@@ -62,8 +62,9 @@ header{
 .support {
     position: fixed;
     bottom: 20px;
-    right: 20px;
-    max-width: calc(100% -30px);
+    right: 100px;
+    max-width: 90vw;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     gap: 8px;
