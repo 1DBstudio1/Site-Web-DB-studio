@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap">
+    <link rel="stylesheet" href="devis.css">
+
+    <title>Demande de devis – DB Studio</title>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="dbstudio.html">DB STUDIO</a>
+        </div>
+        <a href="dbstudio.html" class="retour"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+    </div>
+</header>
+
+<main class="devis-container">
+    <h1>Demande de devis</h1>
+    <p>Parle-nous de ton projet, on te répond rapidement.</p>
+
+    <form class="devis-form" action="https://formspree.io/f/mqedkjdo" method="POST">
+        <div class="row">
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="text" name="prenom" placeholder="Prénom" required>
+        </div>
+
+        <input type="email" name="email" placeholder="Adresse email" required>
+        <input type="tel" name="telephone" placeholder="Téléphone">
+
+        <select name="type_projet" required>
+            <option value="">Type de projet</option>
+            <option value="site_vitrine">Site vitrine</option>
+            <option value="video">Montage vidéo</option>
+            <option value="identite">Identité visuelle</option>
+            <option value="autre">Autre</option>
+        </select>
+
+        <textarea name="description" placeholder="Décris ton projet (budget, délai, attentes…)" required></textarea>
+
+        <button type="submit">Envoyer la demande</button>
+    </form>
+
+    <p class="success-message" style="display:none;">Merci, votre demande de devis a été envoyée !</p>
+</main>
+
+<script>document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.devis-form');
+    const successMsg = document.querySelector('.success-message');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = 'none';
+                    successMsg.style.display = 'block';
+                } else {
+                    alert("Oups, une erreur est survenue. Réessayez plus tard.");
+                }
+            }).catch(error => {
+                alert("Oups, une erreur est survenue. Réessayez plus tard.");
+            });
+        });
+    }
+});</script>
+</body>
+</html>

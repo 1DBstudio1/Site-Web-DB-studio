@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bitcount Single", system-ui;
+}
+
+body {
+    min-height: 100vh;
+    background: url('https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg') center/cover no-repeat;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #00ffc0;
+}
+
+/* HEADER */
+header {
+    background: rgba(0,0,0,0.85);
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.retour {
+    background: #303030;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* FORMULAIRE */
+.devis-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.devis-container h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.devis-container p {
+    margin-bottom: 2rem;
+}
+
+.devis-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.devis-form .row {
+    display: flex;
+    gap: 1rem;
+}
+
+.devis-form input,
+.devis-form select,
+.devis-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.devis-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.devis-form button {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    background: #00ffc0;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.devis-form button:hover {
+    background: #00e0a0;
+}
+
+/* Success message */
+.success-message {
+    margin-top: 1rem;
+    color: #00ffc0;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .devis-form .row {
+        flex-direction: column;
+    }
+}
