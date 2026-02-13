@@ -4,17 +4,17 @@
     box-sizing: border-box;
     font-family: "Bitcount Single", system-ui;
 }
-
+img{
+    max-width: 100%;
+    height: auto;
+}
 body{
     min-height: 100vh;
     background: rgba(0,50,50,0.55);
     border: solid 2px;
     
 }
-html, body {
-max-width: 100%;
-    overflow: hidden;
-}
+
 li{ list-style: none; }
 
 a{
@@ -61,10 +61,9 @@ header{
 /* SUPPORT BUTTON */
 .support {
     position: fixed;
-    bottom: 20px;
-    right: 100px;
-    max-width: 90vw;
-    box-sizing: border-box;
+    bottom: 100px;
+    right: 50px;
+    
     display: flex;
     align-items: center;
     gap: 8px;
@@ -185,7 +184,7 @@ header{
   grid-column: 1 / -1;   
   justify-self: center;  
 }
-.conseille {
+.conseil{
     position: relative ;
     text-align : center;
     color: white;
@@ -210,7 +209,7 @@ header{
 #title{
     font-size: 2rem;
 }
-#offres{
+.offres{
     text-align: center;
     margin: 20px;
     padding: 20px;
@@ -220,7 +219,7 @@ header{
     border-radius: 50px;
     border: solid 2px;
 }
-#span-offres{
+.span-offres{
     font-size: 2rem;
 }
 #offres li{
@@ -232,7 +231,7 @@ header{
     border-radius: 50px;
     margin: 20px;
 }
-#button-devis{
+.button-devis{
     display: block;
     margin: 50px;
     padding: 20px;
@@ -366,5 +365,65 @@ header{
 
     .burger-menu-button{
         display: block;
+    }
+}
+@media (max-width: 768px){
+
+    body{
+        border: none;
+    }
+
+    .section-un h1{
+        font-size: 1.6rem;
+    }
+
+    .section-un p{
+        font-size: 1rem;
+    }
+
+    .services-grid{
+        gap: 1rem;
+    }
+
+    .service-card{
+        max-width: 100%;
+    }
+
+    .conseille,
+    .mission,
+    .dmd{
+        padding: 20px;
+        margin: 20px 10px;
+        border-radius: 20px;
+    }
+
+    .offre{
+        margin: 15px 10px;
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    .btn-devis{
+        margin: 20px auto;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .social-section{
+        width: 95%;
+        height: 95vw;
+        max-height: 400px;
+    }
+
+    .support{
+        font-size: 12px;
+        padding: 10px 14px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .burger-menu{
+        width: 90%;
+        right: 5%;
     }
 }
