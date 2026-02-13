@@ -11,7 +11,10 @@ body{
     border: solid 2px;
     
 }
-
+html, body {
+max-width: 100%;
+    overflow: hidden;
+}
 li{ list-style: none; }
 
 a{
