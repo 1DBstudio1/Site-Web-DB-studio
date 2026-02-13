@@ -118,3 +118,63 @@ header {
         flex-direction: column;
     }
 }
+@media (max-width: 768px){
+
+    body{
+        border: none;
+    }
+
+    .section-un h1{
+        font-size: 1.6rem;
+    }
+
+    .section-un p{
+        font-size: 1rem;
+    }
+
+    .services-grid{
+        gap: 1rem;
+    }
+
+    .service-card{
+        max-width: 100%;
+    }
+
+    .conseille,
+    .mission,
+    .dmd{
+        padding: 20px;
+        margin: 20px 10px;
+        border-radius: 20px;
+    }
+
+    .offre{
+        margin: 15px 10px;
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    .btn-devis{
+        margin: 20px auto;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .social-section{
+        width: 95%;
+        height: 95vw;
+        max-height: 400px;
+    }
+
+    .support{
+        font-size: 12px;
+        padding: 10px 14px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .burger-menu{
+        width: 90%;
+        right: 5%;
+    }
+}
