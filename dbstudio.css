@@ -63,7 +63,7 @@ header{
     position: fixed;
     bottom: 20px;
     right: 20px;
-    
+    max-width: calc(100% -30px);
     display: flex;
     align-items: center;
     gap: 8px;
