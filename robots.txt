@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://1dbstudio1.github.io/Site-Web-DB-studio/sitemap.xml
