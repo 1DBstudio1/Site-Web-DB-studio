@@ -1,58 +1,315 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mentions légales | DB Studio</title>
-<meta name="description" content="Mentions légales du site DB Studio. Informations légales et contact.">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #f8f8f8;
-            color: #333;
-        }
-        h1, h2 {
-            color: #111;
-        }
-        a { color: #00bfa5; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales | DB Studio</title>
+  <meta name="description" content="Mentions légales de DB Studio — agence web dans les Alpes.">
+  <link rel="canonical" href="https://www.tonsite.fr/mentions.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    :root {
+      --accent: #00ffc0;
+      --bg: #020c0a;
+      --surface: rgba(255,255,255,0.05);
+      --border: rgba(255,255,255,0.1);
+      --text: #e8f5f2;
+      --text-muted: #8ab5ad;
+      --radius: 16px;
+      --radius-lg: 28px;
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    body::before {
+      content:'';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,192,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,192,0.025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a { text-decoration: none; color: var(--accent); transition: opacity 0.2s; }
+    a:hover { opacity: 0.8; }
+    li { list-style: none; }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(2,12,10,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo a {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+      padding: 5px 12px;
+      border-radius: 10px;
+      letter-spacing: 2px;
+      text-decoration: none;
+    }
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--accent); }
+
+    /* CONTENT */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 120px 2rem 80px;
+    }
+
+    /* HERO TEXT */
+    .page-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header .badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .page-header p {
+      margin-top: 0.8rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* SECTIONS */
+    .legal-section {
+      margin-bottom: 2.5rem;
+      padding: 2rem 2rem 2rem 1.8rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      border-left: 3px solid var(--accent);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(16px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    .legal-section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .legal-section h2 i { font-size: 0.95rem; }
+
+    .legal-section p, .legal-section li {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-section strong { color: var(--text); }
+
+    .legal-section ul { margin-left: 1rem; }
+    .legal-section ul li::before { content: '→ '; color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    footer a { color: var(--text-muted); margin: 0 0.8rem; text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* WhatsApp */
+    .support {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 50px;
+      background: #25d366;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+      z-index: 200;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100%{ transform:translateY(0); }
+      50%{ transform:translateY(-5px); }
+    }
+
+    .support:hover { background: #1db954; color: white; }
+
+    @media (max-width: 600px) {
+      .support span { display: none; }
+      .support { padding: 12px 14px; }
+    }
+  </style>
 </head>
 <body>
-    </div>
-        <a href="index.html" class="retour"><i class="fa-solid fa-arrow-left"></i> Retour</a>
-    </div>
+
+<nav class="navbar">
+  <div class="logo"><a href="index.html">DB STUDIO</a></div>
+  <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
+</nav>
+
+<a href="https://wa.me/33628527401" class="support" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i><span>Support</span>
+</a>
+
+<div class="page-wrapper">
+
+  <div class="page-header">
+    <div class="badge">Informations légales</div>
     <h1>Mentions légales</h1>
+    <p>Dernière mise à jour : janvier 2025</p>
+  </div>
 
-    <p>Conformément aux dispositions des articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique (LCEN), nous vous informons que :</p>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-building"></i> Éditeur du site</h2>
+    <p><strong>Raison sociale :</strong> DB Studio</p>
+    <p><strong>Statut :</strong> Micro-entreprise / Entreprise individuelle</p>
+    <p><strong>Nom du responsable :</strong> [Votre Prénom et Nom]</p>
+    <p><strong>Adresse :</strong> [Votre adresse, Alpes, France]</p>
+    <p><strong>Email :</strong> <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a></p>
+    <p><strong>Téléphone :</strong> <a href="tel:+33628527401">06 28 52 74 01</a></p>
+    <p><strong>SIRET :</strong> [Votre numéro SIRET]</p>
+    <p><strong>Numéro de TVA intracommunautaire :</strong> Non applicable (franchise en base de TVA, art. 293 B du CGI)</p>
+  </div>
 
-    <h2>Éditeur du site</h2>
-    <p>
-        Nom de l'entreprise : DB Studio<br>
-        Responsable : Dubromez Valentin<br>
-        Adresse : Avenue de bure les coteaux du forest bat E, 05000 Gap<br>
-        Email : <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a><br>
-        SIRET : [Ton numéro SIRET si applicable]
-    </p>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-server"></i> Hébergement</h2>
+    <p><strong>Hébergeur :</strong> [Nom de votre hébergeur, ex. OVH / Infomaniak / o2switch]</p>
+    <p><strong>Adresse :</strong> [Adresse de l'hébergeur]</p>
+    <p><strong>Site web :</strong> <a href="#" target="_blank">[www.hebergeur.fr]</a></p>
+  </div>
 
-    <h2>Hébergement</h2>
-    <p>
-        Ce site est hébergé par : GitHub Pages<br>
-        Adresse : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA
-    </p>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-copyright"></i> Propriété intellectuelle</h2>
+    <p>L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, vidéos, etc.) est la propriété exclusive de <strong>DB Studio</strong>, sauf mention contraire.</p>
+    <p>Toute reproduction, distribution, modification ou utilisation de ces éléments, sans autorisation écrite préalable, est strictement interdite et constitue une contrefaçon sanctionnée par les articles L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+  </div>
 
-    <h2>Propriété intellectuelle</h2>
-    <p>
-        Tous les contenus présents sur ce site (textes, images, logos, graphismes) sont la propriété de DB Studio ou de ses partenaires et sont protégés par la législation française et internationale sur le droit d’auteur. Toute reproduction, diffusion ou exploitation sans autorisation est interdite.
-    </p>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-image"></i> Crédits images</h2>
+    <p>Certaines images utilisées sur ce site proviennent de banques d'images libres de droits :</p>
+    <ul>
+      <li><a href="https://www.pexels.com" target="_blank">Pexels.com</a></li>
+      <li><a href="https://unsplash.com" target="_blank">Unsplash.com</a></li>
+    </ul>
+    <p style="margin-top:0.6rem;">Les images de projets clients sont utilisées avec leur accord explicite.</p>
+  </div>
 
-    <h2>Responsabilité</h2>
-    <p>
-        DB Studio ne saurait être tenu responsable des dommages directs ou indirects pouvant résulter de l’accès ou de l’utilisation de ce site.
-    </p>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-link"></i> Liens hypertextes</h2>
+    <p>Ce site peut contenir des liens vers des sites tiers. <strong>DB Studio</strong> ne peut être tenu responsable du contenu de ces sites externes ni des dommages pouvant résulter de leur consultation.</p>
+    <p>La mise en place de liens hypertextes vers ce site est soumise à autorisation préalable de DB Studio.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-cookie-bite"></i> Cookies</h2>
+    <p>Ce site peut utiliser des cookies à des fins d'analyse statistique (Google Analytics) si vous en acceptez l'usage via notre bannière de consentement.</p>
+    <p>Vous disposez du droit de refuser ces cookies. Pour en savoir plus, consultez notre <a href="privacy.html">Politique de confidentialité</a>.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-shield-halved"></i> Limitation de responsabilité</h2>
+    <p>DB Studio s'efforce de maintenir les informations de ce site à jour et exactes. Cependant, nous ne saurions garantir l'exhaustivité ou l'exactitude des informations publiées.</p>
+    <p>DB Studio ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation de ce site ou de l'impossibilité d'y accéder.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-scale-balanced"></i> Droit applicable</h2>
+    <p>Le présent site et ses mentions légales sont soumis au droit français. Tout litige relatif à son utilisation sera soumis à la compétence exclusive des tribunaux français.</p>
+  </div>
+
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+    <p>Pour toute question relative aux mentions légales, vous pouvez nous contacter :</p>
+    <p><strong>Email :</strong> <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a></p>
+    <p><strong>WhatsApp :</strong> <a href="https://wa.me/33628527401" target="_blank">06 28 52 74 01</a></p>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 DB Studio — Tous droits réservés</p>
+  <div style="margin-top:0.5rem;">
+    <a href="index.html">Accueil</a>
+    <a href="mentions.html">Mentions légales</a>
+    <a href="privacy.html">Politique de confidentialité</a>
+  </div>
+</footer>
+
 </body>
 </html>
