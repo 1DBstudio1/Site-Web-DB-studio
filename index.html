@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DB Studio crée des sites web modernes, rapides et optimisés SEO pour artisans, entrepreneurs et PME en France.">
-  <meta name="keywords" content="création site web, site vitrine, site e-commerce, agence web France, SEO local, maintenance site web">
+  <meta name="description" content="DB Studio — Agence web basée à Gap, Hautes-Alpes. Création de sites web professionnels pour artisans, commerçants et hôteliers locaux.">
+  <meta name="keywords" content="création site web Gap, agence web Hautes-Alpes, site vitrine artisan, site web Gap 05, SEO local Gap">
   <meta name="author" content="DB Studio">
-  <link rel="canonical" href="https://www.tonsite.fr/">
-  <meta property="og:title" content="DB Studio | Création de site web professionnel">
-  <meta property="og:description" content="Agence web basée dans les Alpes spécialisée en création de sites vitrine, e-commerce et SEO.">
+  <link rel="canonical" href="https://1dbstudio1.github.io/Site-Web-DB-studio/">
+  <meta property="og:title" content="DB Studio | Création de site web professionnel à Gap">
+  <meta property="og:description" content="Agence web basée à Gap, Hautes-Alpes. Sites vitrine, e-commerce et hôtels pour les professionnels locaux.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.tonsite.fr">
-  <title>Création de site web professionnel en France | DB Studio</title>
+  <meta property="og:url" content="https://1dbstudio1.github.io/Site-Web-DB-studio/">
+  <title>DB Studio | Création de site web à Gap — Hautes-Alpes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dbstudio.css">
@@ -20,11 +20,207 @@
     "@context": "https://schema.org",
     "@type": "WebDesignCompany",
     "name": "DB Studio",
-    "url": "https://www.tonsite.fr",
-    "description": "Agence spécialisée en création de sites web professionnels en France."
+    "url": "https://1dbstudio1.github.io/Site-Web-DB-studio/",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gap",
+      "addressRegion": "Hautes-Alpes",
+      "postalCode": "05000",
+      "addressCountry": "FR"
+    },
+    "description": "Agence web basée à Gap spécialisée en création de sites web professionnels pour artisans, commerçants et hôteliers des Hautes-Alpes."
   }
   </script>
-  </head>
+  <style>
+    /* ===== PORTFOLIO ===== */
+    #portfolio {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .portfolio-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,255,192,0.12);
+      border-color: var(--accent);
+    }
+
+    .portfolio-mockup {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-mockup::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+    }
+
+    .pm-spa { background: linear-gradient(135deg, #1a0a2e, #3d1a6e); }
+    .pm-spa::before { background: radial-gradient(circle at 30% 50%, #b06aff, transparent 60%); }
+
+    .pm-serrurier { background: linear-gradient(135deg, #0a1628, #1a3a5c); }
+    .pm-serrurier::before { background: radial-gradient(circle at 70% 30%, #2D6BE4, transparent 60%); }
+
+    .pm-plombier { background: linear-gradient(135deg, #0a2010, #1a5c30); }
+    .pm-plombier::before { background: radial-gradient(circle at 40% 60%, #00ffc0, transparent 60%); }
+
+    .pm-cleaning { background: linear-gradient(135deg, #0a1a2e, #1a3a6e); }
+    .pm-cleaning::before { background: radial-gradient(circle at 60% 40%, #4a9eff, transparent 60%); }
+
+    .portfolio-mockup-icon {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+
+    .portfolio-info {
+      padding: 1.4rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-sector {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .portfolio-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .portfolio-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .portfolio-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 8px 16px;
+      border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+      width: fit-content;
+    }
+
+    .portfolio-link:hover {
+      background: var(--accent);
+      color: #001a14;
+    }
+
+    /* ===== OFFRES REDESIGN ===== */
+    .offre-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .badge-simple { background: rgba(0,255,192,0.1); color: var(--accent); border: 1px solid rgba(0,255,192,0.3); }
+    .badge-avance { background: rgba(45,107,228,0.15); color: #5B9BF5; border: 1px solid rgba(45,107,228,0.4); }
+    .badge-hotel { background: rgba(180,120,255,0.15); color: #c084fc; border: 1px solid rgba(180,120,255,0.4); }
+    .badge-ecom { background: rgba(255,160,50,0.15); color: #ffa032; border: 1px solid rgba(255,160,50,0.4); }
+
+    .offre-price {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      margin: 0.8rem 0 0.2rem;
+    }
+
+    .offre-price span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .offre-mensuel {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .offre-mensuel strong { color: var(--accent); }
+
+    .offre-delai {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .offre-delai i { color: var(--accent); font-size: 0.75rem; }
+
+    .offre-card.featured {
+      border-color: rgba(45,107,228,0.5);
+      box-shadow: 0 0 40px rgba(45,107,228,0.1);
+      position: relative;
+    }
+
+    .offre-card.featured::before {
+      content: '⭐ Populaire';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2D6BE4;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
@@ -32,14 +228,13 @@
   <div class="logo">
     <a href="#home">DB STUDIO</a>
   </div>
-
   <ul class="nav-links">
     <li><a href="#home">Accueil</a></li>
-    <li><a href="#media">Média</a></li>
+    <li><a href="#portfolio">Réalisations</a></li>
+    <li><a href="#nos-offres">Offres</a></li>
     <li><a href="#a-propos">À propos</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-
   <button class="burger-btn" aria-label="Menu" id="burgerBtn">
     <i class="fa-solid fa-bars" id="burgerIcon"></i>
   </button>
@@ -49,7 +244,8 @@
 <div class="burger-menu" id="burgerMenu">
   <ul>
     <li><a href="#home">Accueil</a></li>
-    <li><a href="#media">Nos derniers projets</a></li>
+    <li><a href="#portfolio">Nos réalisations</a></li>
+    <li><a href="#nos-offres">Nos offres</a></li>
     <li><a href="#a-propos">À propos</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="mentions.html">Mentions légales</a></li>
@@ -67,7 +263,7 @@
 <section id="home">
   <div class="hero-content">
     <h1>Des sites web professionnels,<br>pensés pour l'essentiel.</h1>
-    <span>Convertissez vos visiteurs en clients grâce à un site clair et efficace.</span>
+    <span>Agence web locale basée à <strong style="color:var(--accent)">Gap, Hautes-Alpes</strong> — on crée des sites qui ramènent de vrais clients.</span>
     <a href="devis.html" class="hero-cta">Obtenir un devis gratuit</a>
   </div>
 </section>
@@ -78,28 +274,28 @@
   <div class="services-grid">
     <div class="service-card">
       <div class="service-icon">💻</div>
-      <h3>Site vitrine – One page</h3>
-      <p>Une page claire et professionnelle pour présenter votre activité et être crédible en ligne dès maintenant.</p>
+      <h3>Site vitrine simple</h3>
+      <p>Une présence en ligne claire et professionnelle pour être trouvé et contacté rapidement.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🌐</div>
       <h3>Site vitrine avancé</h3>
-      <p>Un site structuré avec plusieurs pages pour présenter votre activité en détail et rassurer vos clients.</p>
+      <p>Un site complet, optimisé Google, qui travaille pour vous 24h/24.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏨</div>
+      <h3>Site hôtel & réservation</h3>
+      <p>Réservation en ligne intégrée, zéro commission plateforme. Vos chambres remplies directement.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🛒</div>
       <h3>Site e-commerce</h3>
-      <p>Une boutique en ligne prête à l'emploi pour vendre vos produits sans prise de tête.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">⚙️</div>
-      <h3>Projet sur mesure</h3>
-      <p>Un accompagnement personnalisé pour créer une solution adaptée à votre projet.</p>
+      <p>Boutique en ligne complète, sécurisée et optimisée pour vendre.</p>
     </div>
     <div class="service-card">
       <div class="service-icon">🔧</div>
       <h3>Maintenance & SEO</h3>
-      <p>Un suivi pour éviter les problèmes techniques et améliorer votre visibilité dans le temps.</p>
+      <p>Suivi mensuel, sécurité, modifications et référencement actif inclus.</p>
     </div>
   </div>
 </section>
@@ -113,92 +309,458 @@
   <p>Bien pensé, développé avec méthode et entretenu régulièrement, il devient un véritable outil de croissance.</p>
 </div>
 
-<!-- ===== MISSION ===== -->
-<div class="text-bloc">
-  <p class="bloc-title">Notre mission</p>
-  <p>Notre mission est de vous accompagner et d'assurer le développement durable de votre présence en ligne.</p>
-  <p>Nous concevons des sites stratégiques, pensés pour attirer, convaincre et convertir.</p>
-  <p>Chaque projet est guidé par un objectif clair : transformer votre visibilité en véritable levier de croissance.</p>
-  <p>Parce qu'un site ne doit pas seulement exister — il doit travailler pour vous.</p>
-</div>
+<!-- ===== PORTFOLIO ===== -->
+<section id="portfolio">
+  <h2 class="section-title">Nos réalisations</h2>
+  <p style="text-align:center;color:var(--text-muted);margin-top:-2rem;margin-bottom:1rem;font-size:0.95rem;">Sites créés pour des professionnels locaux — cliquez pour voir en live</p>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup pm-spa">
+        <span class="portfolio-mockup-icon">💆‍♀️</span>
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-sector">Spa & Beauté</div>
+        <div class="portfolio-name">Angel's Head Spa</div>
+        <div class="portfolio-desc">Site vitrine pour un spa haut de gamme — ambiance luxe, prise de rendez-vous et présentation des soins.</div>
+        <a class="portfolio-link" href="https://1dbstudio1.github.io/Angel-s-head-spa---site-web--/" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup pm-serrurier">
+        <span class="portfolio-mockup-icon">🔑</span>
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-sector">Serrurerie</div>
+        <div class="portfolio-name">Forcia Serrurerie</div>
+        <div class="portfolio-desc">Site vitrine artisan serrurier — intervention d'urgence, services et contact direct optimisé mobile.</div>
+        <a class="portfolio-link" href="https://1dbstudio1.github.io/Forcia-serrurerie---site-web-pr-t-l-emploi--/" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup pm-plombier">
+        <span class="portfolio-mockup-icon">🔧</span>
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-sector">Plomberie</div>
+        <div class="portfolio-name">Romain Plombier</div>
+        <div class="portfolio-desc">Site vitrine plombier — présentation des prestations, zone d'intervention et appel direct en un clic.</div>
+        <a class="portfolio-link" href="https://1dbstudio1.github.io/Romain-plombier/" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+        </a>
+      </div>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-mockup pm-cleaning">
+        <span class="portfolio-mockup-icon">🧹</span>
+      </div>
+      <div class="portfolio-info">
+        <div class="portfolio-sector">Nettoyage professionnel</div>
+        <div class="portfolio-name">CleanerClean</div>
+        <div class="portfolio-desc">Site vitrine entreprise de nettoyage — services, formules tarifaires et devis rapide intégré.</div>
+        <a class="portfolio-link" href="https://1dbstudio1.github.io/Cleanerclean-site-d-mo-/" target="_blank">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- ===== OFFRES ===== -->
 <div style="text-align:center; padding: 4rem 2rem 1rem;">
-  <h2 class="section-title" style="margin-bottom:0">Nos offres</h2>
+  <h2 class="section-title" style="margin-bottom:0.5rem">Nos offres</h2>
+  <p style="color:var(--text-muted);font-size:0.95rem;">Paiement en 2 fois · Maquette gratuite avant engagement</p>
 </div>
 <div id="nos-offres">
 
+  <!-- VITRINE SIMPLE -->
   <div class="offre-card">
-    <p class="offre-title">Vitrine One Page</p>
-    <ul>
-      <li>Parfait pour TPE / indépendant</li>
-      <li>Un site simple et efficace pour présenter votre activité et générer vos premiers contacts.</li>
-    </ul>
+    <span class="offre-badge badge-simple">Vitrine Simple</span>
+    <p class="offre-title">Présence en ligne</p>
+    <p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:0.5rem">Idéal pour TPE, indépendants, commerçants qui démarrent</p>
+    <div class="offre-price">400 € <span>création</span></div>
+    <div class="offre-mensuel">+ <strong>30 €/mois</strong> — maintenance & suivi</div>
     <ul class="detail-list">
-      <li>✦ Page unique (Accueil, services, contact)</li>
-      <li>✦ Design responsive</li>
-      <li>✦ Formulaire de contact fonctionnel</li>
-      <li>✦ Optimisation SEO de base</li>
-      <li>✦ Hébergement + nom de domaine</li>
-      <li>✦ Optionnel : Google Analytics</li>
-      <li>✦ Livré en 2 jours</li>
+      <li>✦ 3 à 4 pages (accueil, services, contact)</li>
+      <li>✦ Design responsive mobile</li>
+      <li>✦ Numéro, adresse, horaires</li>
+      <li>✦ Photos du client intégrées</li>
+      <li>✦ Fiche Google Maps</li>
+      <li>✦ SEO local de base</li>
+      <li>✦ Hébergement inclus</li>
+      <li>✦ 1 modification / mois</li>
     </ul>
-    <a class="button-devis" href="devis.html">Obtenir un devis</a>
+    <div class="offre-delai"><i class="fa-solid fa-clock"></i> Livré en 48h</div>
+    <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
   </div>
 
-  <div class="offre-card">
-    <p class="offre-title">Vitrine Avancée</p>
-    <ul>
-      <li>Parfait pour artisan / TPE / PME déjà en activité</li>
-      <li>Le site avancé ne vous présente pas, il travaille pour vous.</li>
-    </ul>
+  <!-- VITRINE AVANCÉ -->
+  <div class="offre-card featured">
+    <span class="offre-badge badge-avance">Vitrine Avancé</span>
+    <p class="offre-title">Site qui travaille pour vous</p>
+    <p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:0.5rem">Artisans, PME, commerces établis</p>
+    <div class="offre-price">900 € <span>création</span></div>
+    <div class="offre-mensuel">+ <strong>50 €/mois</strong> — maintenance & SEO actif</div>
     <ul class="detail-list">
-      <li>✦ 3 à 5 pages stratégiques</li>
-      <li>✦ Design sur mesure, moderne, responsive</li>
-      <li>✦ Call to action optimisé 📱</li>
-      <li>✦ Base SEO propre</li>
-      <li>✦ Hébergement + nom de domaine</li>
-      <li>✦ Suivi Google Analytics</li>
-      <li>✦ Livré en 5 jours</li>
+      <li>✦ 5 à 7 pages sur mesure</li>
+      <li>✦ Design premium, animations</li>
+      <li>✦ Formulaire de contact / devis</li>
+      <li>✦ Bouton avis Google intégré</li>
+      <li>✦ Fiche Google Maps optimisée</li>
+      <li>✦ SEO local poussé dès le lancement</li>
+      <li>✦ Hébergement inclus</li>
+      <li>✦ Rapport analytique mensuel</li>
+      <li>✦ Mis en avant sur nos réseaux</li>
+      <li>✦ 3 modifications / mois</li>
     </ul>
-    <a class="button-devis" href="devis.html">Obtenir un devis</a>
+    <div class="offre-delai"><i class="fa-solid fa-clock"></i> Livré en 5 à 7 jours</div>
+    <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
   </div>
 
+  <!-- HÔTEL -->
   <div class="offre-card">
-    <p class="offre-title">E-boutique Professionnelle</p>
-    <ul>
-      <li>Vendez vos produits en ligne avec une boutique performante, sécurisée et optimisée pour convertir.</li>
-    </ul>
+    <span class="offre-badge badge-hotel">Option Hôtel</span>
+    <p class="offre-title">Réservation directe</p>
+    <p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:0.5rem">Hôtels, chambres d'hôtes, gîtes</p>
+    <div class="offre-price">1 200 € <span>création</span></div>
+    <div class="offre-mensuel">+ <strong>70 €/mois</strong> — maintenance & suivi réservations</div>
     <ul class="detail-list">
-      <li>✦ Pas de limite de pages</li>
-      <li>✦ Design sur mesure, responsive</li>
-      <li>✦ Rapide et optimisée mobile</li>
-      <li>✦ Sécurisée (paiement, données)</li>
-      <li>✦ Pensée pour la conversion</li>
+      <li>✦ Tout le Vitrine Avancé inclus</li>
+      <li>✦ Page chambres — photos, tarifs, dispo</li>
+      <li>✦ Système de réservation en ligne</li>
+      <li>✦ Notifications de réservation</li>
+      <li>✦ Zéro commission plateforme</li>
+      <li>✦ Mises à jour tarifs incluses</li>
+      <li>✦ Modifications illimitées</li>
+    </ul>
+    <div class="offre-delai"><i class="fa-solid fa-clock"></i> Livré en 7 à 10 jours</div>
+    <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
+  </div>
+
+  <!-- E-COMMERCE -->
+  <div class="offre-card">
+    <span class="offre-badge badge-ecom">E-Commerce</span>
+    <p class="offre-title">Boutique en ligne</p>
+    <p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:0.5rem">Vente en ligne, boutiques, créateurs</p>
+    <div class="offre-price">1 500 € <span>création</span></div>
+    <div class="offre-mensuel">+ <strong>80 €/mois</strong> — maintenance & SEO e-commerce</div>
+    <ul class="detail-list">
+      <li>✦ Boutique complète sur mesure</li>
+      <li>✦ Paiement en ligne sécurisé</li>
+      <li>✦ Gestion commandes et stocks</li>
+      <li>✦ Design responsive et rapide</li>
       <li>✦ SEO e-commerce</li>
-      <li>✦ Hébergement + nom de domaine</li>
-      <li>✦ Livré en 7 jours</li>
+      <li>✦ Hébergement inclus</li>
+      <li>✦ Rapport analytique mensuel</li>
+      <li>✦ Mis en avant sur nos réseaux</li>
     </ul>
-    <a class="button-devis" href="devis.html">Obtenir un devis</a>
-  </div>
-
-  <div class="offre-card">
-    <p class="offre-title">Pack Maintenance</p>
-    <ul>
-      <li>Un site sans suivi devient lent, vulnérable et mal référencé.</li>
-    </ul>
-    <ul class="detail-list">
-      <li>✦ Mises à jour techniques</li>
-      <li>✦ Sauvegardes régulières</li>
-      <li>✦ Nettoyage technique</li>
-      <li>✦ Renforcement SEO local</li>
-      <li>✦ Optimisation continue</li>
-      <li>✦ Intervention sous 24h</li>
-    </ul>
-    <a class="button-devis" href="devis.html">Obtenir un devis</a>
+    <div class="offre-delai"><i class="fa-solid fa-clock"></i> Livré en 15 jours</div>
+    <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
   </div>
 
 </div>
+
+<!-- NOTE ABONNEMENT -->
+<div style="text-align:center;padding:0 2rem 4rem;max-width:700px;margin:0 auto;">
+  <p style="color:var(--text-muted);font-size:0.85rem;border:1px solid var(--border);border-radius:16px;padding:1rem 1.5rem;background:var(--surface);">
+    <i class="fa-solid fa-circle-info" style="color:var(--accent);margin-right:6px"></i>
+    L'abonnement mensuel inclut l'hébergement, la sécurité, les mises à jour techniques et le SEO actif. Sans abonnement, le site est suspendu. Préavis de résiliation : 1 mois.
+  </p>
+</div>
+<!-- ===== FAQ ===== -->
+<!-- À insérer dans index.html avant la section #contact -->
+<section id="faq" style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto;">
+  <h2 class="section-title">Questions fréquentes</h2>
+
+  <style>
+    .faq-category {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .faq-item:hover { border-color: rgba(0,255,192,0.3); }
+
+    .faq-question {
+      width: 100%;
+      background: var(--surface);
+      border: none;
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      gap: 1rem;
+    }
+
+    .faq-question span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .faq-icon {
+      color: var(--accent);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.4rem 1.2rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      background: var(--surface);
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+  </style>
+
+  <!-- SUR LE SITE -->
+  <div class="faq-category">💻 Sur le site</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que je peux voir des exemples de vos réalisations ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Oui, tous nos sites sont visibles sur notre Instagram et dans la section Réalisations de ce site. Vous pouvez les consulter avant même de nous contacter.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que mon site sera visible sur Google ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Oui. Chaque site est optimisé pour le référencement local dès la livraison — balises SEO, fiche Google Maps, mots-clés adaptés à votre secteur et votre ville. Avec l'abonnement, on continue à travailler votre référencement chaque mois.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que le site est adapté au mobile ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Absolument. Tous nos sites sont 100% responsive — ils s'adaptent parfaitement aux smartphones, tablettes et ordinateurs. C'est une priorité, car plus de 70% des visiteurs naviguent sur mobile.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que je peux modifier moi-même mon site ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Le site est géré par DB Studio. Si vous avez besoin d'une modification (texte, photo, tarif), vous nous contactez et c'est fait rapidement. Les modifications sont incluses dans l'abonnement mensuel selon votre offre.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Combien de pages aura mon site ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Ça dépend de l'offre. La Vitrine Simple comprend 3 à 4 pages. La Vitrine Avancée comprend 5 à 7 pages sur mesure. L'option Hôtel et l'E-commerce sont construits selon vos besoins spécifiques.</div>
+  </div>
+
+  <!-- SUR LE CONTENU -->
+  <div class="faq-category">✍️ Sur le contenu</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que vous écrivez les textes ou je dois les fournir ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">On peut faire les deux. Si vous fournissez vos textes, on les intègre et les met en forme. Si vous n'avez rien de rédigé, on écrit les textes pour vous à partir de votre brief — c'est inclus dans la prestation.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Et si je n'ai pas de photos professionnelles ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Pas de problème. On peut utiliser des photos libres de droits de haute qualité adaptées à votre secteur. On peut aussi vous guider pour prendre de bonnes photos avec votre smartphone, ou vous recommander un photographe local.</div>
+  </div>
+
+  <!-- SUR LE PAIEMENT -->
+  <div class="faq-category">💶 Sur le paiement</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Comment se passe le paiement ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Le paiement se fait en deux fois : 50% à la signature du contrat (acompte), et 50% à la livraison une fois que vous avez validé le site. Règlement par virement bancaire uniquement.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que je peux payer en plusieurs fois ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Le paiement en deux fois est déjà inclus dans notre fonctionnement standard. Si vous avez besoin d'un arrangement différent, contactez-nous directement.</div>
+  </div>
+
+  <!-- SUR L'ABONNEMENT -->
+  <div class="faq-category">🔄 Sur l'abonnement</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>À quoi sert l'abonnement mensuel ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">L'abonnement couvre l'hébergement de votre site, la sécurité, les mises à jour techniques, les modifications incluses et le SEO actif mensuel. Sans abonnement, le site ne peut pas rester en ligne.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Que se passe-t-il si j'arrête l'abonnement ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Si vous résiliez l'abonnement, votre site est suspendu à l'issue du préavis d'un mois. Vous récupérez tous vos contenus (textes, photos) sur simple demande. Votre nom de domaine reste le vôtre et peut être transféré.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que je suis engagé longtemps ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Non. L'abonnement est sans engagement de durée. Vous pouvez résilier à tout moment avec un préavis d'un mois par email. Pas de frais de résiliation.</div>
+  </div>
+
+  <!-- SUR LE PROCESSUS -->
+  <div class="faq-category">🚀 Sur le processus</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Comment ça se passe concrètement après la signature ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">1. Signature + acompte. 2. Brief client (textes, photos, préférences). 3. Création du site. 4. Présentation de la maquette. 5. Modifications. 6. Validation + solde. 7. Mise en ligne. 8. Mise en avant sur nos réseaux au lancement.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Combien de temps pour avoir mon site ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Vitrine Simple : 48h. Vitrine Avancée : 5 à 7 jours. Option Hôtel : 7 à 10 jours. E-commerce : 15 jours. Ces délais démarrent à la réception de l'acompte et du brief complet.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que je peux voir le site avant de payer le solde ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Oui, c'est exactement comme ça que ça fonctionne. Vous validez la maquette, demandez vos modifications, et vous ne payez le solde qu'une fois satisfait du résultat.</div>
+  </div>
+
+  <!-- SEO -->
+  <div class="faq-category">🔍 Sur le référencement (SEO)</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>C'est quoi le SEO exactement ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Le SEO (Search Engine Optimization) c'est l'ensemble des techniques qui permettent à votre site d'apparaître sur Google quand quelqu'un recherche votre activité. Par exemple : "plombier Gap", "hôtel Hautes-Alpes", "serrurier urgence 05". Plus vous êtes bien positionné, plus vous recevez de visites et de clients.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>À quoi ça sert concrètement pour mon business ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Un bon référencement c'est des clients qui vous trouvent sans que vous ayez à les démarcher. Quelqu'un cherche un plombier à Gap à 22h — si votre site apparaît en premier, il vous appelle. C'est une source de clients passifs, 24h/24, 7j/7.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Pourquoi avoir le SEO actif chaque mois ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Google met à jour ses algorithmes régulièrement et la concurrence évolue. Un site bien référencé aujourd'hui peut perdre des positions si on ne l'entretient pas. L'abonnement inclut un travail SEO continu pour maintenir et améliorer votre visibilité.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Combien de temps pour apparaître sur Google ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Les premiers résultats sont visibles en 4 à 8 semaines pour le référencement local. Pour un positionnement solide sur les mots-clés principaux, comptez 3 à 6 mois. C'est un investissement sur la durée.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que mon site sera mieux référencé qu'une page Wix ou Pages Jaunes ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Oui, dans la grande majorité des cas. Les sites Wix sont souvent mal optimisés techniquement. Les Pages Jaunes ont une présence générique. Un site DB Studio est conçu spécifiquement pour votre activité et votre zone géographique, ce qui est bien plus efficace pour le SEO local.</div>
+  </div>
+
+  <!-- PUB -->
+  <div class="faq-category">📣 Sur la publicité</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Est-ce que vous faites aussi de la publicité en ligne ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">C'est une offre que nous développons. Nous proposons notamment l'optimisation de votre fiche Google My Business, souvent plus efficace et moins coûteuse que de la publicité payante. Pour Google Ads ou Meta Ads, contactez-nous pour en discuter selon vos besoins.</div>
+  </div>
+
+  <!-- RÉSEAU -->
+  <div class="faq-category">🤝 Sur le Réseau DB Studio</div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>C'est quoi le Réseau DB Studio ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">Le Réseau DB Studio est un carnet d'adresses de professionnels locaux qui travaillent avec nous. Si un de nos clients cherche un plombier, un serrurier ou tout autre professionnel, on le met en relation avec quelqu'un du réseau qu'on connaît personnellement. C'est une recommandation humaine, pas un algorithme.</div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      <span>Comment rejoindre le Réseau DB Studio ?</span>
+      <i class="fa-solid fa-plus faq-icon"></i>
+    </button>
+    <div class="faq-answer">C'est une option à 4,99€/mois en supplément de votre abonnement. Vous donnez votre accord pour apparaître dans le réseau, et on commence à vous recommander. Vous pouvez vous retirer à tout moment. Les premiers clients bénéficient d'un tarif fondateur bloqué à vie.</div>
+  </div>
+
+</section>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
 
 <!-- ===== CONTACT / SOCIALS ===== -->
 <section id="contact">
@@ -226,12 +788,12 @@
   <section id="a-propos">
     <div class="apropos">
       <p>À propos</p>
-      <p>DB Studio est une agence web basée dans les Alpes, spécialisée dans la création de sites web professionnels pour les entrepreneurs et PME en France.</p>
+      <p>DB Studio est une agence web basée à <strong style="color:var(--accent)">Gap, Hautes-Alpes</strong>, spécialisée dans la création de sites web professionnels pour les artisans, commerçants et hôteliers locaux.</p>
       <p>Chez DB Studio, nous créons des sites web pensés pour l'essentiel : clairs, efficaces et orientés résultats.</p>
       <p>Notre approche est simple :</p>
       <p>✔ Comprendre votre activité<br>
          ✔ Construire un site adapté à vos objectifs<br>
-         ✔ Optimiser votre visibilité<br>
+         ✔ Optimiser votre visibilité sur Google<br>
          ✔ Assurer un suivi dans le temps</p>
       <p>Parce qu'un site internet n'est pas une dépense. C'est un investissement.</p>
       <div class="footer-links">
@@ -253,7 +815,6 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script>
-  // --- Burger menu ---
   const burgerBtn = document.getElementById('burgerBtn');
   const burgerMenu = document.getElementById('burgerMenu');
   const burgerIcon = document.getElementById('burgerIcon');
@@ -263,7 +824,6 @@
     burgerIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
   });
 
-  // Fermer le menu si on clique sur un lien
   burgerMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       burgerMenu.classList.remove('open');
@@ -271,7 +831,6 @@
     });
   });
 
-  // --- Cookies ---
   const cookieBanner = document.getElementById('cookie-banner');
   const acceptBtn = document.getElementById('accept-cookies');
   const declineBtn = document.getElementById('decline-cookies');
@@ -283,7 +842,6 @@
   acceptBtn.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     cookieBanner.style.display = 'none';
-    // Initialiser Google Analytics ici si besoin
   });
 
   declineBtn.addEventListener('click', () => {
@@ -294,3 +852,4 @@
 
 </body>
 </html>
+        

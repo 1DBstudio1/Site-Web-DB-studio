@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demande de devis | DB Studio</title>
-  <meta name="description" content="Obtenez un devis gratuit pour votre site web avec DB Studio — agence web dans les Alpes.">
-  <link rel="canonical" href="https://www.tonsite.fr/devis.html">
+  <meta name="description" content="Obtenez un devis gratuit pour votre site web avec DB Studio — agence web à Gap, Hautes-Alpes.">
+  <link rel="canonical" href="https://1dbstudio1.github.io/Site-Web-DB-studio/devis.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -31,13 +31,12 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 16px;
       line-height: 1.6;
       min-height: 100vh;
     }
 
-    /* Background grid effect */
     body::before {
       content:'';
       position: fixed;
@@ -71,12 +70,12 @@
 
     .logo a {
       font-family: 'Syne', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 800;
       color: var(--accent);
       border: 2px solid var(--accent);
-      padding: 5px 12px;
-      border-radius: 10px;
+      padding: 6px 14px;
+      border-radius: 12px;
       letter-spacing: 2px;
     }
 
@@ -91,7 +90,7 @@
 
     .nav-back:hover { color: var(--accent); }
 
-    /* ===== HERO DEVIS ===== */
+    /* ===== HERO ===== */
     .devis-hero {
       position: relative;
       z-index: 1;
@@ -121,9 +120,7 @@
       animation: fadeUp 0.6s 0.1s ease both;
     }
 
-    .devis-hero h1 span {
-      color: var(--accent);
-    }
+    .devis-hero h1 span { color: var(--accent); }
 
     .devis-hero p {
       margin-top: 1rem;
@@ -137,16 +134,20 @@
       to { opacity:1; transform: translateY(0); }
     }
 
-    /* ===== FORM WRAPPER ===== */
-    .form-wrapper {
+    /* ===== LAYOUT ===== */
+    .devis-layout {
       position: relative;
       z-index: 1;
-      max-width: 720px;
+      max-width: 1100px;
       margin: 0 auto 80px;
       padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
       animation: fadeUp 0.6s 0.3s ease both;
     }
 
+    /* ===== FORM CARD ===== */
     .form-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -233,9 +234,7 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .form-group {
-      margin-bottom: 1.4rem;
-    }
+    .form-group { margin-bottom: 1.4rem; }
 
     label {
       display: block;
@@ -260,7 +259,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       color: var(--text);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
@@ -272,10 +271,15 @@
       box-shadow: 0 0 0 3px rgba(0,255,192,0.08);
     }
 
-    select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238ab5ad' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+    select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238ab5ad' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
 
     select option { background: #051a15; color: var(--text); }
-
     textarea { resize: vertical; min-height: 110px; }
 
     .form-row {
@@ -284,7 +288,7 @@
       gap: 1rem;
     }
 
-    /* RADIO / CHECKBOX CARDS */
+    /* OPTION CARDS */
     .option-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -383,7 +387,7 @@
       border: 1px solid var(--border);
       background: transparent;
       color: var(--text-muted);
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
       cursor: pointer;
       transition: border-color 0.2s, color 0.2s;
@@ -397,7 +401,7 @@
       border: none;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       color: #001a14;
-      font-family: 'DM Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 0.9rem;
       cursor: pointer;
@@ -457,19 +461,7 @@
 
     .success-screen .back-home:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ===== INFOS SIDEBAR ===== */
-    .devis-layout {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto 80px;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: 1fr 340px;
-      gap: 2rem;
-      animation: fadeUp 0.6s 0.3s ease both;
-    }
-
+    /* ===== SIDEBAR ===== */
     .sidebar {
       display: flex;
       flex-direction: column;
@@ -508,10 +500,7 @@
       flex-shrink: 0;
     }
 
-    .sidebar-item p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
+    .sidebar-item p { font-size: 0.88rem; color: var(--text-muted); }
 
     .sidebar-item strong {
       display: block;
@@ -610,7 +599,6 @@
   <!-- FORM -->
   <div class="form-card">
 
-    <!-- Steps -->
     <div class="steps">
       <div class="step active" id="s1"><div class="step-dot">1</div><div class="step-label">Projet</div></div>
       <div class="step-line" id="l1"></div>
@@ -619,9 +607,9 @@
       <div class="step" id="s3"><div class="step-dot">3</div><div class="step-label">Contact</div></div>
     </div>
 
-    <form id="devisForm" action="https://formspree.io/f/mqedkjdo" method="POST" novalidate>
+    <form id="devisForm" novalidate>
 
-      <!-- PAGE 1 : TYPE DE PROJET -->
+      <!-- PAGE 1 -->
       <div class="form-page active" id="page1">
         <p class="form-page-title">Quel type de site souhaitez-vous ?</p>
 
@@ -629,24 +617,24 @@
           <label>Type de site <span class="req">*</span></label>
           <div class="option-grid">
             <div class="option-card">
-              <input type="radio" name="type_site" id="t1" value="Vitrine One Page" required>
-              <label for="t1"><span class="icon">💻</span>Vitrine One Page</label>
+              <input type="radio" name="type_site" id="t1" value="Vitrine Simple" required>
+              <label for="t1"><span class="icon">💻</span>Vitrine Simple</label>
             </div>
             <div class="option-card">
               <input type="radio" name="type_site" id="t2" value="Vitrine Avancée">
               <label for="t2"><span class="icon">🌐</span>Vitrine Avancée</label>
             </div>
             <div class="option-card">
-              <input type="radio" name="type_site" id="t3" value="E-commerce">
-              <label for="t3"><span class="icon">🛒</span>E-commerce</label>
+              <input type="radio" name="type_site" id="t3" value="Hôtel / Réservation">
+              <label for="t3"><span class="icon">🏨</span>Hôtel / Résa</label>
             </div>
             <div class="option-card">
-              <input type="radio" name="type_site" id="t4" value="Sur mesure">
-              <label for="t4"><span class="icon">⚙️</span>Sur mesure</label>
+              <input type="radio" name="type_site" id="t4" value="E-commerce">
+              <label for="t4"><span class="icon">🛒</span>E-commerce</label>
             </div>
             <div class="option-card">
               <input type="radio" name="type_site" id="t5" value="Maintenance / SEO">
-              <label for="t5"><span class="icon">🔧</span>Maintenance / SEO</label>
+              <label for="t5"><span class="icon">🔧</span>Maintenance</label>
             </div>
             <div class="option-card">
               <input type="radio" name="type_site" id="t6" value="Je ne sais pas encore">
@@ -674,7 +662,7 @@
         </div>
 
         <div class="form-group">
-          <label>Quel est votre secteur d'activité ? <span class="req">*</span></label>
+          <label>Secteur d'activité <span class="req">*</span></label>
           <select name="secteur" required>
             <option value="" disabled selected>Sélectionnez votre secteur</option>
             <option>Artisan / BTP</option>
@@ -696,7 +684,9 @@
           </button>
         </div>
       </div>
-<!-- PAGE 2 : DÉTAILS -->
+
+      
+      <!-- PAGE 2 -->
       <div class="form-page" id="page2">
         <p class="form-page-title">Parlez-nous de votre projet</p>
 
@@ -753,8 +743,8 @@
               <label for="o5"><span class="icon">📬</span>Formulaire</label>
             </div>
             <div class="option-card">
-              <input type="checkbox" name="options[]" id="o6" value="Blog / Actualités">
-              <label for="o6"><span class="icon">✍️</span>Blog</label>
+              <input type="checkbox" name="options[]" id="o6" value="Réservation en ligne">
+              <label for="o6"><span class="icon">📆</span>Réservation</label>
             </div>
           </div>
         </div>
@@ -765,7 +755,7 @@
         </div>
 
         <div class="form-group">
-          <label>Avez-vous des sites de référence / inspiration ?</label>
+          <label>Sites de référence / inspiration</label>
           <input type="text" name="inspiration" placeholder="https://exemple.com, ...">
         </div>
 
@@ -779,7 +769,7 @@
         </div>
       </div>
 
-      <!-- PAGE 3 : CONTACT -->
+      <!-- PAGE 3 -->
       <div class="form-page" id="page3">
         <p class="form-page-title">Vos coordonnées</p>
 
@@ -817,6 +807,7 @@
             <option>TikTok</option>
             <option>Bouche à oreille</option>
             <option>Google</option>
+            <option>Démarchage direct</option>
             <option>Autre</option>
           </select>
         </div>
@@ -850,15 +841,15 @@
       <h3>✦ Pourquoi nous choisir ?</h3>
       <div class="sidebar-item">
         <i class="fa-solid fa-bolt"></i>
-        <div><strong>Livraison rapide</strong><p>Site livré en 2 à 7 jours selon le projet.</p></div>
+        <div><strong>Livraison rapide</strong><p>Site livré en 48h à 15 jours selon le projet.</p></div>
       </div>
       <div class="sidebar-item">
         <i class="fa-solid fa-euro-sign"></i>
-        <div><strong>Devis gratuit</strong><p>Sans engagement, transparent et détaillé.</p></div>
+        <div><strong>Maquette gratuite</strong><p>Vous voyez le résultat avant de vous décider.</p></div>
       </div>
       <div class="sidebar-item">
-        <i class="fa-solid fa-headset"></i>
-        <div><strong>Suivi personnalisé</strong><p>Un interlocuteur unique du début à la fin.</p></div>
+        <i class="fa-solid fa-map-marker-alt"></i>
+        <div><strong>Basés à Gap</strong><p>Agence locale, disponible et réactive.</p></div>
       </div>
       <div class="sidebar-item">
         <i class="fa-solid fa-mobile-screen"></i>
@@ -873,7 +864,7 @@
         <a href="https://wa.me/33628527401" class="contact-link" target="_blank">
           <i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp
         </a>
-        <a href="mailto:db_studio@outlook.fr" class="contact-link">
+        <a href="/cdn-cgi/l/email-protection#5d393f022e29283934321d32282931323236733b2f" class="contact-link">
           <i class="fa-solid fa-envelope" style="color:var(--accent)"></i> Email
         </a>
         <a href="https://www.instagram.com/_db_s_t_u_d_i_o" class="contact-link" target="_blank">
@@ -884,9 +875,10 @@
 
     <div class="sidebar-card">
       <h3>⏱ Délais indicatifs</h3>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>One Page</strong><p>Livré en 2 jours</p></div></div>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine avancée</strong><p>Livré en 5 jours</p></div></div>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-commerce</strong><p>Livré en 7 jours</p></div></div>
+      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 48h</p></div></div>
+      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Avancée</strong><p>Livré en 5 à 7 jours</p></div></div>
+      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Hôtel / Réservation</strong><p>Livré en 7 à 10 jours</p></div></div>
+      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-commerce</strong><p>Livré en 15 jours</p></div></div>
     </div>
 
   </div>
@@ -894,35 +886,32 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 DB Studio — Tous droits réservés</p>
+  <p>© 2026 DB Studio — Gap, Hautes-Alpes — Tous droits réservés</p>
   <div style="margin-top:0.5rem;">
     <a href="mentions.html">Mentions légales</a>
     <a href="privacy.html">Politique de confidentialité</a>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   let current = 1;
 
   function goTo(page) {
-    // Validation basique page 1
     if (page === 2 && current === 1) {
       const type = document.querySelector('input[name="type_site"]:checked');
       const secteur = document.querySelector('select[name="secteur"]').value;
       if (!type) { alert('Veuillez sélectionner un type de site.'); return; }
       if (!secteur) { alert('Veuillez sélectionner votre secteur d\'activité.'); return; }
     }
-
-    // Validation page 3
     if (page > 3) return;
 
     document.getElementById(`page${current}`).classList.remove('active');
     document.getElementById(`s${current}`).classList.remove('active');
-    document.getElementById(`s${current}`).classList.add('done');
 
-    if (page < current) {
+    if (page > current) {
+      document.getElementById(`s${current}`).classList.add('done');
+    } else {
       document.getElementById(`s${current}`).classList.remove('done');
-      document.getElementById(`s${current}`).classList.remove('active');
     }
 
     current = page;
@@ -930,7 +919,6 @@
     document.getElementById(`s${current}`).classList.add('active');
     document.getElementById(`s${current}`).classList.remove('done');
 
-    // Lines
     for (let i = 1; i <= 2; i++) {
       document.getElementById(`l${i}`).classList.toggle('done', i < current);
     }
@@ -946,47 +934,172 @@
       `linear-gradient(to right, var(--accent) ${pct}%, var(--border) ${pct}%)`;
   }
 
-  // Form submit
+  async function sendBrevoEmail(to, toName, subject, htmlContent) {
+    return fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ to, toName, subject, htmlContent })
+    });
+  }
+
   const form = document.getElementById('devisForm');
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const prenom = form.querySelector('[name="prenom"]').value.trim();
+    const nom = form.querySelector('[name="nom"]').value.trim();
     const email = form.querySelector('[name="email"]').value.trim();
+    const tel = form.querySelector('[name="telephone"]').value.trim() || 'Non renseigné';
+    const entreprise = form.querySelector('[name="entreprise"]').value.trim() || 'Non renseignée';
+    const typeSite = form.querySelector('input[name="type_site"]:checked')?.value || 'Non renseigné';
+    const secteur = form.querySelector('select[name="secteur"]').value || 'Non renseigné';
+    const budget = form.querySelector('[name="budget"]').value;
+    const delai = form.querySelector('input[name="delai"]:checked')?.value || 'Non renseigné';
+    const description = form.querySelector('[name="description"]').value.trim() || 'Aucune';
+    const source = form.querySelector('select[name="source"]').value || 'Non renseignée';
+
+    const options = [...form.querySelectorAll('input[name="options[]"]:checked')].map(o => o.value).join(', ') || 'Aucune';
+
     if (!prenom || !email) { alert('Veuillez renseigner votre prénom et votre email.'); return; }
 
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
 
-    // Formspree ou autre service
-    try {
-      const resp = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
+    // ===== DÉLAI SELON TYPE DE SITE =====
+    const delaiLivraison = {
+      'Vitrine Simple': '48h',
+      'Vitrine Avancée': '5 à 7 jours',
+      'Hôtel / Réservation': '7 à 10 jours',
+      'E-commerce': '15 jours'
+    }[typeSite] || 'à définir';
 
-      if (resp.ok) {
-        form.style.display = 'none';
-        document.querySelector('.steps').style.display = 'none';
-        document.getElementById('successScreen').style.display = 'block';
-      } else {
-        alert('Une erreur est survenue. Contactez-nous directement par WhatsApp.');
-        btn.textContent = 'Envoyer ma demande';
-        btn.disabled = false;
-      }
-    } catch {
-      // Fallback : afficher succès quand même (Formspree sans CORS)
+    // ===== MAIL CLIENT =====
+    const mailClient = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020c0a;color:#e8f5f2;border-radius:16px;overflow:hidden;">
+      <div style="background:#1a3a6e;padding:32px;text-align:center;">
+        <h1 style="color:#00ffc0;font-size:28px;margin:0;letter-spacing:2px;">DB STUDIO</h1>
+        <p style="color:#aaccff;margin:8px 0 0;font-size:14px;">Gap, Hautes-Alpes</p>
+      </div>
+      <div style="padding:32px;">
+        <h2 style="color:#ffffff;font-size:22px;margin-bottom:8px;">Bonjour ${prenom} 👋</h2>
+        <p style="color:#8ab5ad;margin-bottom:24px;">Merci pour votre demande ! Voici ce qui va se passer maintenant :</p>
+
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin-bottom:24px;">
+          <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">📋 Récapitulatif de votre demande</h3>
+          <table style="width:100%;border-collapse:collapse;">
+            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;width:40%;">Type de site</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${typeSite}</td></tr>
+            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Secteur</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${secteur}</td></tr>
+            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Budget estimé</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${parseInt(budget) >= 5000 ? '5 000 €+' : parseInt(budget).toLocaleString('fr-FR') + ' €'}</td></tr>
+            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Délai de livraison</td><td style="padding:6px 0;color:#00ffc0;font-size:14px;font-weight:bold;">${delaiLivraison}</td></tr>
+          </table>
+        </div>
+
+        <div style="background:rgba(0,255,192,0.05);border:1px solid rgba(0,255,192,0.2);border-radius:12px;padding:20px;margin-bottom:24px;">
+          <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">🚀 Les prochaines étapes</h3>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">1</span>
+              <p style="color:#e8f5f2;font-size:14px;margin:0;">On vous recontacte sous <strong style="color:#00ffc0;">24h</strong> pour valider votre projet</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">2</span>
+              <p style="color:#e8f5f2;font-size:14px;margin:0;">Signature du contrat + acompte de 50%</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">3</span>
+              <p style="color:#e8f5f2;font-size:14px;margin:0;">Brief client — on vous envoie un questionnaire rapide</p>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">4</span>
+              <p style="color:#e8f5f2;font-size:14px;margin:0;">Création et livraison de votre site en <strong style="color:#00ffc0;">${delaiLivraison}</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <p style="color:#8ab5ad;font-size:14px;">Une question ? Contactez-nous directement :</p>
+        <div style="display:flex;gap:12px;margin-top:12px;">
+          <a href="https://wa.me/33628527401" style="background:#25d366;color:white;padding:10px 20px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:bold;">WhatsApp</a>
+          <a href="mailto:db_studio@outlook.fr" style="background:rgba(255,255,255,0.1);color:#e8f5f2;padding:10px 20px;border-radius:50px;text-decoration:none;font-size:14px;">Email</a>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px;text-align:center;">
+        <p style="color:#8ab5ad;font-size:12px;margin:0;">DB Studio · getdbstudio.fr · Gap, Hautes-Alpes (05)</p>
+      </div>
+    </div>`;
+
+        // ===== MAIL MOI (NOTIFICATION + CHECKLIST) =====
+    const mailMoi = `
+    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
+      <div style="background:#1a3a6e;padding:24px;border-radius:12px 12px 0 0;">
+        <h2 style="color:#00ffc0;margin:0;font-size:20px;">🔔 Nouvelle demande de devis</h2>
+        <p style="color:#aaccff;margin:6px 0 0;font-size:14px;">${new Date().toLocaleDateString('fr-FR', {weekday:'long', year:'numeric', month:'long', day:'numeric'})}</p>
+      </div>
+      <div style="background:#f8faff;padding:24px;border:1px solid #dde8ff;">
+        <h3 style="color:#1a3a6e;font-size:16px;margin-bottom:16px;">👤 Infos client</h3>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Nom</td><td style="padding:8px 12px;font-size:14px;">${prenom} ${nom}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Email</td><td style="padding:8px 12px;font-size:14px;"><a href="mailto:${email}">${email}</a></td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Téléphone</td><td style="padding:8px 12px;font-size:14px;">${tel}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Entreprise</td><td style="padding:8px 12px;font-size:14px;">${entreprise}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Source</td><td style="padding:8px 12px;font-size:14px;">${source}</td></tr>
+        </table>
+
+        <h3 style="color:#1a3a6e;font-size:16px;margin:24px 0 16px;">📋 Projet</h3>
+        <table style="width:100%;border-collapse:collapse;">
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Type de site</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${typeSite}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Secteur</td><td style="padding:8px 12px;font-size:14px;">${secteur}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Budget</td><td style="padding:8px 12px;font-size:14px;">${parseInt(budget) >= 5000 ? '5 000 €+' : parseInt(budget).toLocaleString('fr-FR') + ' €'}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Délai souhaité</td><td style="padding:8px 12px;font-size:14px;">${delai}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Options</td><td style="padding:8px 12px;font-size:14px;">${options}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Description</td><td style="padding:8px 12px;font-size:14px;">${description}</td></tr>
+        </table>
+
+        <h3 style="color:#1a3a6e;font-size:16px;margin:24px 0 16px;">✅ Checklist onboarding</h3>
+        <div style="background:white;border:1px solid #dde8ff;border-radius:8px;padding:16px;">
+          <p style="color:#666;font-size:12px;margin:0 0 12px;">Délai de livraison prévu : <strong style="color:#2D6BE4;">${delaiLivraison}</strong></p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Contrat signé + acompte 50% reçu</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Brief envoyé au client</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Brief reçu et complet (textes + photos)</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Création du site démarrée</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Maquette envoyée au client</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Modifications effectuées</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Site validé par le client</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Solde 50% encaissé</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Site mis en ligne</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Post Instagram de lancement publié</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Client ajouté dans le portfolio</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Abonnement mensuel activé</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Option Réseau proposée</label>
+          </div>
+        </div>
+      </div>
+      <div style="background:#1a3a6e;padding:16px;border-radius:0 0 12px 12px;text-align:center;">
+        <p style="color:#aaccff;font-size:12px;margin:0;">DB Studio · db_studio@outlook.fr · Gap (05)</p>
+      </div>
+    </div>`;
+
+    try {
+      await Promise.all([
+        sendBrevoEmail(email, `${prenom} ${nom}`, 'DB Studio — Votre demande est bien reçue ✅', mailClient),
+        sendBrevoEmail('db_studio@outlook.fr', 'DB Studio', `🔔 Nouveau devis — ${prenom} ${nom} (${typeSite})`, mailMoi)
+      ]);
+
       form.style.display = 'none';
       document.querySelector('.steps').style.display = 'none';
       document.getElementById('successScreen').style.display = 'block';
+
+    } catch(err) {
+      console.error(err);
+      alert('Une erreur est survenue. Contactez-nous directement par WhatsApp.');
+      btn.textContent = 'Envoyer ma demande';
+      btn.disabled = false;
     }
   });
 
-  // Init budget
   updateBudget(500);
 </script>
 
 </body>
-                </html>
+</html>
