@@ -476,291 +476,6 @@
     L'abonnement mensuel inclut l'hébergement, la sécurité, les mises à jour techniques et le SEO actif. Sans abonnement, le site est suspendu. Préavis de résiliation : 1 mois.
   </p>
 </div>
-<!-- ===== FAQ ===== -->
-<!-- À insérer dans index.html avant la section #contact -->
-<section id="faq" style="padding: 5rem 2rem; max-width: 900px; margin: 0 auto;">
-  <h2 class="section-title">Questions fréquentes</h2>
-
-  <style>
-    .faq-category {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin: 2.5rem 0 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      margin-bottom: 0.75rem;
-      overflow: hidden;
-      transition: border-color 0.2s;
-    }
-
-    .faq-item:hover { border-color: rgba(0,255,192,0.3); }
-
-    .faq-question {
-      width: 100%;
-      background: var(--surface);
-      border: none;
-      padding: 1.1rem 1.4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      cursor: pointer;
-      text-align: left;
-      gap: 1rem;
-    }
-
-    .faq-question span {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .faq-icon {
-      color: var(--accent);
-      font-size: 0.85rem;
-      flex-shrink: 0;
-      transition: transform 0.3s;
-    }
-
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-    .faq-answer {
-      display: none;
-      padding: 0 1.4rem 1.2rem;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      background: var(--surface);
-    }
-
-    .faq-item.open .faq-answer { display: block; }
-  </style>
-
-  <!-- SUR LE SITE -->
-  <div class="faq-category">💻 Sur le site</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que je peux voir des exemples de vos réalisations ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Oui, tous nos sites sont visibles sur notre Instagram et dans la section Réalisations de ce site. Vous pouvez les consulter avant même de nous contacter.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que mon site sera visible sur Google ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Oui. Chaque site est optimisé pour le référencement local dès la livraison — balises SEO, fiche Google Maps, mots-clés adaptés à votre secteur et votre ville. Avec l'abonnement, on continue à travailler votre référencement chaque mois.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que le site est adapté au mobile ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Absolument. Tous nos sites sont 100% responsive — ils s'adaptent parfaitement aux smartphones, tablettes et ordinateurs. C'est une priorité, car plus de 70% des visiteurs naviguent sur mobile.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que je peux modifier moi-même mon site ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Le site est géré par DB Studio. Si vous avez besoin d'une modification (texte, photo, tarif), vous nous contactez et c'est fait rapidement. Les modifications sont incluses dans l'abonnement mensuel selon votre offre.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Combien de pages aura mon site ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Ça dépend de l'offre. La Vitrine Simple comprend 3 à 4 pages. La Vitrine Avancée comprend 5 à 7 pages sur mesure. L'option Hôtel et l'E-commerce sont construits selon vos besoins spécifiques.</div>
-  </div>
-
-  <!-- SUR LE CONTENU -->
-  <div class="faq-category">✍️ Sur le contenu</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que vous écrivez les textes ou je dois les fournir ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">On peut faire les deux. Si vous fournissez vos textes, on les intègre et les met en forme. Si vous n'avez rien de rédigé, on écrit les textes pour vous à partir de votre brief — c'est inclus dans la prestation.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Et si je n'ai pas de photos professionnelles ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Pas de problème. On peut utiliser des photos libres de droits de haute qualité adaptées à votre secteur. On peut aussi vous guider pour prendre de bonnes photos avec votre smartphone, ou vous recommander un photographe local.</div>
-  </div>
-
-  <!-- SUR LE PAIEMENT -->
-  <div class="faq-category">💶 Sur le paiement</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Comment se passe le paiement ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Le paiement se fait en deux fois : 50% à la signature du contrat (acompte), et 50% à la livraison une fois que vous avez validé le site. Règlement par virement bancaire uniquement.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que je peux payer en plusieurs fois ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Le paiement en deux fois est déjà inclus dans notre fonctionnement standard. Si vous avez besoin d'un arrangement différent, contactez-nous directement.</div>
-  </div>
-
-  <!-- SUR L'ABONNEMENT -->
-  <div class="faq-category">🔄 Sur l'abonnement</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>À quoi sert l'abonnement mensuel ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">L'abonnement couvre l'hébergement de votre site, la sécurité, les mises à jour techniques, les modifications incluses et le SEO actif mensuel. Sans abonnement, le site ne peut pas rester en ligne.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Que se passe-t-il si j'arrête l'abonnement ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Si vous résiliez l'abonnement, votre site est suspendu à l'issue du préavis d'un mois. Vous récupérez tous vos contenus (textes, photos) sur simple demande. Votre nom de domaine reste le vôtre et peut être transféré.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que je suis engagé longtemps ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Non. L'abonnement est sans engagement de durée. Vous pouvez résilier à tout moment avec un préavis d'un mois par email. Pas de frais de résiliation.</div>
-  </div>
-
-  <!-- SUR LE PROCESSUS -->
-  <div class="faq-category">🚀 Sur le processus</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Comment ça se passe concrètement après la signature ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">1. Signature + acompte. 2. Brief client (textes, photos, préférences). 3. Création du site. 4. Présentation de la maquette. 5. Modifications. 6. Validation + solde. 7. Mise en ligne. 8. Mise en avant sur nos réseaux au lancement.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Combien de temps pour avoir mon site ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Vitrine Simple : 48h. Vitrine Avancée : 5 à 7 jours. Option Hôtel : 7 à 10 jours. E-commerce : 15 jours. Ces délais démarrent à la réception de l'acompte et du brief complet.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que je peux voir le site avant de payer le solde ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Oui, c'est exactement comme ça que ça fonctionne. Vous validez la maquette, demandez vos modifications, et vous ne payez le solde qu'une fois satisfait du résultat.</div>
-  </div>
-
-  <!-- SEO -->
-  <div class="faq-category">🔍 Sur le référencement (SEO)</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>C'est quoi le SEO exactement ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Le SEO (Search Engine Optimization) c'est l'ensemble des techniques qui permettent à votre site d'apparaître sur Google quand quelqu'un recherche votre activité. Par exemple : "plombier Gap", "hôtel Hautes-Alpes", "serrurier urgence 05". Plus vous êtes bien positionné, plus vous recevez de visites et de clients.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>À quoi ça sert concrètement pour mon business ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Un bon référencement c'est des clients qui vous trouvent sans que vous ayez à les démarcher. Quelqu'un cherche un plombier à Gap à 22h — si votre site apparaît en premier, il vous appelle. C'est une source de clients passifs, 24h/24, 7j/7.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Pourquoi avoir le SEO actif chaque mois ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Google met à jour ses algorithmes régulièrement et la concurrence évolue. Un site bien référencé aujourd'hui peut perdre des positions si on ne l'entretient pas. L'abonnement inclut un travail SEO continu pour maintenir et améliorer votre visibilité.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Combien de temps pour apparaître sur Google ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Les premiers résultats sont visibles en 4 à 8 semaines pour le référencement local. Pour un positionnement solide sur les mots-clés principaux, comptez 3 à 6 mois. C'est un investissement sur la durée.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que mon site sera mieux référencé qu'une page Wix ou Pages Jaunes ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Oui, dans la grande majorité des cas. Les sites Wix sont souvent mal optimisés techniquement. Les Pages Jaunes ont une présence générique. Un site DB Studio est conçu spécifiquement pour votre activité et votre zone géographique, ce qui est bien plus efficace pour le SEO local.</div>
-  </div>
-
-  <!-- PUB -->
-  <div class="faq-category">📣 Sur la publicité</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Est-ce que vous faites aussi de la publicité en ligne ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">C'est une offre que nous développons. Nous proposons notamment l'optimisation de votre fiche Google My Business, souvent plus efficace et moins coûteuse que de la publicité payante. Pour Google Ads ou Meta Ads, contactez-nous pour en discuter selon vos besoins.</div>
-  </div>
-
-  <!-- RÉSEAU -->
-  <div class="faq-category">🤝 Sur le Réseau DB Studio</div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>C'est quoi le Réseau DB Studio ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">Le Réseau DB Studio est un carnet d'adresses de professionnels locaux qui travaillent avec nous. Si un de nos clients cherche un plombier, un serrurier ou tout autre professionnel, on le met en relation avec quelqu'un du réseau qu'on connaît personnellement. C'est une recommandation humaine, pas un algorithme.</div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question" onclick="toggleFaq(this)">
-      <span>Comment rejoindre le Réseau DB Studio ?</span>
-      <i class="fa-solid fa-plus faq-icon"></i>
-    </button>
-    <div class="faq-answer">C'est une option à 4,99€/mois en supplément de votre abonnement. Vous donnez votre accord pour apparaître dans le réseau, et on commence à vous recommander. Vous pouvez vous retirer à tout moment. Les premiers clients bénéficient d'un tarif fondateur bloqué à vie.</div>
-  </div>
-
-</section>
-
-<script>
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    item.classList.toggle('open');
-  }
-</script>
 
 <!-- ===== CONTACT / SOCIALS ===== -->
 <section id="contact">
@@ -771,7 +486,7 @@
     <a class="social-link tiktok" href="https://www.tiktok.com/@_db_studio" target="_blank">
       <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
     </a>
-    <a class="social-link mail" href="mailto:db_studio@outlook.fr?subject=Demande%20de%20devis">
+    <a class="social-link mail" href="/cdn-cgi/l/email-protection#debabc81adaaabbab7b19eb1abaab2b1b1b5f0b8ace1adabbcb4bbbdaae39abbb3bfb0babbfbeceebabbfbeceebabba8b7ad">
       <i class="fa-solid fa-envelope"></i><span>Mail</span>
     </a>
     <a class="social-link whatsapp" href="https://wa.me/33628527401?text=Bonjour%20DB%20Studio,%20je%20souhaite%20un%20devis." target="_blank">
@@ -789,13 +504,14 @@
     <div class="apropos">
       <p>À propos</p>
       <p>DB Studio est une agence web basée à <strong style="color:var(--accent)">Gap, Hautes-Alpes</strong>, spécialisée dans la création de sites web professionnels pour les artisans, commerçants et hôteliers locaux.</p>
-      <p>Chez DB Studio, nous créons des sites web pensés pour l'essentiel : clairs, efficaces et orientés résultats.</p>
-      <p>Notre approche est simple :</p>
-      <p>✔ Comprendre votre activité<br>
-         ✔ Construire un site adapté à vos objectifs<br>
-         ✔ Optimiser votre visibilité sur Google<br>
-         ✔ Assurer un suivi dans le temps</p>
-      <p>Parce qu'un site internet n'est pas une dépense. C'est un investissement.</p>
+      <p>On travaille exclusivement avec des professionnels locaux qui veulent exister en ligne et attirer de vrais clients. Ici, ça ne s'arrête pas à la livraison du site — on s'investit dans votre réussite sur la durée : conseils proactifs, mise en avant sur nos réseaux, idées pour développer votre activité. Vous n'êtes pas seul.</p>
+      <p>Notre approche :</p>
+      <p>✔ On analyse votre situation avant de proposer quoi que ce soit<br>
+         ✔ On construit un site taillé pour vos objectifs<br>
+         ✔ On optimise votre visibilité sur Google dès le lancement<br>
+         ✔ On reste présents — chaque mois, on suit, on conseille, on agit<br>
+         ✔ On vous met en avant sur nos réseaux sociaux</p>
+      <p>Parce qu'un bon site ne suffit pas. Ce qui compte, c'est ce qu'il vous rapporte.</p>
       <div class="footer-links">
         <a href="mentions.html">Mentions légales</a>
         <a href="privacy.html">Politique de confidentialité</a>
@@ -814,7 +530,7 @@
 </div>
 
 <!-- ===== SCRIPTS ===== -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const burgerBtn = document.getElementById('burgerBtn');
   const burgerMenu = document.getElementById('burgerMenu');
   const burgerIcon = document.getElementById('burgerIcon');
@@ -842,14 +558,4 @@
   acceptBtn.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     cookieBanner.style.display = 'none';
-  });
-
-  declineBtn.addEventListener('click', () => {
-    localStorage.setItem('cookiesAccepted', 'false');
-    cookieBanner.style.display = 'none';
-  });
-</script>
-
-</body>
-</html>
-        
+  
