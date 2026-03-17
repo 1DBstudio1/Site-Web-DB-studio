@@ -4,303 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Politique de confidentialité | DB Studio</title>
-  <meta name="description" content="Politique de confidentialité et protection des données personnelles — DB Studio.">
-  <link rel="canonical" href="https://www.tonsite.fr/privacy.html">
+  <meta name="description" content="Politique de confidentialité de DB Studio — agence web à Gap, Hautes-Alpes.">
+  <link rel="canonical" href="https://site-web-db-studio.vercel.app/privacy.html">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-
-    :root {
-      --accent: #00ffc0;
-      --bg: #020c0a;
-      --surface: rgba(255,255,255,0.05);
-      --border: rgba(255,255,255,0.1);
-      --text: #e8f5f2;
-      --text-muted: #8ab5ad;
-      --radius: 16px;
-      --radius-lg: 28px;
-    }
-
+    :root { --accent: #00ffc0; --bg: #020c0a; --surface: rgba(255,255,255,0.05); --border: rgba(255,255,255,0.1); --text: #e8f5f2; --text-muted: #8ab5ad; --radius: 16px; --radius-lg: 28px; }
     html { scroll-behavior: smooth; overflow-x: hidden; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      line-height: 1.8;
-    }
-
-    body::before {
-      content:'';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(0,255,192,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,192,0.025) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
+    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.8; }
+    body::before { content:''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,255,192,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,192,0.025) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
     a { text-decoration: none; color: var(--accent); transition: opacity 0.2s; }
     a:hover { opacity: 0.8; }
     li { list-style: none; }
-
-    /* NAVBAR */
-    .navbar {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(2,12,10,0.9);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo a {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--accent);
-      border: 2px solid var(--accent);
-      padding: 5px 12px;
-      border-radius: 10px;
-      letter-spacing: 2px;
-      text-decoration: none;
-    }
-
-    .nav-back {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 100; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; background: rgba(2,12,10,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+    .logo a { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; color: var(--accent); border: 2px solid var(--accent); padding: 6px 14px; border-radius: 12px; letter-spacing: 2px; text-decoration: none; }
+    .nav-back { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
     .nav-back:hover { color: var(--accent); }
-
-    /* PAGE */
-    .page-wrapper {
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 120px 2rem 80px;
-    }
-
-    .page-header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .page-header .badge {
-      display: inline-block;
-      padding: 5px 14px;
-      border: 1px solid var(--border);
-      border-radius: 50px;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .page-header h1 {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.2;
-    }
-
+    .page-wrapper { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 120px 2rem 80px; }
+    .page-header { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .page-header .badge { display: inline-block; padding: 5px 14px; border: 1px solid var(--border); border-radius: 50px; font-size: 0.75rem; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+    .page-header h1 { font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: #fff; line-height: 1.2; }
     .page-header p { margin-top: 0.8rem; color: var(--text-muted); font-size: 0.9rem; }
-
-    /* TOC */
-    .toc {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.8rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .toc h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .toc ol {
-      list-style: none;
-      counter-reset: toc;
-    }
-
-    .toc li {
-      counter-increment: toc;
-      padding: 0.25rem 0;
-    }
-
-    .toc li::before {
-      content: counter(toc) ". ";
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.85rem;
-    }
-
-    .toc a {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .toc a:hover { color: var(--accent); opacity: 1; }
-
-    /* SECTION */
-    .legal-section {
-      margin-bottom: 2rem;
-      padding: 2rem 2rem 2rem 1.8rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      border-left: 3px solid var(--accent);
-    }
-
-    .legal-section h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+    .legal-section { margin-bottom: 2.5rem; padding: 2rem 2rem 2rem 1.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); border-left: 3px solid var(--accent); animation: fadeUp 0.5s ease both; }
+    @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    .legal-section h2 { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
     .legal-section h2 i { font-size: 0.95rem; }
-
-    .legal-section p, .legal-section li {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 0.5rem;
-    }
-
+    .legal-section p, .legal-section li { color: var(--text-muted); font-size: 0.92rem; margin-bottom: 0.5rem; }
     .legal-section strong { color: var(--text); }
-
     .legal-section ul { margin-left: 1rem; }
     .legal-section ul li::before { content: '→ '; color: var(--accent); }
-
-    /* TABLE */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.8rem;
-      font-size: 0.85rem;
-    }
-
-    th {
-      text-align: left;
-      padding: 8px 12px;
-      background: rgba(0,255,192,0.08);
-      color: var(--accent);
-      font-weight: 600;
-      border-bottom: 1px solid var(--border);
-    }
-
-    td {
-      padding: 8px 12px;
-      color: var(--text-muted);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-      vertical-align: top;
-    }
-
-    tr:last-child td { border-bottom: none; }
-
-    /* DROITS BOX */
-    .droits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.75rem;
-      margin-top: 0.8rem;
-    }
-
-    .droit-item {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem;
-    }
-
-    .droit-item strong {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.88rem;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    .droit-item strong i { color: var(--accent); font-size: 0.8rem; }
-    .droit-item p { font-size: 0.8rem; margin: 0; }
-
-    /* WhatsApp */
-    .support {
-      position: fixed;
-      bottom: 24px; right: 24px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      background: #25d366;
-      color: white;
-      font-weight: 600;
-      font-size: 14px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-      z-index: 200;
-      animation: float 3s ease-in-out infinite;
-    }
-
-    @keyframes float {
-      0%,100%{ transform:translateY(0); }
-      50%{ transform:translateY(-5px); }
-    }
-
-    .support:hover { background: #1db954; color: white; }
-
-    /* FOOTER */
-    footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
+    .data-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.88rem; }
+    .data-table th { background: rgba(0,255,192,0.08); color: var(--accent); padding: 8px 12px; text-align: left; border: 1px solid var(--border); font-weight: 600; }
+    .data-table td { padding: 8px 12px; border: 1px solid var(--border); color: var(--text-muted); }
+    .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 2rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
     footer a { color: var(--text-muted); margin: 0 0.8rem; text-decoration: none; }
     footer a:hover { color: var(--accent); }
-
-    @media (max-width: 600px) {
-      .support span { display: none; }
-      .support { padding: 12px 14px; }
-    }
+    .support { position: fixed; bottom: 24px; right: 24px; display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 50px; background: #25d366; color: white; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 8px 24px rgba(37,211,102,0.35); z-index: 200; animation: float 3s ease-in-out infinite; }
+    @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
+    .support:hover { background: #1db954; color: white; }
+    @media (max-width: 600px) { .support span { display: none; } .support { padding: 12px 14px; } .data-table { font-size: 0.78rem; } }
   </style>
 </head>
 <body>
@@ -319,64 +63,32 @@
   <div class="page-header">
     <div class="badge">RGPD — Protection des données</div>
     <h1>Politique de confidentialité</h1>
-    <p>Dernière mise à jour : janvier 2025 — Conformément au RGPD (Règlement UE 2016/679)</p>
+    <p>Dernière mise à jour : mars 2026 — Conformément au RGPD (Règlement UE 2016/679)</p>
   </div>
 
-  <!-- TABLE DES MATIÈRES -->
-  <div class="toc">
-    <h3>📋 Sommaire</h3>
-    <ol>
-      <li><a href="#responsable">Responsable du traitement</a></li>
-      <li><a href="#collecte">Données collectées</a></li>
-      <li><a href="#finalites">Finalités du traitement</a></li>
-      <li><a href="#bases">Bases légales</a></li>
-      <li><a href="#conservation">Durée de conservation</a></li>
-      <li><a href="#partage">Partage des données</a></li>
-      <li><a href="#cookies">Cookies et traceurs</a></li>
-      <li><a href="#droits">Vos droits</a></li>
-      <li><a href="#securite">Sécurité</a></li>
-      <li><a href="#contact">Nous contacter</a></li>
-    </ol>
-  </div>
-
-  <!-- 1 -->
-  <div class="legal-section" id="responsable">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-user-shield"></i> 1. Responsable du traitement</h2>
     <p><strong>DB Studio</strong></p>
-    <p>[Votre Prénom et Nom] — Micro-entrepreneur</p>
-    <p>[Votre adresse, Alpes, France]</p>
+    <p>Valentin Dubromez — Micro-entrepreneur</p>
+    <p>Gap, Hautes-Alpes (05), France</p>
     <p><strong>Email :</strong> <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a></p>
     <p><strong>Téléphone :</strong> <a href="tel:+33628527401">06 28 52 74 01</a></p>
+    <p><strong>SIRET :</strong> 985 080 779 000 12</p>
   </div>
 
-  <!-- 2 -->
-  <div class="legal-section" id="collecte">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-database"></i> 2. Données collectées</h2>
     <p>Nous collectons les données suivantes lorsque vous utilisez notre site ou nos services :</p>
-
-    <table>
-      <tr>
-        <th>Source</th>
-        <th>Données collectées</th>
-      </tr>
-      <tr>
-        <td><strong>Formulaire de devis</strong></td>
-        <td>Prénom, nom, email, téléphone, entreprise, type de projet, budget, description du projet</td>
-      </tr>
-      <tr>
-        <td><strong>Contact direct (email / WhatsApp)</strong></td>
-        <td>Nom, email, numéro de téléphone, contenu des messages</td>
-      </tr>
-      <tr>
-        <td><strong>Navigation (si cookies acceptés)</strong></td>
-        <td>Adresse IP (anonymisée), pages visitées, durée de session, type d'appareil (via Google Analytics)</td>
-      </tr>
+    <table class="data-table">
+      <tr><th>Source</th><th>Données collectées</th></tr>
+      <tr><td><strong>Formulaire de devis</strong></td><td>Prénom, nom, email, téléphone, entreprise, type de projet, budget, description du projet</td></tr>
+      <tr><td><strong>Contact direct (email / WhatsApp)</strong></td><td>Nom, email, numéro de téléphone, contenu des messages</td></tr>
+      <tr><td><strong>Navigation (si cookies acceptés)</strong></td><td>Adresse IP (anonymisée), pages visitées, durée de session, type d'appareil (via Google Analytics)</td></tr>
     </table>
     <p style="margin-top:0.8rem;">Nous ne collectons <strong>aucune donnée sensible</strong> (santé, opinions politiques, données bancaires, etc.).</p>
   </div>
 
-  <!-- 3 -->
-  <div class="legal-section" id="finalites">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-bullseye"></i> 3. Finalités du traitement</h2>
     <p>Vos données sont utilisées exclusivement pour :</p>
     <ul>
@@ -385,171 +97,94 @@
       <li>Vous envoyer des informations relatives à votre commande</li>
       <li>Analyser le trafic du site afin d'améliorer nos contenus (si cookies acceptés)</li>
     </ul>
-    <p style="margin-top:0.6rem;">Nous n'utilisons vos données à <strong>aucune fin publicitaire</strong> et ne les vendons jamais à des tiers.</p>
+    <p style="margin-top:0.8rem;">Nous n'utilisons vos données à <strong>aucune fin publicitaire</strong> et ne les vendons jamais à des tiers.</p>
   </div>
 
-  <!-- 4 -->
-  <div class="legal-section" id="bases">
-    <h2><i class="fa-solid fa-scale-balanced"></i> 4. Bases légales du traitement</h2>
-    <table>
-      <tr>
-        <th>Traitement</th>
-        <th>Base légale</th>
-      </tr>
-      <tr>
-        <td>Réponse à une demande de devis</td>
-        <td>Exécution d'un contrat (art. 6.1.b RGPD)</td>
-      </tr>
-      <tr>
-        <td>Suivi commercial</td>
-        <td>Intérêt légitime (art. 6.1.f RGPD)</td>
-      </tr>
-      <tr>
-        <td>Cookies analytiques</td>
-        <td>Consentement (art. 6.1.a RGPD)</td>
-      </tr>
-      <tr>
-        <td>Conservation des données comptables</td>
-        <td>Obligation légale (art. 6.1.c RGPD)</td>
-      </tr>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-gavel"></i> 4. Bases légales du traitement</h2>
+    <table class="data-table">
+      <tr><th>Traitement</th><th>Base légale</th></tr>
+      <tr><td>Réponse à une demande de devis</td><td>Exécution d'un contrat (art. 6.1.b RGPD)</td></tr>
+      <tr><td>Suivi commercial</td><td>Intérêt légitime (art. 6.1.f RGPD)</td></tr>
+      <tr><td>Cookies analytiques</td><td>Consentement (art. 6.1.a RGPD)</td></tr>
+      <tr><td>Conservation des données comptables</td><td>Obligation légale (art. 6.1.c RGPD)</td></tr>
     </table>
   </div>
 
-  <!-- 5 -->
-  <div class="legal-section" id="conservation">
-    <h2><i class="fa-solid fa-clock-rotate-left"></i> 5. Durée de conservation</h2>
-    <table>
-      <tr>
-        <th>Type de données</th>
-        <th>Durée de conservation</th>
-      </tr>
-      <tr>
-        <td>Données de contact / devis (prospect)</td>
-        <td>3 ans à compter du dernier contact</td>
-      </tr>
-      <tr>
-        <td>Données clients (commande réalisée)</td>
-        <td>5 ans (obligation comptable légale)</td>
-      </tr>
-      <tr>
-        <td>Données de navigation (Analytics)</td>
-        <td>13 mois maximum (paramétrage Google Analytics)</td>
-      </tr>
-      <tr>
-        <td>Cookies de consentement</td>
-        <td>13 mois</td>
-      </tr>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-clock"></i> 5. Durée de conservation</h2>
+    <table class="data-table">
+      <tr><th>Type de données</th><th>Durée de conservation</th></tr>
+      <tr><td>Données de contact / devis (prospect)</td><td>3 ans à compter du dernier contact</td></tr>
+      <tr><td>Données clients (commande réalisée)</td><td>5 ans (obligation comptable légale)</td></tr>
+      <tr><td>Données de navigation (Analytics)</td><td>13 mois maximum</td></tr>
+      <tr><td>Cookies de consentement</td><td>13 mois</td></tr>
     </table>
     <p style="margin-top:0.8rem;">Passés ces délais, vos données sont <strong>supprimées ou anonymisées</strong>.</p>
   </div>
 
-  <!-- 6 -->
-  <div class="legal-section" id="partage">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-share-nodes"></i> 6. Partage des données</h2>
-    <p>Vos données ne sont <strong>jamais vendues</strong>. Elles peuvent être transmises aux seuls partenaires techniques suivants, dans le strict cadre de notre activité :</p>
+    <p>Vos données ne sont <strong>jamais vendues</strong>. Elles peuvent être transmises aux seuls partenaires techniques suivants :</p>
     <ul>
-      <li><strong>Formspree / service d'envoi de formulaire</strong> — traitement des demandes de devis</li>
+      <li><strong>Brevo (ex-Sendinblue)</strong> — envoi des emails de confirmation de devis</li>
       <li><strong>Google (Analytics)</strong> — analyse d'audience si vous avez accepté les cookies</li>
-      <li><strong>Hébergeur du site</strong> — stockage sécurisé des données</li>
+      <li><strong>Vercel Inc.</strong> — hébergeur du site, stockage sécurisé</li>
     </ul>
-    <p style="margin-top:0.6rem;">Ces prestataires traitent vos données uniquement sous nos instructions et dans le respect du RGPD.</p>
+    <p style="margin-top:0.8rem;">Ces prestataires traitent vos données uniquement sous nos instructions et dans le respect du RGPD.</p>
     <p>Aucun transfert de données vers des pays hors de l'Union Européenne n'est effectué sans garanties appropriées.</p>
   </div>
 
-  <!-- 7 -->
-  <div class="legal-section" id="cookies">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-cookie-bite"></i> 7. Cookies et traceurs</h2>
-    <p>Ce site utilise les types de cookies suivants :</p>
-
-    <table style="margin-bottom:0.8rem;">
-      <tr>
-        <th>Cookie</th>
-        <th>Type</th>
-        <th>Finalité</th>
-        <th>Durée</th>
-      </tr>
-      <tr>
-        <td><code>cookiesAccepted</code></td>
-        <td>Fonctionnel</td>
-        <td>Mémorisation de votre choix de consentement</td>
-        <td>Session / localStorage</td>
-      </tr>
-      <tr>
-        <td><code>_ga, _gid</code></td>
-        <td>Analytique</td>
-        <td>Mesure d'audience via Google Analytics</td>
-        <td>2 ans / 24h</td>
-      </tr>
+    <table class="data-table">
+      <tr><th>Cookie</th><th>Type</th><th>Finalité</th><th>Durée</th></tr>
+      <tr><td><code>cookiesAccepted</code></td><td>Fonctionnel</td><td>Mémorisation du choix de consentement</td><td>localStorage</td></tr>
+      <tr><td><code>_ga, _gid</code></td><td>Analytique</td><td>Mesure d'audience via Google Analytics</td><td>2 ans / 24h</td></tr>
     </table>
-
-    <p><strong>Cookies fonctionnels</strong> : nécessaires au bon fonctionnement du site, ils ne requièrent pas votre consentement.</p>
+    <p style="margin-top:0.8rem;"><strong>Cookies fonctionnels</strong> : nécessaires au bon fonctionnement du site, ils ne requièrent pas votre consentement.</p>
     <p><strong>Cookies analytiques</strong> : déposés uniquement si vous cliquez sur « Accepter » dans la bannière.</p>
-    <p style="margin-top:0.6rem;"><strong>Refuser ou retirer votre consentement :</strong> Cliquez sur « Refuser » dans la bannière, ou videz le localStorage de votre navigateur. Vous pouvez aussi désactiver Google Analytics via <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">l'extension officielle</a>.</p>
+    <p><strong>Refuser ou retirer votre consentement :</strong> Cliquez sur « Refuser » dans la bannière, ou videz le localStorage de votre navigateur.</p>
   </div>
 
-  <!-- 8 -->
-  <div class="legal-section" id="droits">
-    <h2><i class="fa-solid fa-person-circle-check"></i> 8. Vos droits (RGPD)</h2>
+  <div class="legal-section">
+    <h2><i class="fa-solid fa-hand-fist"></i> 8. Vos droits (RGPD)</h2>
     <p>Conformément au RGPD et à la loi Informatique et Libertés, vous disposez des droits suivants :</p>
-
-    <div class="droits-grid">
-      <div class="droit-item">
-        <strong><i class="fa-solid fa-eye"></i> Droit d'accès</strong>
-        <p>Obtenir une copie de vos données personnelles détenues par DB Studio.</p>
-      </div>
-      <div class="droit-item">
-        <strong><i class="fa-solid fa-pen-to-square"></i> Droit de rectification</strong>
-        <p>Corriger vos données si elles sont inexactes ou incomplètes.</p>
-      </div>
-      <div class="droit-item">
-        <strong><i class="fa-solid fa-trash"></i> Droit à l'effacement</strong>
-        <p>Demander la suppression de vos données (« droit à l'oubli »).</p>
-      </div>
-      <div class="droit-item">
-        <strong><i class="fa-solid fa-hand"></i> Droit d'opposition</strong>
-        <p>Vous opposer à l'utilisation de vos données à des fins de prospection.</p>
-      </div>
-      <div class="droit-item">
-        <strong><i class="fa-solid fa-pause"></i> Droit à la limitation</strong>
-        <p>Demander la suspension du traitement de vos données.</p>
-      </div>
-      <div class="droit-item">
-        <strong><i class="fa-solid fa-file-export"></i> Portabilité</strong>
-        <p>Recevoir vos données dans un format structuré et lisible par machine.</p>
-      </div>
-    </div>
-
-    <p style="margin-top:1.2rem;">Pour exercer vos droits, contactez-nous à : <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a></p>
-    <p>Nous nous engageons à vous répondre dans un délai de <strong>30 jours</strong>.</p>
-    <p style="margin-top:0.6rem;">Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <a href="https://www.cnil.fr" target="_blank">CNIL (www.cnil.fr)</a>.</p>
+    <ul>
+      <li><strong>Droit d'accès</strong> — obtenir une copie de vos données</li>
+      <li><strong>Droit de rectification</strong> — corriger vos données inexactes</li>
+      <li><strong>Droit à l'effacement</strong> — demander la suppression de vos données</li>
+      <li><strong>Droit d'opposition</strong> — vous opposer à l'utilisation à des fins de prospection</li>
+      <li><strong>Droit à la limitation</strong> — suspendre le traitement de vos données</li>
+      <li><strong>Portabilité</strong> — recevoir vos données dans un format lisible</li>
+    </ul>
+    <p style="margin-top:0.8rem;">Pour exercer vos droits : <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a> — réponse sous <strong>30 jours</strong>.</p>
+    <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <a href="https://www.cnil.fr" target="_blank">CNIL (www.cnil.fr)</a>.</p>
   </div>
 
-  <!-- 9 -->
-  <div class="legal-section" id="securite">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-lock"></i> 9. Sécurité des données</h2>
     <p>DB Studio met en œuvre les mesures techniques et organisationnelles appropriées pour protéger vos données :</p>
     <ul>
       <li>Connexion sécurisée HTTPS (certificat SSL)</li>
       <li>Accès aux données limité aux seules personnes habilitées</li>
-      <li>Sauvegardes régulières des données</li>
+      <li>Hébergement sécurisé via Vercel</li>
       <li>Mises à jour de sécurité régulières</li>
     </ul>
-    <p style="margin-top:0.6rem;">En cas de violation de données susceptible d'engendrer un risque élevé pour vos droits, nous nous engageons à vous en informer dans les meilleurs délais, conformément à l'article 34 du RGPD.</p>
   </div>
 
-  <!-- 10 -->
-  <div class="legal-section" id="contact">
+  <div class="legal-section">
     <h2><i class="fa-solid fa-envelope"></i> 10. Nous contacter</h2>
     <p>Pour toute question relative à la présente politique ou pour exercer vos droits :</p>
     <p><strong>Email :</strong> <a href="mailto:db_studio@outlook.fr">db_studio@outlook.fr</a></p>
     <p><strong>WhatsApp :</strong> <a href="https://wa.me/33628527401" target="_blank">06 28 52 74 01</a></p>
-    <p style="margin-top:0.6rem; font-size:0.85rem; color:var(--text-muted);">Cette politique peut être mise à jour à tout moment. La date de dernière modification est indiquée en haut de la page. Nous vous invitons à la consulter régulièrement.</p>
+    <p style="margin-top:0.8rem;color:var(--text-muted);font-size:0.88rem;">Cette politique peut être mise à jour à tout moment. La date de dernière modification est indiquée en haut de la page.</p>
   </div>
 
 </div>
 
 <footer>
-  <p>© 2025 DB Studio — Tous droits réservés</p>
+  <p>© 2026 DB Studio — Gap, Hautes-Alpes — Tous droits réservés</p>
   <div style="margin-top:0.5rem;">
     <a href="index.html">Accueil</a>
     <a href="mentions.html">Mentions légales</a>
