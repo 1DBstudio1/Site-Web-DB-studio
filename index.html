@@ -558,4 +558,13 @@
   acceptBtn.addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     cookieBanner.style.display = 'none';
-  
+    });
+
+  declineBtn.addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'false');
+    cookieBanner.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>
