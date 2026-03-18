@@ -1,26 +1,46 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="DB Studio — Agence web basée à Gap, Hautes-Alpes. Création de sites web professionnels pour artisans, commerçants et hôteliers locaux.">
+  <meta name="description" content="DB Studio — Agence web basée à Gap, Hautes-Alpes. Création de sites web professionnels pour artisans, commerçants et hôteliers locaux. Devis gratuit, livraison en 48h.">
   <meta name="keywords" content="création site web Gap, agence web Hautes-Alpes, site vitrine artisan, site web Gap 05, SEO local Gap">
   <meta name="author" content="DB Studio">
   <link rel="canonical" href="https://1dbstudio1.github.io/Site-Web-DB-studio/">
-  <meta property="og:title" content="DB Studio | Création de site web professionnel à Gap">
-  <meta property="og:description" content="Agence web basée à Gap, Hautes-Alpes. Sites vitrine, e-commerce et hôtels pour les professionnels locaux.">
+
+  <!-- Open Graph -->
+
+  <meta property="og:title" content="DB Studio | Sites web pros à Gap — Hautes-Alpes">
+  <meta property="og:description" content="Agence web locale à Gap. Sites vitrine, e-commerce et hôtels pour professionnels locaux. Livraison en 48h, maquette gratuite.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://1dbstudio1.github.io/Site-Web-DB-studio/">
+  <meta property="og:image" content="https://1dbstudio1.github.io/Site-Web-DB-studio/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DB Studio | Sites web pros à Gap">
+  <meta name="twitter:description" content="Agence web locale à Gap. Sites vitrine, e-commerce et hôtels. Livraison en 48h.">
+  <meta name="twitter:image" content="https://1dbstudio1.github.io/Site-Web-DB-studio/og-image.svg">
+
   <title>DB Studio | Création de site web à Gap — Hautes-Alpes</title>
+
+  <!-- Favicon -->
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="dbstudio.css">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebDesignCompany",
     "name": "DB Studio",
     "url": "https://1dbstudio1.github.io/Site-Web-DB-studio/",
+    "telephone": "+33628527401",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Gap",
@@ -31,6 +51,7 @@
     "description": "Agence web basée à Gap spécialisée en création de sites web professionnels pour artisans, commerçants et hôteliers des Hautes-Alpes."
   }
   </script>
+
   <style>
     /* ===== PORTFOLIO ===== */
     #portfolio {
@@ -54,12 +75,27 @@
       transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
       display: flex;
       flex-direction: column;
+      position: relative;
     }
 
     .portfolio-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 16px 40px rgba(0,255,192,0.12);
       border-color: var(--accent);
+    }
+
+    .portfolio-badge-phare {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #2D6BE4, #1a4aad);
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.5px;
+      z-index: 2;
     }
 
     .portfolio-mockup {
@@ -81,13 +117,10 @@
 
     .pm-spa { background: linear-gradient(135deg, #1a0a2e, #3d1a6e); }
     .pm-spa::before { background: radial-gradient(circle at 30% 50%, #b06aff, transparent 60%); }
-
     .pm-serrurier { background: linear-gradient(135deg, #0a1628, #1a3a5c); }
     .pm-serrurier::before { background: radial-gradient(circle at 70% 30%, #2D6BE4, transparent 60%); }
-
     .pm-plombier { background: linear-gradient(135deg, #0a2010, #1a5c30); }
     .pm-plombier::before { background: radial-gradient(circle at 40% 60%, #00ffc0, transparent 60%); }
-
     .pm-cleaning { background: linear-gradient(135deg, #0a1a2e, #1a3a6e); }
     .pm-cleaning::before { background: radial-gradient(circle at 60% 40%, #4a9eff, transparent 60%); }
 
@@ -147,7 +180,7 @@
       color: #001a14;
     }
 
-    /* ===== OFFRES REDESIGN ===== */
+    /* ===== OFFRES ===== */
     .offre-badge {
       display: inline-block;
       font-size: 0.7rem;
@@ -219,20 +252,422 @@
       border-radius: 50px;
       white-space: nowrap;
     }
+
+    /* ===== OFFRE LANCEMENT ===== */
+    #offre-lancement {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .lancement-card {
+      background: linear-gradient(135deg, rgba(0,255,192,0.05), rgba(45,107,228,0.08));
+      border: 1px solid rgba(0,255,192,0.3);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lancement-card::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,255,192,0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .lancement-badge {
+      display: inline-block;
+      background: rgba(0,255,192,0.1);
+      border: 1px solid rgba(0,255,192,0.4);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .lancement-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.8rem;
+    }
+
+    .lancement-title span { color: var(--accent); }
+
+    .lancement-desc {
+      color: var(--text-muted);
+      font-size: 0.97rem;
+      margin-bottom: 2rem;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lancement-compteur {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .place {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 2px solid rgba(0,255,192,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+
+    .place.libre {
+      background: rgba(0,255,192,0.08);
+      border-color: var(--accent);
+    }
+
+    .place.libre::after { content: '✦'; color: var(--accent); }
+
+    .place.prise {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .place.prise::after { content: '✓'; color: var(--text-muted); font-size: 0.9rem; }
+
+    .lancement-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .lancement-label strong { color: var(--accent); }
+
+    .lancement-conditions {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .lancement-cond {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .lancement-cond i { color: var(--accent); }
+
+    .lancement-cta {
+      display: inline-block;
+      padding: 14px 40px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #001a14;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 8px 24px rgba(0,255,192,0.3);
+    }
+
+    .lancement-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(0,255,192,0.45);
+      color: #001a14;
+    }
+
+    /* ===== PRÊT À L'EMPLOI ===== */
+    #pret-emploi {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pret-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .pret-badge {
+      display: inline-block;
+      background: rgba(255,160,50,0.1);
+      border: 1px solid rgba(255,160,50,0.3);
+      color: #ffa032;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .pret-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pret-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pret-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(255,160,50,0.1);
+      border-color: #ffa032;
+    }
+
+    .pret-mockup {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pret-mockup-icon {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+    }
+
+    .pret-info {
+      padding: 1.4rem 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pret-sector {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffa032;
+      margin-bottom: 0.4rem;
+    }
+
+    .pret-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .pret-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      flex: 1;
+    }
+
+    .pret-prix {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .pret-prix span {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .pret-delai {
+      font-size: 0.78rem;
+      color: #ffa032;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pret-exclusif {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pret-exclusif i { color: var(--accent); font-size: 0.7rem; }
+
+    .pret-btns {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .pret-btn-demo {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 50px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .pret-btn-demo:hover { border-color: var(--accent); color: var(--accent); }
+
+    .pret-btn-cmd {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #001a14;
+      background: linear-gradient(135deg, #ffa032, #e07800);
+      padding: 8px 12px;
+      border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .pret-btn-cmd:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255,160,50,0.3);
+      color: #001a14;
+    }
+
+    /* ===== FAQ ===== */
+    #faq {
+      padding: 5rem 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 3rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.3rem 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover { background: var(--surface-hover); }
+
+    .faq-question span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .faq-question i {
+      color: var(--accent);
+      font-size: 0.85rem;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-question i { transform: rotate(180deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.8rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 1.8rem 1.3rem;
+    }
+
+    .faq-answer p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .faq-category {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 1rem 1.8rem 0.5rem;
+      background: rgba(0,255,192,0.03);
+      border-bottom: 1px solid var(--border);
+    }
   </style>
+
 </head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
+
 <nav class="navbar">
   <div class="logo">
-    <a href="#home">DB STUDIO</a>
+    <a href="#home">
+      <img src="favicon.svg" alt="DB Studio" width="36" height="36" style="vertical-align:middle; margin-right:8px;">
+      <span style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--accent);letter-spacing:2px;">DB STUDIO</span>
+    </a>
   </div>
   <ul class="nav-links">
     <li><a href="#home">Accueil</a></li>
     <li><a href="#portfolio">Réalisations</a></li>
+    <li><a href="#pret-emploi">Prêt à l'emploi</a></li>
     <li><a href="#nos-offres">Offres</a></li>
-    <li><a href="#a-propos">À propos</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="burger-btn" aria-label="Menu" id="burgerBtn">
@@ -241,12 +676,14 @@
 </nav>
 
 <!-- Menu burger -->
+
 <div class="burger-menu" id="burgerMenu">
   <ul>
     <li><a href="#home">Accueil</a></li>
-    <li><a href="#portfolio">Nos réalisations</a></li>
+    <li><a href="#portfolio">Réalisations</a></li>
+    <li><a href="#pret-emploi">Prêt à l'emploi</a></li>
     <li><a href="#nos-offres">Nos offres</a></li>
-    <li><a href="#a-propos">À propos</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="mentions.html">Mentions légales</a></li>
     <li><a href="privacy.html">Politique de confidentialité</a></li>
@@ -254,12 +691,14 @@
 </div>
 
 <!-- WhatsApp fixe -->
+
 <a href="https://wa.me/33628527401" class="support" target="_blank" aria-label="Contacter le support WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
   <span>Support</span>
 </a>
 
 <!-- ===== HERO ===== -->
+
 <section id="home">
   <div class="hero-content">
     <h1>Des sites web professionnels,<br>pensés pour l'essentiel.</h1>
@@ -268,41 +707,10 @@
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="services" id="services">
-  <h2 class="section-title">Nos services</h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">💻</div>
-      <h3>Site vitrine simple</h3>
-      <p>Une présence en ligne claire et professionnelle pour être trouvé et contacté rapidement.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🌐</div>
-      <h3>Site vitrine avancé</h3>
-      <p>Un site complet, optimisé Google, qui travaille pour vous 24h/24.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🏨</div>
-      <h3>Site hôtel & réservation</h3>
-      <p>Réservation en ligne intégrée, zéro commission plateforme. Vos chambres remplies directement.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🛒</div>
-      <h3>Site e-commerce</h3>
-      <p>Boutique en ligne complète, sécurisée et optimisée pour vendre.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🔧</div>
-      <h3>Maintenance & SEO</h3>
-      <p>Suivi mensuel, sécurité, modifications et référencement actif inclus.</p>
-    </div>
-  </div>
-</section>
+<!-- ===== BLOC CONSEIL ===== -->
 
-<!-- ===== CONSEIL ===== -->
-<div class="text-bloc">
-  <p class="bloc-title">Conseil</p>
+<div class="text-bloc" style="max-width:800px;margin:0 auto 2rem;">
+  <p class="bloc-title">Pourquoi agir maintenant ?</p>
   <p>Aujourd'hui, un site internet n'est plus une option, c'est un levier stratégique.</p>
   <p>Chaque jour, de nouveaux sites apparaissent et la concurrence s'intensifie.</p>
   <p>Mal conçu, lent ou mal référencé, un site peut faire fuir vos clients avant même qu'ils ne vous contactent.</p>
@@ -310,79 +718,176 @@
 </div>
 
 <!-- ===== PORTFOLIO ===== -->
+
 <section id="portfolio">
   <h2 class="section-title">Nos réalisations</h2>
   <p style="text-align:center;color:var(--text-muted);margin-top:-2rem;margin-bottom:1rem;font-size:0.95rem;">Sites créés pour des professionnels locaux — cliquez pour voir en live</p>
 
   <div class="portfolio-grid">
 
-    <div class="portfolio-card">
-      <div class="portfolio-mockup pm-spa">
-        <span class="portfolio-mockup-icon">💆‍♀️</span>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-sector">Spa & Beauté</div>
-        <div class="portfolio-name">Angel's Head Spa</div>
-        <div class="portfolio-desc">Site vitrine pour un spa haut de gamme — ambiance luxe, prise de rendez-vous et présentation des soins.</div>
-        <a class="portfolio-link" href="https://1dbstudio1.github.io/Angel-s-head-spa---site-web--/" target="_blank">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
-        </a>
-      </div>
-    </div>
+```
+<div class="portfolio-card">
+  <span class="portfolio-badge-phare">⭐ À la une</span>
+  <div class="portfolio-mockup pm-spa">
+    <span class="portfolio-mockup-icon">💆‍♀️</span>
+  </div>
+  <div class="portfolio-info">
+    <div class="portfolio-sector">Spa & Beauté</div>
+    <div class="portfolio-name">Angel's Head Spa</div>
+    <div class="portfolio-desc">Site vitrine pour un spa haut de gamme — ambiance luxe, prise de rendez-vous et présentation des soins.</div>
+    <a class="portfolio-link" href="https://1dbstudio1.github.io/Angel-s-head-spa---site-web--/" target="_blank">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+    </a>
+  </div>
+</div>
 
-    <div class="portfolio-card">
-      <div class="portfolio-mockup pm-serrurier">
-        <span class="portfolio-mockup-icon">🔑</span>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-sector">Serrurerie</div>
-        <div class="portfolio-name">Forcia Serrurerie</div>
-        <div class="portfolio-desc">Site vitrine artisan serrurier — intervention d'urgence, services et contact direct optimisé mobile.</div>
-        <a class="portfolio-link" href="https://1dbstudio1.github.io/Forcia-serrurerie---site-web-pr-t-l-emploi--/" target="_blank">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
-        </a>
-      </div>
-    </div>
+<div class="portfolio-card">
+  <div class="portfolio-mockup pm-serrurier">
+    <span class="portfolio-mockup-icon">🔑</span>
+  </div>
+  <div class="portfolio-info">
+    <div class="portfolio-sector">Serrurerie</div>
+    <div class="portfolio-name">Forcia Serrurerie</div>
+    <div class="portfolio-desc">Site vitrine artisan serrurier — intervention d'urgence, services et contact direct optimisé mobile.</div>
+    <a class="portfolio-link" href="https://1dbstudio1.github.io/Forcia-serrurerie---site-web-pr-t-l-emploi--/" target="_blank">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+    </a>
+  </div>
+</div>
 
-    <div class="portfolio-card">
-      <div class="portfolio-mockup pm-plombier">
-        <span class="portfolio-mockup-icon">🔧</span>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-sector">Plomberie</div>
-        <div class="portfolio-name">Romain Plombier</div>
-        <div class="portfolio-desc">Site vitrine plombier — présentation des prestations, zone d'intervention et appel direct en un clic.</div>
-        <a class="portfolio-link" href="https://1dbstudio1.github.io/Romain-plombier/" target="_blank">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
-        </a>
-      </div>
-    </div>
+<div class="portfolio-card">
+  <div class="portfolio-mockup pm-plombier">
+    <span class="portfolio-mockup-icon">🔧</span>
+  </div>
+  <div class="portfolio-info">
+    <div class="portfolio-sector">Plomberie</div>
+    <div class="portfolio-name">Romain Plombier</div>
+    <div class="portfolio-desc">Site vitrine plombier — présentation des prestations, zone d'intervention et appel direct en un clic.</div>
+    <a class="portfolio-link" href="https://1dbstudio1.github.io/Romain-plombier/" target="_blank">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+    </a>
+  </div>
+</div>
 
-    <div class="portfolio-card">
-      <div class="portfolio-mockup pm-cleaning">
-        <span class="portfolio-mockup-icon">🧹</span>
-      </div>
-      <div class="portfolio-info">
-        <div class="portfolio-sector">Nettoyage professionnel</div>
-        <div class="portfolio-name">CleanerClean</div>
-        <div class="portfolio-desc">Site vitrine entreprise de nettoyage — services, formules tarifaires et devis rapide intégré.</div>
-        <a class="portfolio-link" href="https://1dbstudio1.github.io/Cleanerclean-site-d-mo-/" target="_blank">
-          <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
-        </a>
-      </div>
-    </div>
+<div class="portfolio-card">
+  <div class="portfolio-mockup pm-cleaning">
+    <span class="portfolio-mockup-icon">🧹</span>
+  </div>
+  <div class="portfolio-info">
+    <div class="portfolio-sector">Nettoyage professionnel</div>
+    <div class="portfolio-name">CleanerClean</div>
+    <div class="portfolio-desc">Site vitrine entreprise de nettoyage — services, formules tarifaires et devis rapide intégré.</div>
+    <a class="portfolio-link" href="https://1dbstudio1.github.io/Cleanerclean-site-d-mo-/" target="_blank">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i> Voir le site
+    </a>
+  </div>
+</div>
+```
 
   </div>
 </section>
 
-<!-- ===== OFFRES ===== -->
+<!-- ===== PRÊT À L'EMPLOI ===== -->
+
+<section id="pret-emploi">
+  <div class="pret-header">
+    <div class="pret-badge">⚡ Prêt à l'emploi</div>
+    <h2 class="section-title" style="margin-bottom:0.5rem">Votre site en 48h chrono</h2>
+    <p style="color:var(--text-muted);font-size:0.97rem;max-width:560px;margin:0 auto;">Un site déjà optimisé pour votre secteur, adapté à votre nom et votre contenu. Livré en 48h, exclusif à votre zone.</p>
+  </div>
+
+  <div class="pret-grid">
+
+```
+<div class="pret-card">
+  <div class="pret-mockup pm-spa">
+    <span class="pret-mockup-icon">💆‍♀️</span>
+  </div>
+  <div class="pret-info">
+    <div class="pret-sector">Spa & Beauté</div>
+    <div class="pret-name">Template Spa & Bien-être</div>
+    <div class="pret-desc">Design luxe, ambiance premium. Idéal pour instituts, spas, soins.</div>
+    <div class="pret-prix">250 € <span>+ 30 €/mois</span></div>
+    <div class="pret-delai"><i class="fa-solid fa-bolt"></i> Livré en 48h</div>
+    <div class="pret-exclusif"><i class="fa-solid fa-shield-halved"></i> Exclusif à votre ville</div>
+    <div class="pret-btns">
+      <a class="pret-btn-demo" href="https://1dbstudio1.github.io/Angel-s-head-spa---site-web--/" target="_blank"><i class="fa-solid fa-eye"></i> Démo</a>
+      <a class="pret-btn-cmd" href="devis.html?template=spa"><i class="fa-solid fa-cart-shopping"></i> Commander</a>
+    </div>
+  </div>
+</div>
+
+<div class="pret-card">
+  <div class="pret-mockup pm-serrurier">
+    <span class="pret-mockup-icon">🔑</span>
+  </div>
+  <div class="pret-info">
+    <div class="pret-sector">Artisan / BTP</div>
+    <div class="pret-name">Template Artisan</div>
+    <div class="pret-desc">Optimisé urgence & appel direct. Parfait pour serruriers, plombiers, électriciens.</div>
+    <div class="pret-prix">250 € <span>+ 30 €/mois</span></div>
+    <div class="pret-delai"><i class="fa-solid fa-bolt"></i> Livré en 48h</div>
+    <div class="pret-exclusif"><i class="fa-solid fa-shield-halved"></i> Exclusif à votre ville</div>
+    <div class="pret-btns">
+      <a class="pret-btn-demo" href="https://1dbstudio1.github.io/Forcia-serrurerie---site-web-pr-t-l-emploi--/" target="_blank"><i class="fa-solid fa-eye"></i> Démo</a>
+      <a class="pret-btn-cmd" href="devis.html?template=artisan"><i class="fa-solid fa-cart-shopping"></i> Commander</a>
+    </div>
+  </div>
+</div>
+
+<div class="pret-card">
+  <div class="pret-mockup pm-plombier">
+    <span class="pret-mockup-icon">🔧</span>
+  </div>
+  <div class="pret-info">
+    <div class="pret-sector">Services locaux</div>
+    <div class="pret-name">Template Services</div>
+    <div class="pret-desc">Présentation claire, zone d'intervention, contact rapide. Polyvalent et efficace.</div>
+    <div class="pret-prix">250 € <span>+ 30 €/mois</span></div>
+    <div class="pret-delai"><i class="fa-solid fa-bolt"></i> Livré en 48h</div>
+    <div class="pret-exclusif"><i class="fa-solid fa-shield-halved"></i> Exclusif à votre ville</div>
+    <div class="pret-btns">
+      <a class="pret-btn-demo" href="https://1dbstudio1.github.io/Romain-plombier/" target="_blank"><i class="fa-solid fa-eye"></i> Démo</a>
+      <a class="pret-btn-cmd" href="devis.html?template=services"><i class="fa-solid fa-cart-shopping"></i> Commander</a>
+    </div>
+  </div>
+</div>
+
+<div class="pret-card">
+  <div class="pret-mockup pm-cleaning">
+    <span class="pret-mockup-icon">🧹</span>
+  </div>
+  <div class="pret-info">
+    <div class="pret-sector">Nettoyage & Entretien</div>
+    <div class="pret-name">Template Nettoyage</div>
+    <div class="pret-desc">Formules, tarifs, devis rapide. Conçu pour les pros du nettoyage et de l'entretien.</div>
+    <div class="pret-prix">250 € <span>+ 30 €/mois</span></div>
+    <div class="pret-delai"><i class="fa-solid fa-bolt"></i> Livré en 48h</div>
+    <div class="pret-exclusif"><i class="fa-solid fa-shield-halved"></i> Exclusif à votre ville</div>
+    <div class="pret-btns">
+      <a class="pret-btn-demo" href="https://1dbstudio1.github.io/Cleanerclean-site-d-mo-/" target="_blank"><i class="fa-solid fa-eye"></i> Démo</a>
+      <a class="pret-btn-cmd" href="devis.html?template=nettoyage"><i class="fa-solid fa-cart-shopping"></i> Commander</a>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <p style="text-align:center;color:var(--text-muted);font-size:0.82rem;margin-top:1.5rem;">
+    <i class="fa-solid fa-circle-info" style="color:var(--accent);margin-right:5px"></i>
+    Un seul template par secteur par ville — une fois commandé, il vous appartient exclusivement dans votre zone.
+  </p>
+</section>
+
+<!-- ===== OFFRES SUR-MESURE ===== -->
+
 <div style="text-align:center; padding: 4rem 2rem 1rem;">
-  <h2 class="section-title" style="margin-bottom:0.5rem">Nos offres</h2>
+  <h2 class="section-title" style="margin-bottom:0.5rem">Sur-mesure</h2>
   <p style="color:var(--text-muted);font-size:0.95rem;">Paiement en 2 fois · Maquette gratuite avant engagement</p>
 </div>
 <div id="nos-offres">
 
-  <!-- VITRINE SIMPLE -->
   <div class="offre-card">
     <span class="offre-badge badge-simple">Vitrine Simple</span>
     <p class="offre-title">Présence en ligne</p>
@@ -399,11 +904,10 @@
       <li>✦ Hébergement inclus</li>
       <li>✦ 1 modification / mois</li>
     </ul>
-    <div class="offre-delai"><i class="fa-solid fa-clock"></i> Livré en 48h</div>
+    <div class="offre-delai"><i class="fa-solid fa-clock"></i> Livré en 5 à 7 jours</div>
     <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
   </div>
 
-  <!-- VITRINE AVANCÉ -->
   <div class="offre-card featured">
     <span class="offre-badge badge-avance">Vitrine Avancé</span>
     <p class="offre-title">Site qui travaille pour vous</p>
@@ -426,7 +930,6 @@
     <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
   </div>
 
-  <!-- HÔTEL -->
   <div class="offre-card">
     <span class="offre-badge badge-hotel">Option Hôtel</span>
     <p class="offre-title">Réservation directe</p>
@@ -446,7 +949,6 @@
     <a class="button-devis" href="devis.html" style="margin-top:1.2rem">Obtenir un devis</a>
   </div>
 
-  <!-- E-COMMERCE -->
   <div class="offre-card">
     <span class="offre-badge badge-ecom">E-Commerce</span>
     <p class="offre-title">Boutique en ligne</p>
@@ -470,35 +972,231 @@
 </div>
 
 <!-- NOTE ABONNEMENT -->
+
 <div style="text-align:center;padding:0 2rem 4rem;max-width:700px;margin:0 auto;">
   <p style="color:var(--text-muted);font-size:0.85rem;border:1px solid var(--border);border-radius:16px;padding:1rem 1.5rem;background:var(--surface);">
     <i class="fa-solid fa-circle-info" style="color:var(--accent);margin-right:6px"></i>
-    L'abonnement mensuel inclut l'hébergement, la sécurité, les mises à jour techniques et le SEO actif. Sans abonnement, le site est suspendu. Préavis de résiliation : 1 mois.
+    L'abonnement mensuel inclut l'hébergement, la sécurité, les mises à jour techniques et le SEO actif. Il garantit que votre site reste en ligne, sécurisé et performant chaque mois. Préavis de résiliation : 1 mois.
   </p>
 </div>
 
+<!-- ===== OFFRE LANCEMENT ===== -->
+
+<section id="offre-lancement">
+  <div class="lancement-card">
+    <div class="lancement-badge">🚀 Offre de lancement</div>
+    <h2 class="lancement-title">−25% pour les <span>5 premiers clients</span><br>des Hautes-Alpes</h2>
+    <p class="lancement-desc">Vous êtes basé dans la région et vous voulez un site pro ? On vous accompagne en priorité avec une réduction exclusive pour les 5 premiers.</p>
+
+```
+<div class="lancement-compteur" id="compteurPlaces">
+  <!-- Généré par JS -->
+</div>
+<p class="lancement-label" id="labelPlaces"></p>
+
+<div class="lancement-conditions">
+  <div class="lancement-cond"><i class="fa-solid fa-map-marker-alt"></i> Hautes-Alpes uniquement</div>
+  <div class="lancement-cond"><i class="fa-solid fa-tag"></i> −25% sur la création</div>
+  <div class="lancement-cond"><i class="fa-solid fa-handshake"></i> Maquette gratuite incluse</div>
+</div>
+
+<a href="devis.html" class="lancement-cta">Je profite de l'offre</a>
+```
+
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+
+<section id="faq">
+  <h2 class="section-title">Questions fréquentes</h2>
+
+  <div class="faq-grid">
+
+```
+<div class="faq-category">Avant d'acheter</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>C'est quoi exactement DB Studio ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>DB Studio est une agence web locale basée à Gap, dans les Hautes-Alpes. On crée des sites web professionnels pour les artisans, commerçants et professionnels locaux qui veulent exister en ligne et attirer de vrais clients.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Vous êtes basés où ? Peut-on se rencontrer ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>On est basés à Gap (05000), Hautes-Alpes. Oui, on peut se rencontrer en physique pour un rendez-vous de présentation ou un suivi de projet. Contactez-nous par WhatsApp pour convenir d'un créneau.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Pourquoi passer par vous plutôt que Wix ou Squarespace ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Wix ou Squarespace vous donnent un outil — pas un site qui convertit. Avec DB Studio vous avez un vrai humain qui pense votre site pour votre activité spécifique, optimise votre SEO local, et reste disponible chaque mois pour faire évoluer votre présence. C'est la différence entre un marteau et un artisan qui construit pour vous.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Vous travaillez avec quel type d'entreprise ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Principalement les artisans (plombiers, serruriers, électriciens, maçons), les commerçants locaux, les prestataires de services (beauté, bien-être, nettoyage), les hôtels, chambres d'hôtes et gîtes, ainsi que les entrepreneurs qui se lancent.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Quelle est la différence entre le prêt à l'emploi et le sur-mesure ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Le prêt à l'emploi c'est un site déjà optimisé pour votre secteur qu'on adapte à votre nom et votre contenu — livré en 48h à 250€. Le sur-mesure c'est une création from scratch pensée 100% pour vous, avec brief complet, maquette personnalisée et livraison en 5 à 15 jours selon le projet. Les deux sont professionnels — la différence c'est le niveau de personnalisation et le délai.</p></div>
+</div>
+
+<div class="faq-category">Sur le process</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Comment ça se passe concrètement de A à Z ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>1. Vous remplissez le formulaire de devis — on vous recontacte sous 24h. 2. On signe le contrat et vous versez 50% d'acompte. 3. On vous envoie un brief client pour récolter vos textes, photos et infos. 4. On crée votre site et on vous envoie la maquette. 5. On intègre vos retours. 6. Vous validez, on met en ligne. 7. Vous réglez le solde et l'abonnement démarre.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>C'est quoi la maquette gratuite ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Avant tout engagement, on vous crée une maquette visuelle de votre futur site — vous voyez exactement à quoi il ressemblera. Si ça ne vous convient pas, vous ne payez rien. C'est notre façon de travailler en toute transparence.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Je n'ai pas de logo ni de photos, c'est un problème ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Pas du tout. On peut utiliser des photos libres de droits adaptées à votre activité. Pour le logo, on peut créer quelque chose de simple ou vous orienter vers un graphiste partenaire. On s'adapte à ce que vous avez.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Je dois m'y connaître en informatique ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Zéro. On gère tout de A à Z — la technique, l'hébergement, les mises à jour. Vous n'avez qu'à nous fournir vos informations et valider le résultat. Pas besoin de toucher à une ligne de code.</p></div>
+</div>
+
+<div class="faq-category">Sur les prix</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Pourquoi y a-t-il un abonnement mensuel ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>L'abonnement couvre l'hébergement de votre site, la sécurité, les mises à jour techniques et le SEO actif chaque mois. Sans lui, votre site n'a pas de serveur pour exister. C'est comme louer l'espace où votre site vit sur internet — en plus du suivi mensuel qu'on assure.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Je reste propriétaire de mon site ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Oui, le contenu (textes, photos, informations) vous appartient entièrement. Le code du site est développé par DB Studio et reste lié à notre infrastructure d'hébergement tant que l'abonnement est actif.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Que se passe-t-il si j'arrête l'abonnement ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Vous pouvez résilier à tout moment avec un préavis d'un mois. Le site sera alors suspendu car l'hébergement ne sera plus assuré. Vos contenus vous restent accessibles si vous souhaitez migrer vers un autre hébergeur.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Puis-je payer en plusieurs fois ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Oui — on propose le paiement en 2 fois : 50% à la commande, 50% à la livraison. Pas de frais supplémentaires.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Y a-t-il des frais cachés ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Non. Le prix affiché est le prix final. L'abonnement mensuel est clairement indiqué pour chaque offre. Si des options supplémentaires s'avèrent nécessaires, on vous en informe avant de procéder — jamais de surprise.</p></div>
+</div>
+
+<div class="faq-category">Après la livraison</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Vous assurez le suivi après la livraison ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Oui, c'est inclus dans l'abonnement. Chaque mois on vérifie les performances de votre site, on assure les mises à jour techniques, et on reste disponibles pour vos questions. On vous conseille aussi proactivement si on voit des axes d'amélioration.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Je peux modifier mon site moi-même ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Les modifications sont incluses dans votre abonnement selon votre offre (1 à 3 par mois). Pour toute modification, vous nous contactez par WhatsApp ou email, on s'en charge sous 48h.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Mon site sera visible sur Google ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>Oui — on intègre le SEO local dès la création (balises, structure, fiche Google Maps). Pour les offres Vitrine Avancée et supérieures, le SEO est travaillé activement chaque mois. Les résultats sur Google prennent généralement 1 à 3 mois pour se consolider.</p></div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question" onclick="toggleFaq(this)">
+    <span>Que se passe-t-il si mon site tombe en panne ?</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+  <div class="faq-answer"><p>On est disponibles 7j/7 via WhatsApp pour les urgences. En cas de panne, on intervient dans les plus brefs délais. La sécurité et la disponibilité de votre site font partie de notre engagement mensuel.</p></div>
+</div>
+```
+
+  </div>
+</section>
+
 <!-- ===== CONTACT / SOCIALS ===== -->
+
 <section id="contact">
   <div class="social-section">
-    <a class="social-link instagram" href="https://www.instagram.com/_db_s_t_u_d_i_o" target="_blank">
+    <a class="social-link instagram" href="https://www.instagram.com/dbstudio.business" target="_blank">
       <i class="fa-brands fa-instagram"></i><span>Instagram</span>
     </a>
     <a class="social-link tiktok" href="https://www.tiktok.com/@_db_studio" target="_blank">
       <i class="fa-brands fa-tiktok"></i><span>TikTok</span>
     </a>
-    <a class="social-link mail" href="/cdn-cgi/l/email-protection#debabc81adaaabbab7b19eb1abaab2b1b1b5f0b8ace1adabbcb4bbbdaae39abbb3bfb0babbfbeceebabbfbeceebabba8b7ad">
+    <a class="social-link mail" href="mailto:db_studio@outlook.fr">
       <i class="fa-solid fa-envelope"></i><span>Mail</span>
     </a>
     <a class="social-link whatsapp" href="https://wa.me/33628527401?text=Bonjour%20DB%20Studio,%20je%20souhaite%20un%20devis." target="_blank">
       <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
     </a>
+    <a class="social-link" href="tel:+33628527401">
+      <i class="fa-solid fa-phone"></i><span>06 28 52 74 01</span>
+    </a>
   </div>
   <div class="dmd">
-    <p>Pour toute demande ou information, contactez-nous par mail ou WhatsApp.</p>
+    <p>Pour toute demande ou information, contactez-nous par mail, téléphone ou WhatsApp.</p>
   </div>
 </section>
 
 <!-- ===== FOOTER / À PROPOS ===== -->
+
 <footer>
   <section id="a-propos">
     <div class="apropos">
@@ -521,6 +1219,7 @@
 </footer>
 
 <!-- ===== COOKIE BANNER ===== -->
+
 <div id="cookie-banner" style="display:none;">
   <p>Nous utilisons des cookies pour améliorer votre expérience (Google Analytics).</p>
   <div class="cookie-btns">
@@ -530,7 +1229,9 @@
 </div>
 
 <!-- ===== SCRIPTS ===== -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script>
+  // Burger
   const burgerBtn = document.getElementById('burgerBtn');
   const burgerMenu = document.getElementById('burgerMenu');
   const burgerIcon = document.getElementById('burgerIcon');
@@ -547,23 +1248,43 @@
     });
   });
 
+  // Cookies
   const cookieBanner = document.getElementById('cookie-banner');
-  const acceptBtn = document.getElementById('accept-cookies');
-  const declineBtn = document.getElementById('decline-cookies');
-
-  if (!localStorage.getItem('cookiesAccepted')) {
-    cookieBanner.style.display = 'flex';
-  }
-
-  acceptBtn.addEventListener('click', () => {
+  if (!localStorage.getItem('cookiesAccepted')) cookieBanner.style.display = 'flex';
+  document.getElementById('accept-cookies').addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'true');
     cookieBanner.style.display = 'none';
-    });
-
-  declineBtn.addEventListener('click', () => {
+  });
+  document.getElementById('decline-cookies').addEventListener('click', () => {
     localStorage.setItem('cookiesAccepted', 'false');
     cookieBanner.style.display = 'none';
   });
+
+  // Compteur offre lancement — modifie placesLibres pour mettre à jour
+  const placesTotal = 5;
+  const placesLibres = 5; // ← Mets à jour ce chiffre à chaque client signé
+
+  const compteur = document.getElementById('compteurPlaces');
+  const label = document.getElementById('labelPlaces');
+
+  for (let i = 0; i < placesTotal; i++) {
+    const div = document.createElement('div');
+    div.className = 'place ' + (i < placesLibres ? 'libre' : 'prise');
+    compteur.appendChild(div);
+  }
+
+  const prises = placesTotal - placesLibres;
+  label.innerHTML = prises === 0
+    ? '<strong>' + placesLibres + ' places disponibles</strong> — offre active'
+    : '<strong>' + placesLibres + ' place' + (placesLibres > 1 ? 's restantes' : ' restante') + '</strong> sur ' + placesTotal + ' — ' + prises + ' déjà prise' + (prises > 1 ? 's' : '');
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
 </script>
 
 </body>
