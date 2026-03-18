@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -6,6 +7,7 @@
   <title>Demande de devis | DB Studio</title>
   <meta name="description" content="Obtenez un devis gratuit pour votre site web avec DB Studio — agence web à Gap, Hautes-Alpes.">
   <link rel="canonical" href="https://1dbstudio1.github.io/Site-Web-DB-studio/devis.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -53,7 +55,7 @@
     a:hover { color: var(--accent); }
     li { list-style: none; }
 
-    /* ===== NAVBAR ===== */
+    /* NAVBAR */
     .navbar {
       position: fixed;
       top: 0; left: 0;
@@ -69,13 +71,13 @@
     }
 
     .logo a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       font-family: 'Syne', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--accent);
-      border: 2px solid var(--accent);
-      padding: 6px 14px;
-      border-radius: 12px;
       letter-spacing: 2px;
     }
 
@@ -90,11 +92,29 @@
 
     .nav-back:hover { color: var(--accent); }
 
-    /* ===== HERO ===== */
+    /* BANDEAU OFFRE LANCEMENT */
+    .bandeau-lancement {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, rgba(0,255,192,0.08), rgba(45,107,228,0.1));
+      border-bottom: 1px solid rgba(0,255,192,0.2);
+      padding: 0.7rem 2rem;
+      text-align: center;
+      margin-top: 64px;
+    }
+
+    .bandeau-lancement p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .bandeau-lancement strong { color: var(--accent); }
+
+    /* HERO */
     .devis-hero {
       position: relative;
       z-index: 1;
-      padding: 140px 2rem 60px;
+      padding: 60px 2rem 60px;
       text-align: center;
     }
 
@@ -134,7 +154,7 @@
       to { opacity:1; transform: translateY(0); }
     }
 
-    /* ===== LAYOUT ===== */
+    /* LAYOUT */
     .devis-layout {
       position: relative;
       z-index: 1;
@@ -147,7 +167,7 @@
       animation: fadeUp 0.6s 0.3s ease both;
     }
 
-    /* ===== FORM CARD ===== */
+    /* FORM CARD */
     .form-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -165,55 +185,29 @@
       margin-bottom: 2.5rem;
     }
 
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
+    .step { display: flex; flex-direction: column; align-items: center; gap: 4px; }
 
     .step-dot {
-      width: 32px;
-      height: 32px;
+      width: 32px; height: 32px;
       border-radius: 50%;
       border: 2px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700;
       color: var(--text-muted);
       transition: all 0.3s;
       background: var(--bg);
     }
 
-    .step.active .step-dot {
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: 0 0 16px rgba(0,255,192,0.3);
-    }
+    .step.active .step-dot { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 16px rgba(0,255,192,0.3); }
+    .step.done .step-dot { background: var(--accent); border-color: var(--accent); color: #001a14; }
 
-    .step.done .step-dot {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #001a14;
-    }
-
-    .step-label {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      text-align: center;
-      white-space: nowrap;
-    }
-
+    .step-label { font-size: 0.7rem; color: var(--text-muted); text-align: center; white-space: nowrap; }
     .step.active .step-label { color: var(--accent); }
 
     .step-line {
-      flex: 1;
-      height: 2px;
+      flex: 1; height: 2px;
       background: var(--border);
-      margin: 0 8px;
-      margin-bottom: 18px;
+      margin: 0 8px; margin-bottom: 18px;
       min-width: 30px;
       transition: background 0.3s;
     }
@@ -226,10 +220,8 @@
 
     .form-page-title {
       font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.8rem;
-      color: #fff;
+      font-size: 1.2rem; font-weight: 700;
+      margin-bottom: 1.8rem; color: #fff;
       padding-bottom: 0.8rem;
       border-bottom: 1px solid var(--border);
     }
@@ -238,21 +230,16 @@
 
     label {
       display: block;
-      font-size: 0.85rem;
-      font-weight: 500;
+      font-size: 0.85rem; font-weight: 500;
       color: var(--text-muted);
       margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      text-transform: uppercase; letter-spacing: 0.5px;
     }
 
     label span.req { color: var(--accent); }
+    label span.opt { color: var(--text-muted); font-size: 0.75rem; text-transform: none; letter-spacing: 0; font-weight: 400; margin-left: 4px; }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    select,
-    textarea {
+    input[type="text"], input[type="email"], input[type="tel"], select, textarea {
       width: 100%;
       padding: 12px 16px;
       background: rgba(255,255,255,0.04);
@@ -262,8 +249,7 @@
       font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
       transition: border-color 0.2s, box-shadow 0.2s;
-      outline: none;
-      appearance: none;
+      outline: none; appearance: none;
     }
 
     input:focus, select:focus, textarea:focus {
@@ -282,243 +268,124 @@
     select option { background: #051a15; color: var(--text); }
     textarea { resize: vertical; min-height: 110px; }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
     /* OPTION CARDS */
-    .option-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.75rem;
-    }
-
+    .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; }
     .option-card input { display: none; }
 
     .option-card label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
       padding: 1rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      cursor: pointer;
-      text-align: center;
-      font-size: 0.82rem;
-      text-transform: none;
-      letter-spacing: 0;
+      border: 1px solid var(--border); border-radius: var(--radius);
+      cursor: pointer; text-align: center;
+      font-size: 0.82rem; text-transform: none; letter-spacing: 0;
       color: var(--text-muted);
       background: rgba(255,255,255,0.03);
-      transition: all 0.2s;
-      margin-bottom: 0;
+      transition: all 0.2s; margin-bottom: 0;
     }
 
     .option-card label .icon { font-size: 1.6rem; }
 
     .option-card input:checked + label {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--accent); color: var(--accent);
       background: rgba(0,255,192,0.06);
       box-shadow: 0 0 12px rgba(0,255,192,0.12);
     }
 
-    .option-card label:hover {
-      border-color: rgba(0,255,192,0.3);
-      color: var(--text);
-    }
+    .option-card label:hover { border-color: rgba(0,255,192,0.3); color: var(--text); }
 
     /* BUDGET SLIDER */
     .budget-display {
       text-align: center;
-      font-family: 'Syne', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin: 0.5rem 0;
+      font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+      color: var(--accent); margin: 0.5rem 0;
     }
 
     input[type="range"] {
-      width: 100%;
-      height: 4px;
-      border-radius: 2px;
+      width: 100%; height: 4px; border-radius: 2px;
       background: linear-gradient(to right, var(--accent) 0%, var(--border) 0%);
-      outline: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      appearance: none;
+      outline: none; border: none; padding: 0; cursor: pointer; appearance: none;
     }
 
     input[type="range"]::-webkit-slider-thumb {
-      appearance: none;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(0,255,192,0.5);
-      cursor: pointer;
-      transition: transform 0.2s;
+      appearance: none; width: 20px; height: 20px; border-radius: 50%;
+      background: var(--accent); box-shadow: 0 0 10px rgba(0,255,192,0.5);
+      cursor: pointer; transition: transform 0.2s;
     }
 
     input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
 
-    .range-labels {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-top: 6px;
-    }
+    .range-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 6px; }
 
     /* NAVIGATION BTNS */
-    .form-nav {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-      justify-content: flex-end;
-    }
+    .form-nav { display: flex; gap: 1rem; margin-top: 2rem; justify-content: flex-end; }
 
     .btn-prev {
-      padding: 12px 24px;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-muted);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
+      padding: 12px 24px; border-radius: 50px;
+      border: 1px solid var(--border); background: transparent;
+      color: var(--text-muted); font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      cursor: pointer; transition: border-color 0.2s, color 0.2s;
     }
 
     .btn-prev:hover { border-color: var(--text-muted); color: var(--text); }
 
     .btn-next {
-      padding: 12px 28px;
-      border-radius: 50px;
-      border: none;
+      padding: 12px 28px; border-radius: 50px; border: none;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      color: #001a14;
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      color: #001a14; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.9rem;
+      cursor: pointer; display: flex; align-items: center; gap: 8px;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .btn-next:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,255,192,0.3);
-    }
+    .btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,255,192,0.3); }
 
     /* SUCCESS */
-    .success-screen {
-      display: none;
-      text-align: center;
-      padding: 2rem 0;
-    }
+    .success-screen { display: none; text-align: center; padding: 2rem 0; }
 
     .success-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(0,255,192,0.1);
-      border: 2px solid var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      color: var(--accent);
-      margin: 0 auto 1.5rem;
+      width: 80px; height: 80px; border-radius: 50%;
+      background: rgba(0,255,192,0.1); border: 2px solid var(--accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; color: var(--accent); margin: 0 auto 1.5rem;
     }
 
-    .success-screen h2 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.8rem;
-      color: #fff;
-      margin-bottom: 0.8rem;
-    }
-
+    .success-screen h2 { font-family: 'Syne', sans-serif; font-size: 1.8rem; color: #fff; margin-bottom: 0.8rem; }
     .success-screen p { color: var(--text-muted); }
 
     .success-screen .back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 2rem;
-      padding: 12px 28px;
-      border-radius: 50px;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 2rem; padding: 12px 28px; border-radius: 50px;
+      border: 1px solid var(--border); color: var(--text-muted); font-size: 0.9rem;
       transition: all 0.2s;
     }
 
     .success-screen .back-home:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ===== SIDEBAR ===== */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-    }
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 1.2rem; }
 
     .sidebar-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 1.8rem;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 1.8rem;
     }
 
-    .sidebar-card h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
+    .sidebar-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 1rem; }
 
     .sidebar-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: 0.6rem 0; border-bottom: 1px solid var(--border);
     }
 
     .sidebar-item:last-child { border-bottom: none; }
-
-    .sidebar-item i {
-      color: var(--accent);
-      font-size: 1rem;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
+    .sidebar-item i { color: var(--accent); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
     .sidebar-item p { font-size: 0.88rem; color: var(--text-muted); }
-
-    .sidebar-item strong {
-      display: block;
-      color: var(--text);
-      font-size: 0.9rem;
-      margin-bottom: 2px;
-    }
+    .sidebar-item strong { display: block; color: var(--text); font-size: 0.9rem; margin-bottom: 2px; }
 
     .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      transition: all 0.2s;
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px; border: 1px solid var(--border); border-radius: var(--radius);
+      font-size: 0.88rem; color: var(--text-muted); transition: all 0.2s;
     }
 
     .contact-link:hover { border-color: var(--accent); color: var(--accent); }
@@ -526,38 +393,23 @@
 
     /* WhatsApp fixed */
     .support {
-      position: fixed;
-      bottom: 24px; right: 24px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 50px;
-      background: #25d366;
-      color: white;
-      font-weight: 600;
-      font-size: 14px;
-      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
-      z-index: 200;
+      position: fixed; bottom: 24px; right: 24px;
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 18px; border-radius: 50px;
+      background: #25d366; color: white; font-weight: 600; font-size: 14px;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.35); z-index: 200;
       animation: float 3s ease-in-out infinite;
     }
 
     .support:hover { background: #1db954; color: white; }
 
-    @keyframes float {
-      0%,100%{ transform:translateY(0); }
-      50%{ transform:translateY(-5px); }
-    }
+    @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-5px); } }
 
     /* FOOTER */
     footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--border);
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      position: relative; z-index: 1;
+      border-top: 1px solid var(--border); padding: 2rem;
+      text-align: center; font-size: 0.85rem; color: var(--text-muted);
     }
 
     footer a { color: var(--text-muted); margin: 0 0.8rem; }
@@ -570,23 +422,39 @@
       .form-card { padding: 2rem 1.5rem; }
       .support span { display: none; }
       .support { padding: 12px 14px; }
+      .devis-hero { padding-top: 40px; }
     }
   </style>
+
 </head>
 <body>
 
 <!-- NAVBAR -->
+
 <nav class="navbar">
-  <div class="logo"><a href="index.html">DB STUDIO</a></div>
+  <div class="logo">
+    <a href="index.html">
+      <img src="favicon.svg" alt="DB Studio" width="30" height="30">
+      DB STUDIO
+    </a>
+  </div>
   <a href="index.html" class="nav-back"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
 </nav>
 
+<!-- BANDEAU OFFRE LANCEMENT -->
+
+<div class="bandeau-lancement">
+  <p>🚀 <strong>Offre de lancement −25%</strong> — Valable pour les 5 premiers clients des Hautes-Alpes · <a href="index.html#offre-lancement" style="color:var(--accent);text-decoration:underline;">En savoir plus</a></p>
+</div>
+
 <!-- WhatsApp -->
+
 <a href="https://wa.me/33628527401" class="support" target="_blank" aria-label="WhatsApp">
   <i class="fa-brands fa-whatsapp"></i><span>Support</span>
 </a>
 
 <!-- HERO -->
+
 <div class="devis-hero">
   <div class="badge">✦ Devis gratuit</div>
   <h1>Parlons de votre <span>projet</span></h1>
@@ -594,297 +462,235 @@
 </div>
 
 <!-- LAYOUT -->
+
 <div class="devis-layout">
 
   <!-- FORM -->
+
   <div class="form-card">
 
-    <div class="steps">
-      <div class="step active" id="s1"><div class="step-dot">1</div><div class="step-label">Projet</div></div>
-      <div class="step-line" id="l1"></div>
-      <div class="step" id="s2"><div class="step-dot">2</div><div class="step-label">Détails</div></div>
-      <div class="step-line" id="l2"></div>
-      <div class="step" id="s3"><div class="step-dot">3</div><div class="step-label">Contact</div></div>
+```
+<div class="steps">
+  <div class="step active" id="s1"><div class="step-dot">1</div><div class="step-label">Projet</div></div>
+  <div class="step-line" id="l1"></div>
+  <div class="step" id="s2"><div class="step-dot">2</div><div class="step-label">Détails</div></div>
+  <div class="step-line" id="l2"></div>
+  <div class="step" id="s3"><div class="step-dot">3</div><div class="step-label">Contact</div></div>
+</div>
+
+<form id="devisForm" novalidate>
+
+  <!-- PAGE 1 -->
+  <div class="form-page active" id="page1">
+    <p class="form-page-title">Quel type de site souhaitez-vous ?</p>
+
+    <div class="form-group">
+      <label>Type de site <span class="req">*</span></label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="type_site" id="t1" value="Vitrine Simple" required><label for="t1"><span class="icon">💻</span>Vitrine Simple</label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Avancée"><label for="t2"><span class="icon">🌐</span>Vitrine Avancée</label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Hôtel / Réservation"><label for="t3"><span class="icon">🏨</span>Hôtel / Résa</label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t4" value="E-commerce"><label for="t4"><span class="icon">🛒</span>E-commerce</label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t5" value="Prêt à l'emploi (48h)"><label for="t5"><span class="icon">⚡</span>Prêt à l'emploi</label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t6" value="Je ne sais pas encore"><label for="t6"><span class="icon">🤔</span>Je ne sais pas</label></div>
+      </div>
     </div>
 
-    <form id="devisForm" novalidate>
-
-      <!-- PAGE 1 -->
-      <div class="form-page active" id="page1">
-        <p class="form-page-title">Quel type de site souhaitez-vous ?</p>
-
-        <div class="form-group">
-          <label>Type de site <span class="req">*</span></label>
-          <div class="option-grid">
-            <div class="option-card">
-              <input type="radio" name="type_site" id="t1" value="Vitrine Simple" required>
-              <label for="t1"><span class="icon">💻</span>Vitrine Simple</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="type_site" id="t2" value="Vitrine Avancée">
-              <label for="t2"><span class="icon">🌐</span>Vitrine Avancée</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="type_site" id="t3" value="Hôtel / Réservation">
-              <label for="t3"><span class="icon">🏨</span>Hôtel / Résa</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="type_site" id="t4" value="E-commerce">
-              <label for="t4"><span class="icon">🛒</span>E-commerce</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="type_site" id="t5" value="Maintenance / SEO">
-              <label for="t5"><span class="icon">🔧</span>Maintenance</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="type_site" id="t6" value="Je ne sais pas encore">
-              <label for="t6"><span class="icon">🤔</span>Je ne sais pas</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Avez-vous déjà un site internet ?</label>
-          <div class="option-grid" style="grid-template-columns: 1fr 1fr 1fr;">
-            <div class="option-card">
-              <input type="radio" name="site_existant" id="e1" value="Non">
-              <label for="e1"><span class="icon">🆕</span>Non</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="site_existant" id="e2" value="Oui, à refaire">
-              <label for="e2"><span class="icon">🔄</span>Oui, à refaire</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="site_existant" id="e3" value="Oui, à améliorer">
-              <label for="e3"><span class="icon">✨</span>Oui, à améliorer</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Secteur d'activité <span class="req">*</span></label>
-          <select name="secteur" required>
-            <option value="" disabled selected>Sélectionnez votre secteur</option>
-            <option>Artisan / BTP</option>
-            <option>Commerce / Retail</option>
-            <option>Restauration / Hôtellerie</option>
-            <option>Santé / Bien-être</option>
-            <option>Services aux entreprises</option>
-            <option>Sport / Fitness</option>
-            <option>Immobilier</option>
-            <option>Éducation / Formation</option>
-            <option>Beauté / Coiffure</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div class="form-nav">
-          <button type="button" class="btn-next" onclick="goTo(2)">
-            Suivant <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
+    <div class="form-group">
+      <label>Avez-vous déjà un site internet ?</label>
+      <div class="option-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="option-card"><input type="radio" name="site_existant" id="e1" value="Non"><label for="e1"><span class="icon">🆕</span>Non</label></div>
+        <div class="option-card"><input type="radio" name="site_existant" id="e2" value="Oui, à refaire"><label for="e2"><span class="icon">🔄</span>Oui, à refaire</label></div>
+        <div class="option-card"><input type="radio" name="site_existant" id="e3" value="Oui, à améliorer"><label for="e3"><span class="icon">✨</span>Oui, à améliorer</label></div>
       </div>
-
-      
-      <!-- PAGE 2 -->
-      <div class="form-page" id="page2">
-        <p class="form-page-title">Parlez-nous de votre projet</p>
-
-        <div class="form-group">
-          <label>Budget estimé</label>
-          <div class="budget-display" id="budgetDisplay">500 €</div>
-          <input type="range" id="budgetRange" name="budget" min="300" max="5000" step="100" value="500" oninput="updateBudget(this.value)">
-          <div class="range-labels"><span>300 €</span><span>5 000 €+</span></div>
-        </div>
-
-        <div class="form-group">
-          <label>Délai souhaité</label>
-          <div class="option-grid" style="grid-template-columns: repeat(4, 1fr);">
-            <div class="option-card">
-              <input type="radio" name="delai" id="d1" value="Le plus vite possible">
-              <label for="d1"><span class="icon">🚀</span>Urgent</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="delai" id="d2" value="Sous 1 mois">
-              <label for="d2"><span class="icon">📅</span>1 mois</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="delai" id="d3" value="Sous 3 mois">
-              <label for="d3"><span class="icon">🗓️</span>3 mois</label>
-            </div>
-            <div class="option-card">
-              <input type="radio" name="delai" id="d4" value="Pas de contrainte">
-              <label for="d4"><span class="icon">😌</span>Flexible</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Options souhaitées (plusieurs choix possibles)</label>
-          <div class="option-grid">
-            <div class="option-card">
-              <input type="checkbox" name="options[]" id="o1" value="SEO optimisé">
-              <label for="o1"><span class="icon">🔍</span>SEO</label>
-            </div>
-            <div class="option-card">
-              <input type="checkbox" name="options[]" id="o2" value="Google Analytics">
-              <label for="o2"><span class="icon">📊</span>Analytics</label>
-            </div>
-            <div class="option-card">
-              <input type="checkbox" name="options[]" id="o3" value="Maintenance mensuelle">
-              <label for="o3"><span class="icon">🔧</span>Maintenance</label>
-            </div>
-            <div class="option-card">
-              <input type="checkbox" name="options[]" id="o4" value="Hébergement inclus">
-              <label for="o4"><span class="icon">🌐</span>Hébergement</label>
-            </div>
-            <div class="option-card">
-              <input type="checkbox" name="options[]" id="o5" value="Formulaire de contact">
-              <label for="o5"><span class="icon">📬</span>Formulaire</label>
-            </div>
-            <div class="option-card">
-              <input type="checkbox" name="options[]" id="o6" value="Réservation en ligne">
-              <label for="o6"><span class="icon">📆</span>Réservation</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Description de votre projet</label>
-          <textarea name="description" placeholder="Décrivez votre activité, vos objectifs, vos inspirations..." rows="4"></textarea>
-        </div>
-
-        <div class="form-group">
-          <label>Sites de référence / inspiration</label>
-          <input type="text" name="inspiration" placeholder="https://exemple.com, ...">
-        </div>
-
-        <div class="form-nav">
-          <button type="button" class="btn-prev" onclick="goTo(1)">
-            <i class="fa-solid fa-arrow-left"></i> Retour
-          </button>
-          <button type="button" class="btn-next" onclick="goTo(3)">
-            Suivant <i class="fa-solid fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- PAGE 3 -->
-      <div class="form-page" id="page3">
-        <p class="form-page-title">Vos coordonnées</p>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label>Prénom <span class="req">*</span></label>
-            <input type="text" name="prenom" placeholder="Jean" required>
-          </div>
-          <div class="form-group">
-            <label>Nom <span class="req">*</span></label>
-            <input type="text" name="nom" placeholder="Dupont" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label>Email <span class="req">*</span></label>
-          <input type="email" name="email" placeholder="jean@exemple.fr" required>
-        </div>
-
-        <div class="form-group">
-          <label>Téléphone</label>
-          <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
-        </div>
-
-        <div class="form-group">
-          <label>Entreprise / Nom commercial</label>
-          <input type="text" name="entreprise" placeholder="Mon Entreprise">
-        </div>
-
-        <div class="form-group">
-          <label>Comment avez-vous connu DB Studio ?</label>
-          <select name="source">
-            <option value="" disabled selected>Choisissez une option</option>
-            <option>Instagram</option>
-            <option>TikTok</option>
-            <option>Bouche à oreille</option>
-            <option>Google</option>
-            <option>Démarchage direct</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div class="form-nav">
-          <button type="button" class="btn-prev" onclick="goTo(2)">
-            <i class="fa-solid fa-arrow-left"></i> Retour
-          </button>
-          <button type="submit" class="btn-next">
-            Envoyer ma demande <i class="fa-solid fa-paper-plane"></i>
-          </button>
-        </div>
-      </div>
-
-    </form>
-
-    <!-- SUCCESS -->
-    <div class="success-screen" id="successScreen">
-      <div class="success-icon"><i class="fa-solid fa-check"></i></div>
-      <h2>Demande envoyée !</h2>
-      <p>Merci pour votre message.<br>Nous vous répondrons dans les <strong style="color:var(--accent)">24 heures</strong>.</p>
-      <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
     </div>
+
+    <div class="form-group">
+      <label>Secteur d'activité <span class="req">*</span></label>
+      <select name="secteur" required>
+        <option value="" disabled selected>Sélectionnez votre secteur</option>
+        <option>Artisan / BTP</option>
+        <option>Commerce / Retail</option>
+        <option>Restauration / Hôtellerie</option>
+        <option>Santé / Bien-être</option>
+        <option>Services aux entreprises</option>
+        <option>Sport / Fitness</option>
+        <option>Immobilier</option>
+        <option>Éducation / Formation</option>
+        <option>Beauté / Coiffure</option>
+        <option>Autre</option>
+      </select>
+    </div>
+
+    <div class="form-nav">
+      <button type="button" class="btn-next" onclick="goTo(2)">Suivant <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- PAGE 2 -->
+  <div class="form-page" id="page2">
+    <p class="form-page-title">Parlez-nous de votre projet</p>
+
+    <div class="form-group">
+      <label>Budget estimé</label>
+      <div class="budget-display" id="budgetDisplay">500 €</div>
+      <input type="range" id="budgetRange" name="budget" min="400" max="5000" step="100" value="500" oninput="updateBudget(this.value)">
+      <div class="range-labels"><span>400 €</span><span>5 000 €+</span></div>
+    </div>
+
+    <div class="form-group">
+      <label>Délai souhaité</label>
+      <div class="option-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="option-card"><input type="radio" name="delai" id="d1" value="Le plus vite possible"><label for="d1"><span class="icon">🚀</span>Urgent</label></div>
+        <div class="option-card"><input type="radio" name="delai" id="d2" value="Sous 1 mois"><label for="d2"><span class="icon">📅</span>1 mois</label></div>
+        <div class="option-card"><input type="radio" name="delai" id="d3" value="Sous 3 mois"><label for="d3"><span class="icon">🗓️</span>3 mois</label></div>
+        <div class="option-card"><input type="radio" name="delai" id="d4" value="Pas de contrainte"><label for="d4"><span class="icon">😌</span>Flexible</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Options souhaitées <span class="opt">(plusieurs choix possibles)</span></label>
+      <div class="option-grid">
+        <div class="option-card"><input type="checkbox" name="options[]" id="o1" value="SEO optimisé"><label for="o1"><span class="icon">🔍</span>SEO</label></div>
+        <div class="option-card"><input type="checkbox" name="options[]" id="o2" value="Google Analytics"><label for="o2"><span class="icon">📊</span>Analytics</label></div>
+        <div class="option-card"><input type="checkbox" name="options[]" id="o3" value="Maintenance mensuelle"><label for="o3"><span class="icon">🔧</span>Maintenance</label></div>
+        <div class="option-card"><input type="checkbox" name="options[]" id="o4" value="Hébergement inclus"><label for="o4"><span class="icon">🌐</span>Hébergement</label></div>
+        <div class="option-card"><input type="checkbox" name="options[]" id="o5" value="Formulaire de contact"><label for="o5"><span class="icon">📬</span>Formulaire</label></div>
+        <div class="option-card"><input type="checkbox" name="options[]" id="o6" value="Réservation en ligne"><label for="o6"><span class="icon">📆</span>Réservation</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Description de votre projet</label>
+      <textarea name="description" placeholder="Décrivez votre activité, vos objectifs, vos inspirations..." rows="4"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Sites de référence / inspiration</label>
+      <input type="text" name="inspiration" placeholder="https://exemple.com, ...">
+    </div>
+
+    <div class="form-nav">
+      <button type="button" class="btn-prev" onclick="goTo(1)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
+      <button type="button" class="btn-next" onclick="goTo(3)">Suivant <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- PAGE 3 -->
+  <div class="form-page" id="page3">
+    <p class="form-page-title">Vos coordonnées</p>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Prénom <span class="req">*</span></label>
+        <input type="text" name="prenom" placeholder="Jean" required>
+      </div>
+      <div class="form-group">
+        <label>Nom <span class="req">*</span></label>
+        <input type="text" name="nom" placeholder="Dupont" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email <span class="req">*</span></label>
+      <input type="email" name="email" placeholder="jean@exemple.fr" required>
+    </div>
+
+    <div class="form-group">
+      <label>Téléphone</label>
+      <input type="tel" name="telephone" placeholder="06 XX XX XX XX">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Entreprise / Nom commercial <span class="opt">(optionnel)</span></label>
+        <input type="text" name="entreprise" placeholder="Mon Entreprise">
+      </div>
+      <div class="form-group">
+        <label>Ville / Commune <span class="opt">(optionnel)</span></label>
+        <input type="text" name="ville" placeholder="Gap, Embrun, Briançon...">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Comment avez-vous connu DB Studio ?</label>
+      <select name="source">
+        <option value="" disabled selected>Choisissez une option</option>
+        <option>Instagram</option>
+        <option>TikTok</option>
+        <option>Bouche à oreille</option>
+        <option>Google</option>
+        <option>Démarchage direct</option>
+        <option>Autre</option>
+      </select>
+    </div>
+
+    <div class="form-nav">
+      <button type="button" class="btn-prev" onclick="goTo(2)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
+      <button type="submit" class="btn-next">Envoyer ma demande <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+</form>
+
+<!-- SUCCESS -->
+<div class="success-screen" id="successScreen">
+  <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+  <h2>Demande envoyée !</h2>
+  <p>Merci pour votre message.<br>Nous vous répondrons dans les <strong style="color:var(--accent)">24 heures</strong>.</p>
+  <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
+</div>
+```
 
   </div>
 
   <!-- SIDEBAR -->
+
   <div class="sidebar">
 
-    <div class="sidebar-card">
-      <h3>✦ Pourquoi nous choisir ?</h3>
-      <div class="sidebar-item">
-        <i class="fa-solid fa-bolt"></i>
-        <div><strong>Livraison rapide</strong><p>Site livré en 48h à 15 jours selon le projet.</p></div>
-      </div>
-      <div class="sidebar-item">
-        <i class="fa-solid fa-euro-sign"></i>
-        <div><strong>Maquette gratuite</strong><p>Vous voyez le résultat avant de vous décider.</p></div>
-      </div>
-      <div class="sidebar-item">
-        <i class="fa-solid fa-map-marker-alt"></i>
-        <div><strong>Basés à Gap</strong><p>Agence locale, disponible et réactive.</p></div>
-      </div>
-      <div class="sidebar-item">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <div><strong>100% Responsive</strong><p>Optimisé mobile, tablette et desktop.</p></div>
-      </div>
-    </div>
+```
+<div class="sidebar-card">
+  <h3>✦ Pourquoi nous choisir ?</h3>
+  <div class="sidebar-item"><i class="fa-solid fa-bolt"></i><div><strong>Livraison rapide</strong><p>Site livré en 48h à 15 jours selon le projet.</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-euro-sign"></i><div><strong>Maquette gratuite</strong><p>Vous voyez le résultat avant de vous décider.</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-map-marker-alt"></i><div><strong>Basés à Gap</strong><p>Agence locale, disponible et réactive.</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-mobile-screen"></i><div><strong>100% Responsive</strong><p>Optimisé mobile, tablette et desktop.</p></div></div>
+</div>
 
-    <div class="sidebar-card">
-      <h3>📞 Contact direct</h3>
-      <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Préférez-vous nous parler directement ?</p>
-      <div style="display:flex; flex-direction:column; gap:0.6rem;">
-        <a href="https://wa.me/33628527401" class="contact-link" target="_blank">
-          <i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp
-        </a>
-        <a href="/cdn-cgi/l/email-protection#5d393f022e29283934321d32282931323236733b2f" class="contact-link">
-          <i class="fa-solid fa-envelope" style="color:var(--accent)"></i> Email
-        </a>
-        <a href="https://www.instagram.com/_db_s_t_u_d_i_o" class="contact-link" target="_blank">
-          <i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram
-        </a>
-      </div>
-    </div>
+<div class="sidebar-card">
+  <h3>📞 Contact direct</h3>
+  <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Préférez-vous nous parler directement ?</p>
+  <div style="display:flex; flex-direction:column; gap:0.6rem;">
+    <a href="tel:+33628527401" class="contact-link">
+      <i class="fa-solid fa-phone" style="color:var(--accent)"></i> 06 28 52 74 01
+    </a>
+    <a href="https://wa.me/33628527401" class="contact-link" target="_blank">
+      <i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp
+    </a>
+    <a href="mailto:db_studio@outlook.fr" class="contact-link">
+      <i class="fa-solid fa-envelope" style="color:var(--accent)"></i> db_studio@outlook.fr
+    </a>
+    <a href="https://www.instagram.com/dbstudio.business" class="contact-link" target="_blank">
+      <i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram
+    </a>
+  </div>
+</div>
 
-    <div class="sidebar-card">
-      <h3>⏱ Délais indicatifs</h3>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 48h</p></div></div>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Avancée</strong><p>Livré en 5 à 7 jours</p></div></div>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Hôtel / Réservation</strong><p>Livré en 7 à 10 jours</p></div></div>
-      <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-commerce</strong><p>Livré en 15 jours</p></div></div>
-    </div>
+<div class="sidebar-card">
+  <h3>⏱ Délais indicatifs</h3>
+  <div class="sidebar-item"><i class="fa-solid fa-bolt" style="color:#ffa032"></i><div><strong>Prêt à l'emploi</strong><p>Livré en 48h</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 5 à 7 jours</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Avancée</strong><p>Livré en 5 à 7 jours</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Hôtel / Réservation</strong><p>Livré en 7 à 10 jours</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-commerce</strong><p>Livré en 15 jours</p></div></div>
+</div>
+```
 
   </div>
 </div>
 
 <!-- FOOTER -->
+
 <footer>
   <p>© 2026 DB Studio — Gap, Hautes-Alpes — Tous droits réservés</p>
   <div style="margin-top:0.5rem;">
@@ -893,7 +699,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   let current = 1;
 
   function goTo(page) {
@@ -929,9 +735,16 @@
   function updateBudget(val) {
     const v = parseInt(val);
     document.getElementById('budgetDisplay').textContent = v >= 5000 ? '5 000 €+' : v.toLocaleString('fr-FR') + ' €';
-    const pct = ((v - 300) / (5000 - 300)) * 100;
+    const pct = ((v - 400) / (5000 - 400)) * 100;
     document.getElementById('budgetRange').style.background =
       `linear-gradient(to right, var(--accent) ${pct}%, var(--border) ${pct}%)`;
+  }
+
+  // Pré-remplir le type si arrivé depuis le catalogue
+  const params = new URLSearchParams(window.location.search);
+  const template = params.get('template');
+  if (template) {
+    document.querySelector('input[value="Prêt à l\'emploi (48h)"]').checked = true;
   }
 
   async function sendBrevoEmail(to, toName, subject, htmlContent) {
@@ -951,13 +764,13 @@
     const email = form.querySelector('[name="email"]').value.trim();
     const tel = form.querySelector('[name="telephone"]').value.trim() || 'Non renseigné';
     const entreprise = form.querySelector('[name="entreprise"]').value.trim() || 'Non renseignée';
+    const ville = form.querySelector('[name="ville"]').value.trim() || 'Non renseignée';
     const typeSite = form.querySelector('input[name="type_site"]:checked')?.value || 'Non renseigné';
     const secteur = form.querySelector('select[name="secteur"]').value || 'Non renseigné';
     const budget = form.querySelector('[name="budget"]').value;
     const delai = form.querySelector('input[name="delai"]:checked')?.value || 'Non renseigné';
     const description = form.querySelector('[name="description"]').value.trim() || 'Aucune';
     const source = form.querySelector('select[name="source"]').value || 'Non renseignée';
-
     const options = [...form.querySelectorAll('input[name="options[]"]:checked')].map(o => o.value).join(', ') || 'Aucune';
 
     if (!prenom || !email) { alert('Veuillez renseigner votre prénom et votre email.'); return; }
@@ -966,15 +779,14 @@
     btn.textContent = 'Envoi en cours...';
     btn.disabled = true;
 
-    // ===== DÉLAI SELON TYPE DE SITE =====
     const delaiLivraison = {
-      'Vitrine Simple': '48h',
+      'Vitrine Simple': '5 à 7 jours',
       'Vitrine Avancée': '5 à 7 jours',
       'Hôtel / Réservation': '7 à 10 jours',
-      'E-commerce': '15 jours'
+      'E-commerce': '15 jours',
+      "Prêt à l'emploi (48h)": '48h'
     }[typeSite] || 'à définir';
 
-    // ===== MAIL CLIENT =====
     const mailClient = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020c0a;color:#e8f5f2;border-radius:16px;overflow:hidden;">
       <div style="background:#1a3a6e;padding:32px;text-align:center;">
@@ -984,51 +796,33 @@
       <div style="padding:32px;">
         <h2 style="color:#ffffff;font-size:22px;margin-bottom:8px;">Bonjour ${prenom} 👋</h2>
         <p style="color:#8ab5ad;margin-bottom:24px;">Merci pour votre demande ! Voici ce qui va se passer maintenant :</p>
-
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin-bottom:24px;">
-          <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">📋 Récapitulatif de votre demande</h3>
+          <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">📋 Récapitulatif</h3>
           <table style="width:100%;border-collapse:collapse;">
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;width:40%;">Type de site</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${typeSite}</td></tr>
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Secteur</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${secteur}</td></tr>
+            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Ville</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${ville}</td></tr>
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Budget estimé</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${parseInt(budget) >= 5000 ? '5 000 €+' : parseInt(budget).toLocaleString('fr-FR') + ' €'}</td></tr>
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Délai de livraison</td><td style="padding:6px 0;color:#00ffc0;font-size:14px;font-weight:bold;">${delaiLivraison}</td></tr>
           </table>
         </div>
-
         <div style="background:rgba(0,255,192,0.05);border:1px solid rgba(0,255,192,0.2);border-radius:12px;padding:20px;margin-bottom:24px;">
           <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">🚀 Les prochaines étapes</h3>
-          <div style="display:flex;flex-direction:column;gap:12px;">
-            <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">1</span>
-              <p style="color:#e8f5f2;font-size:14px;margin:0;">On vous recontacte sous <strong style="color:#00ffc0;">24h</strong> pour valider votre projet</p>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">2</span>
-              <p style="color:#e8f5f2;font-size:14px;margin:0;">Signature du contrat + acompte de 50%</p>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">3</span>
-              <p style="color:#e8f5f2;font-size:14px;margin:0;">Brief client — on vous envoie un questionnaire rapide</p>
-            </div>
-            <div style="display:flex;gap:12px;align-items:flex-start;">
-              <span style="background:#2D6BE4;color:white;border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;">4</span>
-              <p style="color:#e8f5f2;font-size:14px;margin:0;">Création et livraison de votre site en <strong style="color:#00ffc0;">${delaiLivraison}</strong></p>
-            </div>
-          </div>
+          <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">1.</strong> On vous recontacte sous 24h pour valider votre projet</p>
+          <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">2.</strong> Signature du contrat + acompte de 50%</p>
+          <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">3.</strong> Brief client — on vous envoie un questionnaire rapide</p>
+          <p style="color:#e8f5f2;font-size:14px;margin:0;"><strong style="color:#00ffc0;">4.</strong> Livraison de votre site en <strong style="color:#00ffc0;">${delaiLivraison}</strong></p>
         </div>
-
-        <p style="color:#8ab5ad;font-size:14px;">Une question ? Contactez-nous directement :</p>
         <div style="display:flex;gap:12px;margin-top:12px;">
           <a href="https://wa.me/33628527401" style="background:#25d366;color:white;padding:10px 20px;border-radius:50px;text-decoration:none;font-size:14px;font-weight:bold;">WhatsApp</a>
           <a href="mailto:db_studio@outlook.fr" style="background:rgba(255,255,255,0.1);color:#e8f5f2;padding:10px 20px;border-radius:50px;text-decoration:none;font-size:14px;">Email</a>
         </div>
       </div>
       <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px;text-align:center;">
-        <p style="color:#8ab5ad;font-size:12px;margin:0;">DB Studio · getdbstudio.fr · Gap, Hautes-Alpes (05)</p>
+        <p style="color:#8ab5ad;font-size:12px;margin:0;">DB Studio · db_studio@outlook.fr · 06 28 52 74 01 · Gap, Hautes-Alpes (05)</p>
       </div>
     </div>`;
 
-        // ===== MAIL MOI (NOTIFICATION + CHECKLIST) =====
     const mailMoi = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
       <div style="background:#1a3a6e;padding:24px;border-radius:12px 12px 0 0;">
@@ -1042,36 +836,34 @@
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Email</td><td style="padding:8px 12px;font-size:14px;"><a href="mailto:${email}">${email}</a></td></tr>
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Téléphone</td><td style="padding:8px 12px;font-size:14px;">${tel}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Entreprise</td><td style="padding:8px 12px;font-size:14px;">${entreprise}</td></tr>
-          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Source</td><td style="padding:8px 12px;font-size:14px;">${source}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Ville</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${ville}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Source</td><td style="padding:8px 12px;font-size:14px;">${source}</td></tr>
         </table>
-
         <h3 style="color:#1a3a6e;font-size:16px;margin:24px 0 16px;">📋 Projet</h3>
         <table style="width:100%;border-collapse:collapse;">
-          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Type de site</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${typeSite}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Type</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${typeSite}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Secteur</td><td style="padding:8px 12px;font-size:14px;">${secteur}</td></tr>
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Budget</td><td style="padding:8px 12px;font-size:14px;">${parseInt(budget) >= 5000 ? '5 000 €+' : parseInt(budget).toLocaleString('fr-FR') + ' €'}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Délai souhaité</td><td style="padding:8px 12px;font-size:14px;">${delai}</td></tr>
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Options</td><td style="padding:8px 12px;font-size:14px;">${options}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Description</td><td style="padding:8px 12px;font-size:14px;">${description}</td></tr>
         </table>
-
         <h3 style="color:#1a3a6e;font-size:16px;margin:24px 0 16px;">✅ Checklist onboarding</h3>
         <div style="background:white;border:1px solid #dde8ff;border-radius:8px;padding:16px;">
-          <p style="color:#666;font-size:12px;margin:0 0 12px;">Délai de livraison prévu : <strong style="color:#2D6BE4;">${delaiLivraison}</strong></p>
+          <p style="color:#666;font-size:12px;margin:0 0 12px;">Délai prévu : <strong style="color:#2D6BE4;">${delaiLivraison}</strong></p>
           <div style="display:flex;flex-direction:column;gap:8px;">
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Contrat signé + acompte 50% reçu</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Brief envoyé au client</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Brief reçu et complet (textes + photos)</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Création du site démarrée</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Maquette envoyée au client</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Modifications effectuées</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Site validé par le client</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Solde 50% encaissé</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Site mis en ligne</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Post Instagram de lancement publié</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Client ajouté dans le portfolio</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Abonnement mensuel activé</label>
-            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;"> Option Réseau proposée</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Contrat signé + acompte 50% reçu</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Brief envoyé au client</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Brief reçu et complet (textes + photos)</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Création du site démarrée</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Maquette envoyée au client</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Modifications effectuées</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Site validé par le client</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Solde 50% encaissé</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Site mis en ligne</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Post Instagram de lancement publié</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Client ajouté dans le portfolio</label>
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;color:#333;"><input type="checkbox"> Abonnement mensuel activé</label>
           </div>
         </div>
       </div>
@@ -1083,7 +875,7 @@
     try {
       await Promise.all([
         sendBrevoEmail(email, `${prenom} ${nom}`, 'DB Studio — Votre demande est bien reçue ✅', mailClient),
-        sendBrevoEmail('db_studio@outlook.fr', 'DB Studio', `🔔 Nouveau devis — ${prenom} ${nom} (${typeSite})`, mailMoi)
+        sendBrevoEmail('db_studio@outlook.fr', 'DB Studio', `🔔 Nouveau devis — ${prenom} ${nom} (${typeSite} · ${ville})`, mailMoi)
       ]);
 
       form.style.display = 'none';
