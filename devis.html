@@ -446,7 +446,6 @@
 
   <div class="form-card">
 
-```
 <div class="steps">
   <div class="step active" id="s1"><div class="step-dot">1</div><div class="step-label">Activité</div></div>
   <div class="step-line" id="l1"></div>
@@ -465,7 +464,7 @@
 
     <div class="form-group">
       <label>Secteur d'activité <span class="req">*</span></label>
-      <select name="secteur" id="secteurSelect" required onchange="updateTypeSiteOptions()">
+      <select name="secteur" id="secteurSelect" required>
         <option value="" disabled selected>Sélectionnez votre secteur</option>
         <option>Artisan / BTP</option>
         <option>Restauration / Bar</option>
@@ -728,7 +727,6 @@
   <p>Merci pour votre message.<br>Nous vous répondrons dans les <strong style="color:var(--accent)">24 heures</strong>.</p>
   <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Retour au site</a>
 </div>
-```
 
   </div>
 
@@ -736,7 +734,6 @@
 
   <div class="sidebar">
 
-```
 <div class="sidebar-card">
   <h3>✦ Pourquoi nous choisir ?</h3>
   <div class="sidebar-item"><i class="fa-solid fa-bolt"></i><div><strong>Livraison rapide</strong><p>Site livré en 48h à 15 jours selon le projet.</p></div></div>
@@ -772,7 +769,6 @@
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium+</strong><p>Livré en 10 à 14 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-boutique</strong><p>Livré en 12 à 15 jours</p></div></div>
 </div>
-```
 
   </div>
 </div>
@@ -1085,4 +1081,13 @@
       document.querySelector('.steps').style.display = 'none';
       document.getElementById('successScreen').style.display = 'block';
 
-    } catch(err) 
+    } catch(err) {
+      console.error(err);
+      btn.textContent = 'Envoyer ma demande';
+      btn.disabled = false;
+      alert('Une erreur est survenue. Contactez-nous directement sur WhatsApp ou par email.');
+    }
+  });
+</script>
+</body>
+</html>
