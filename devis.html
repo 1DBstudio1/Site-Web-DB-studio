@@ -467,29 +467,50 @@
 
 ```
 <div class="steps">
-  <div class="step active" id="s1"><div class="step-dot">1</div><div class="step-label">Projet</div></div>
+  <div class="step active" id="s1"><div class="step-dot">1</div><div class="step-label">Activité</div></div>
   <div class="step-line" id="l1"></div>
-  <div class="step" id="s2"><div class="step-dot">2</div><div class="step-label">Détails</div></div>
+  <div class="step" id="s2"><div class="step-dot">2</div><div class="step-label">Projet</div></div>
   <div class="step-line" id="l2"></div>
-  <div class="step" id="s3"><div class="step-dot">3</div><div class="step-label">Contact</div></div>
+  <div class="step" id="s3"><div class="step-dot">3</div><div class="step-label">Design</div></div>
+  <div class="step-line" id="l3"></div>
+  <div class="step" id="s4"><div class="step-dot">4</div><div class="step-label">Contact</div></div>
 </div>
 
 <form id="devisForm" novalidate>
 
-  <!-- PAGE 1 -->
+  <!-- PAGE 1 — ACTIVITÉ -->
   <div class="form-page active" id="page1">
-    <p class="form-page-title">Quel type de site souhaitez-vous ?</p>
+    <p class="form-page-title">Votre activité</p>
 
     <div class="form-group">
-      <label>Type de site <span class="req">*</span></label>
-      <div class="option-grid">
-        <div class="option-card"><input type="radio" name="type_site" id="t1" value="Vitrine Simple" required><label for="t1"><span class="icon">💻</span>Vitrine Simple</label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Avancée"><label for="t2"><span class="icon">🌐</span>Vitrine Avancée</label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Hôtel / Réservation"><label for="t3"><span class="icon">🏨</span>Hôtel / Résa</label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t4" value="E-commerce"><label for="t4"><span class="icon">🛒</span>E-commerce</label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t5" value="Prêt à l'emploi (48h)"><label for="t5"><span class="icon">⚡</span>Prêt à l'emploi</label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t6" value="Je ne sais pas encore"><label for="t6"><span class="icon">🤔</span>Je ne sais pas</label></div>
-      </div>
+      <label>Secteur d'activité <span class="req">*</span></label>
+      <select name="secteur" id="secteurSelect" required onchange="updateTypeSiteOptions()">
+        <option value="" disabled selected>Sélectionnez votre secteur</option>
+        <option>Artisan / BTP</option>
+        <option>Restauration / Bar</option>
+        <option>Hôtellerie / Hébergement</option>
+        <option>Commerce / Boutique physique</option>
+        <option>E-commerce / Vente en ligne</option>
+        <option>Santé / Bien-être</option>
+        <option>Beauté / Coiffure</option>
+        <option>Services aux particuliers</option>
+        <option>Services aux entreprises</option>
+        <option>Sport / Fitness</option>
+        <option>Immobilier</option>
+        <option>Éducation / Formation</option>
+        <option>Autre</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Décrivez votre activité <span class="req">*</span></label>
+      <textarea name="description_activite" placeholder="Ex : Je suis plombier indépendant à Gap depuis 5 ans, j'interviens chez des particuliers pour des urgences et des rénovations..." rows="3" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Vos concurrents directs <span class="req">*</span></label>
+      <input type="text" name="concurrents" placeholder="Ex : Plomberie Martin — plomberie-martin.fr, ..." required>
+      <small style="color:var(--text-muted);font-size:0.78rem;margin-top:4px;display:block;">On analyse leurs sites pour vous faire mieux.</small>
     </div>
 
     <div class="form-group">
@@ -502,20 +523,13 @@
     </div>
 
     <div class="form-group">
-      <label>Secteur d'activité <span class="req">*</span></label>
-      <select name="secteur" required>
-        <option value="" disabled selected>Sélectionnez votre secteur</option>
-        <option>Artisan / BTP</option>
-        <option>Commerce / Retail</option>
-        <option>Restauration / Hôtellerie</option>
-        <option>Santé / Bien-être</option>
-        <option>Services aux entreprises</option>
-        <option>Sport / Fitness</option>
-        <option>Immobilier</option>
-        <option>Éducation / Formation</option>
-        <option>Beauté / Coiffure</option>
-        <option>Autre</option>
-      </select>
+      <label>Adresse de votre site actuel <span class="opt">(si existant)</span></label>
+      <input type="url" name="site_actuel" placeholder="https://monsite.fr">
+    </div>
+
+    <div class="form-group">
+      <label>Vos réseaux sociaux <span class="opt">(optionnel)</span></label>
+      <input type="text" name="reseaux" placeholder="Instagram, Facebook, TikTok... + liens ou noms de compte">
     </div>
 
     <div class="form-nav">
@@ -523,9 +537,35 @@
     </div>
   </div>
 
-  <!-- PAGE 2 -->
+  <!-- PAGE 2 — PROJET -->
   <div class="form-page" id="page2">
-    <p class="form-page-title">Parlez-nous de votre projet</p>
+    <p class="form-page-title">Votre projet web</p>
+
+    <div class="form-group">
+      <label>Type de site souhaité <span class="req">*</span></label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="type_site" id="t1" value="Prêt à l'emploi" required><label for="t1"><span class="icon">⚡</span>Prêt à l'emploi<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">250 € · 48h</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Simple"><label for="t2"><span class="icon">💻</span>Vitrine Simple<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">800 € · 5 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Vitrine Premium"><label for="t3"><span class="icon">🚀</span>Vitrine Premium<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">1 800 € · 7-10 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t4" value="Vitrine Premium+"><label for="t4"><span class="icon">🏨</span>Premium+ Réservation<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 10-14 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t5" value="E-boutique"><label for="t5"><span class="icon">🛒</span>E-boutique<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 12-15 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t6" value="Je ne sais pas encore"><label for="t6"><span class="icon">🤔</span>Je ne sais pas<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">On vous conseille</span></label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Vos objectifs prioritaires <span class="opt">(plusieurs choix)</span></label>
+      <div class="option-grid">
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj1" value="Être visible sur Google"><label for="obj1"><span class="icon">🔍</span>Visible sur Google</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj2" value="Attirer de nouveaux clients"><label for="obj2"><span class="icon">👥</span>Nouveaux clients</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj3" value="Recevoir des demandes de devis"><label for="obj3"><span class="icon">📬</span>Devis en ligne</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj4" value="Réservations en ligne"><label for="obj4"><span class="icon">📅</span>Réservations</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj5" value="Vendre des produits en ligne"><label for="obj5"><span class="icon">💳</span>Vendre en ligne</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj6" value="Améliorer mon image de marque"><label for="obj6"><span class="icon">⭐</span>Image de marque</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj7" value="Avis Google et témoignages"><label for="obj7"><span class="icon">💬</span>Avis Google</label></div>
+        <div class="option-card"><input type="checkbox" name="objectifs[]" id="obj8" value="Présenter mes services clairement"><label for="obj8"><span class="icon">📋</span>Présenter services</label></div>
+      </div>
+    </div>
 
     <div class="form-group">
       <label>Budget estimé</label>
@@ -544,36 +584,95 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label>Options souhaitées <span class="opt">(plusieurs choix possibles)</span></label>
-      <div class="option-grid">
-        <div class="option-card"><input type="checkbox" name="options[]" id="o1" value="SEO optimisé"><label for="o1"><span class="icon">🔍</span>SEO</label></div>
-        <div class="option-card"><input type="checkbox" name="options[]" id="o2" value="Google Analytics"><label for="o2"><span class="icon">📊</span>Analytics</label></div>
-        <div class="option-card"><input type="checkbox" name="options[]" id="o3" value="Maintenance mensuelle"><label for="o3"><span class="icon">🔧</span>Maintenance</label></div>
-        <div class="option-card"><input type="checkbox" name="options[]" id="o4" value="Hébergement inclus"><label for="o4"><span class="icon">🌐</span>Hébergement</label></div>
-        <div class="option-card"><input type="checkbox" name="options[]" id="o5" value="Formulaire de contact"><label for="o5"><span class="icon">📬</span>Formulaire</label></div>
-        <div class="option-card"><input type="checkbox" name="options[]" id="o6" value="Réservation en ligne"><label for="o6"><span class="icon">📆</span>Réservation</label></div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Description de votre projet</label>
-      <textarea name="description" placeholder="Décrivez votre activité, vos objectifs, vos inspirations..." rows="4"></textarea>
-    </div>
-
-    <div class="form-group">
-      <label>Sites de référence / inspiration</label>
-      <input type="text" name="inspiration" placeholder="https://exemple.com, ...">
-    </div>
-
     <div class="form-nav">
       <button type="button" class="btn-prev" onclick="goTo(1)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
       <button type="button" class="btn-next" onclick="goTo(3)">Suivant <i class="fa-solid fa-arrow-right"></i></button>
     </div>
   </div>
 
-  <!-- PAGE 3 -->
+  <!-- PAGE 3 — DESIGN & IDENTITÉ -->
   <div class="form-page" id="page3">
+    <p class="form-page-title">Design & Identité visuelle</p>
+
+    <div class="form-group">
+      <label>Style visuel souhaité <span class="opt">(plusieurs choix)</span></label>
+      <div class="option-grid">
+        <div class="option-card"><input type="checkbox" name="style[]" id="st1" value="Minimaliste / Épuré"><label for="st1"><span class="icon">◻️</span>Minimaliste</label></div>
+        <div class="option-card"><input type="checkbox" name="style[]" id="st2" value="Luxe / Premium"><label for="st2"><span class="icon">✨</span>Luxe / Premium</label></div>
+        <div class="option-card"><input type="checkbox" name="style[]" id="st3" value="Dynamique / Moderne"><label for="st3"><span class="icon">⚡</span>Dynamique</label></div>
+        <div class="option-card"><input type="checkbox" name="style[]" id="st4" value="Naturel / Organique"><label for="st4"><span class="icon">🌿</span>Naturel</label></div>
+        <div class="option-card"><input type="checkbox" name="style[]" id="st5" value="Sombre / Dark mode"><label for="st5"><span class="icon">🌑</span>Sombre</label></div>
+        <div class="option-card"><input type="checkbox" name="style[]" id="st6" value="Clair / Lumineux"><label for="st6"><span class="icon">☀️</span>Clair</label></div>
+        <div class="option-card"><input type="checkbox" name="style[]" id="st7" value="Pas d'idée, faites-moi une proposition"><label for="st7"><span class="icon">🤔</span>Pas d'idée</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Couleurs souhaitées <span class="opt">(optionnel)</span></label>
+      <input type="text" name="couleurs" placeholder="Ex : bleu marine et blanc, tons chauds, couleurs de mon logo...">
+    </div>
+
+    <div class="form-group">
+      <label>Sites que vous aimez <span class="opt">(références esthétiques)</span></label>
+      <textarea name="inspiration" placeholder="Mettez les liens ou noms de sites dont vous aimez le style. Ça nous aide énormément à cerner votre vision." rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Avez-vous des photos de votre activité ?</label>
+      <div class="option-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="option-card"><input type="radio" name="photos" id="ph1" value="Oui, j'ai des photos"><label for="ph1"><span class="icon">📷</span>Oui</label></div>
+        <div class="option-card"><input type="radio" name="photos" id="ph2" value="Non, pas de photos"><label for="ph2"><span class="icon">❌</span>Non</label></div>
+        <div class="option-card"><input type="radio" name="photos" id="ph3" value="Photos libres de droits OK"><label for="ph3"><span class="icon">🖼️</span>Stock OK</label></div>
+      </div>
+    </div>
+
+    <!-- LOGO SECTION -->
+    <div class="form-group">
+      <label>Avez-vous un logo ? <span class="req">*</span></label>
+      <div class="option-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+        <div class="option-card"><input type="radio" name="logo" id="lg1" value="Oui, j'ai un logo" required onchange="toggleLogoSection()"><label for="lg1"><span class="icon">✅</span>Oui, j'en ai un</label></div>
+        <div class="option-card"><input type="radio" name="logo" id="lg2" value="Non, pas de logo" onchange="toggleLogoSection()"><label for="lg2"><span class="icon">❌</span>Non</label></div>
+        <div class="option-card"><input type="radio" name="logo" id="lg3" value="Je veux en créer un" onchange="toggleLogoSection()"><label for="lg3"><span class="icon">🎨</span>À créer (+150 €)</label></div>
+      </div>
+    </div>
+
+    <!-- Section logo conditionnelle -->
+    <div id="logoSection" style="display:none; background:rgba(0,255,192,0.04); border:1px solid rgba(0,255,192,0.2); border-radius:16px; padding:1.4rem; margin-top:-0.5rem; margin-bottom:1.4rem;">
+      <p style="font-size:0.82rem; color:var(--accent); letter-spacing:0.5px; text-transform:uppercase; margin-bottom:1rem;">🎨 Création de logo — Option à 150 €</p>
+
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Nom à afficher sur le logo <span class="req">*</span></label>
+        <input type="text" name="logo_nom" placeholder="Ex : Dupont Plomberie, Studio K, ...">
+      </div>
+
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Slogan <span class="opt">(optionnel)</span></label>
+        <input type="text" name="logo_slogan" placeholder="Ex : Votre artisan de confiance depuis 2010">
+      </div>
+
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label>Style de logo souhaité</label>
+        <div class="option-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="option-card"><input type="radio" name="logo_style" id="ls1" value="Icône + texte"><label for="ls1"><span class="icon">🔷</span>Icône + texte</label></div>
+          <div class="option-card"><input type="radio" name="logo_style" id="ls2" value="Lettres stylisées"><label for="ls2"><span class="icon">Aa</span>Lettres</label></div>
+          <div class="option-card"><input type="radio" name="logo_style" id="ls3" value="Pas d'idée"><label for="ls3"><span class="icon">🤷</span>Pas d'idée</label></div>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-bottom:0;">
+        <label>Couleurs souhaitées pour le logo <span class="opt">(optionnel)</span></label>
+        <input type="text" name="logo_couleurs" placeholder="Ex : bleu et blanc, tons chauds, comme mon activité...">
+      </div>
+    </div>
+
+    <div class="form-nav">
+      <button type="button" class="btn-prev" onclick="goTo(2)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
+      <button type="button" class="btn-next" onclick="goTo(4)">Suivant <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <!-- PAGE 4 — CONTACT + RECOMMANDATION -->
+  <div class="form-page" id="page4">
     <p class="form-page-title">Vos coordonnées</p>
 
     <div class="form-row">
@@ -621,8 +720,20 @@
       </select>
     </div>
 
+    <!-- RECOMMANDATION CALCULÉE -->
+    <div id="recoBox" style="display:none; background:rgba(0,255,192,0.06); border:1px solid rgba(0,255,192,0.3); border-radius:16px; padding:1.5rem; margin-bottom:1.5rem;">
+      <p style="font-size:0.75rem; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:8px;">✦ Notre recommandation pour vous</p>
+      <p id="recoOffre" style="font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; color:#fff; margin-bottom:4px;"></p>
+      <p id="recoDetail" style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.2rem;"></p>
+      <p style="font-size:0.82rem; color:var(--text-muted); margin-bottom:10px;">Est-ce que cette offre vous correspond ?</p>
+      <div style="display:flex; gap:10px;">
+        <div class="option-card" style="flex:1;"><input type="radio" name="reco_accord" id="ra1" value="Oui, cette offre m'intéresse"><label for="ra1" style="justify-content:center;"><span class="icon">✅</span>Oui, ça m'intéresse</label></div>
+        <div class="option-card" style="flex:1;"><input type="radio" name="reco_accord" id="ra2" value="Je préfère qu'on en discute"><label for="ra2" style="justify-content:center;"><span class="icon">💬</span>On en discute</label></div>
+      </div>
+    </div>
+
     <div class="form-nav">
-      <button type="button" class="btn-prev" onclick="goTo(2)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
+      <button type="button" class="btn-prev" onclick="goTo(3)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
       <button type="submit" class="btn-next">Envoyer ma demande <i class="fa-solid fa-paper-plane"></i></button>
     </div>
   </div>
@@ -663,8 +774,8 @@
     <a href="https://wa.me/33628527401" class="contact-link" target="_blank">
       <i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp
     </a>
-    <a href="mailto:db_studio@outlook.fr" class="contact-link">
-      <i class="fa-solid fa-envelope" style="color:var(--accent)"></i> db_studio@outlook.fr
+    <a href="/cdn-cgi/l/email-protection#e98d8bb69a9d9c8d8086a9869c9d85868682c78f9b" class="contact-link">
+      <i class="fa-solid fa-envelope" style="color:var(--accent)"></i> <span class="__cf_email__" data-cfemail="c5a1a79ab6b1b0a1acaa85aab0b1a9aaaaaeeba3b7">[email&#160;protected]</span>
     </a>
     <a href="https://www.instagram.com/dbstudio.business" class="contact-link" target="_blank">
       <i class="fa-brands fa-instagram" style="color:#e1306c"></i> Instagram
@@ -676,9 +787,9 @@
   <h3>⏱ Délais indicatifs</h3>
   <div class="sidebar-item"><i class="fa-solid fa-bolt" style="color:#ffa032"></i><div><strong>Prêt à l'emploi</strong><p>Livré en 48h</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 5 à 7 jours</p></div></div>
-  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Avancée</strong><p>Livré en 5 à 7 jours</p></div></div>
-  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Hôtel / Réservation</strong><p>Livré en 7 à 10 jours</p></div></div>
-  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-commerce</strong><p>Livré en 15 jours</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium</strong><p>Livré en 7 à 10 jours</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium+</strong><p>Livré en 10 à 14 jours</p></div></div>
+  <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>E-boutique</strong><p>Livré en 12 à 15 jours</p></div></div>
 </div>
 ```
 
@@ -695,21 +806,37 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   let current = 1;
+  const totalSteps = 4;
 
   function goTo(page) {
+    // Validation étape 1
     if (page === 2 && current === 1) {
-      const type = document.querySelector('input[name="type_site"]:checked');
       const secteur = document.querySelector('select[name="secteur"]').value;
-      if (!type) { alert('Veuillez sélectionner un type de site.'); return; }
+      const activite = document.querySelector('[name="description_activite"]').value.trim();
+      const concurrents = document.querySelector('[name="concurrents"]').value.trim();
       if (!secteur) { alert('Veuillez sélectionner votre secteur d\'activité.'); return; }
+      if (!activite) { alert('Veuillez décrire votre activité.'); return; }
+      if (!concurrents) { alert('Veuillez renseigner vos concurrents.'); return; }
     }
-    if (page > 3) return;
+    // Validation étape 2
+    if (page === 3 && current === 2) {
+      const type = document.querySelector('input[name="type_site"]:checked');
+      if (!type) { alert('Veuillez sélectionner un type de site.'); return; }
+    }
+    // Validation étape 3
+    if (page === 4 && current === 3) {
+      const logo = document.querySelector('input[name="logo"]:checked');
+      if (!logo) { alert('Veuillez indiquer si vous avez un logo.'); return; }
+      // Calculer et afficher la recommandation
+      showReco();
+    }
+
+    if (page > totalSteps) return;
 
     document.getElementById(`page${current}`).classList.remove('active');
     document.getElementById(`s${current}`).classList.remove('active');
-
     if (page > current) {
       document.getElementById(`s${current}`).classList.add('done');
     } else {
@@ -721,13 +848,56 @@
     document.getElementById(`s${current}`).classList.add('active');
     document.getElementById(`s${current}`).classList.remove('done');
 
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 1; i <= 3; i++) {
       document.getElementById(`l${i}`).classList.toggle('done', i < current);
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // ── LOGO SECTION CONDITIONNELLE ──
+  function toggleLogoSection() {
+    const logoVal = document.querySelector('input[name="logo"]:checked')?.value;
+    const section = document.getElementById('logoSection');
+    section.style.display = (logoVal === 'Je veux en créer un') ? 'block' : 'none';
+  }
+
+  // ── ALGORITHME DE RECOMMANDATION ──
+  function calcReco() {
+    const secteur = document.querySelector('select[name="secteur"]').value;
+    const typeSite = document.querySelector('input[name="type_site"]:checked')?.value || '';
+    const budget = parseInt(document.getElementById('budgetRange').value);
+    const objectifs = [...document.querySelectorAll('input[name="objectifs[]"]:checked')].map(o => o.value);
+
+    const veuxReservation = objectifs.includes('Réservations en ligne');
+    const veuxVendre = objectifs.includes('Vendre des produits en ligne');
+    const veuxDevis = objectifs.includes('Recevoir des demandes de devis');
+    const veuxAvis = objectifs.includes('Avis Google et témoignages');
+
+    // Logique de recommandation
+    if (secteur === 'E-commerce / Vente en ligne' || veuxVendre || typeSite === 'E-boutique') {
+      return { offre: '🛒 E-boutique — 2 500 €', detail: 'Vous souhaitez vendre en ligne. La boutique complète est faite pour vous — paiement sécurisé, gestion stocks, zéro commission contrairement à Etsy ou Shopify.', abo: '80 €/mois' };
+    }
+    if (secteur === 'Hôtellerie / Hébergement' || (secteur === 'Restauration / Bar' && veuxReservation) || typeSite === 'Vitrine Premium+') {
+      return { offre: '🏨 Vitrine Premium+ — 2 500 €', detail: 'Votre activité nécessite un système de réservation en ligne. Zéro commission contrairement à Booking ou The Fork — vos clients réservent directement chez vous.', abo: '70 €/mois' };
+    }
+    if ((veuxDevis || veuxAvis || objectifs.length >= 3) && budget >= 1200) {
+      return { offre: '🚀 Vitrine Premium — 1 800 €', detail: 'Vous avez plusieurs objectifs ambitieux. La Vitrine Premium travaille activement pour vous : devis en ligne, avis Google, SEO mensuel, rapport analytics.', abo: '50 €/mois' };
+    }
+    if (budget <= 400 || typeSite === 'Prêt à l\'emploi') {
+      return { offre: '⚡ Prêt à l\'emploi — 250 €', detail: 'Idéal pour démarrer rapidement. Site professionnel livré en 48h, déjà optimisé pour votre secteur, exclusif à votre zone.', abo: '20 €/mois' };
+    }
+    return { offre: '💻 Vitrine Simple — 800 €', detail: 'Pour être visible sur Google et présenter votre activité clairement. Sur-mesure, livré en 5 jours, avec bouton d\'appel direct et formulaire de contact.', abo: '30 €/mois' };
+  }
+
+  function showReco() {
+    const reco = calcReco();
+    document.getElementById('recoOffre').textContent = reco.offre;
+    document.getElementById('recoDetail').textContent = reco.detail + ' Abonnement mensuel : ' + reco.abo + '.';
+    document.getElementById('recoBox').style.display = 'block';
+  }
+
+  // ── BUDGET SLIDER ──
   function updateBudget(val) {
     const v = parseInt(val);
     document.getElementById('budgetDisplay').textContent = v >= 5000 ? '5 000 €+' : v.toLocaleString('fr-FR') + ' €';
@@ -740,7 +910,8 @@
   const params = new URLSearchParams(window.location.search);
   const template = params.get('template');
   if (template) {
-    document.querySelector('input[value="Prêt à l\'emploi (48h)"]').checked = true;
+    const el = document.querySelector('input[value="Prêt à l\'emploi"]');
+    if (el) el.checked = true;
   }
 
   async function sendBrevoEmail(to, toName, subject, htmlContent) {
@@ -765,9 +936,24 @@
     const secteur = form.querySelector('select[name="secteur"]').value || 'Non renseigné';
     const budget = form.querySelector('[name="budget"]').value;
     const delai = form.querySelector('input[name="delai"]:checked')?.value || 'Non renseigné';
-    const description = form.querySelector('[name="description"]').value.trim() || 'Aucune';
     const source = form.querySelector('select[name="source"]').value || 'Non renseignée';
-    const options = [...form.querySelectorAll('input[name="options[]"]:checked')].map(o => o.value).join(', ') || 'Aucune';
+    const descActivite = form.querySelector('[name="description_activite"]').value.trim() || 'Aucune';
+    const concurrents = form.querySelector('[name="concurrents"]').value.trim() || 'Aucun';
+    const siteExistant = form.querySelector('input[name="site_existant"]:checked')?.value || 'Non renseigné';
+    const siteActuel = form.querySelector('[name="site_actuel"]').value.trim() || 'Aucun';
+    const reseaux = form.querySelector('[name="reseaux"]').value.trim() || 'Non renseignés';
+    const objectifs = [...form.querySelectorAll('input[name="objectifs[]"]:checked')].map(o => o.value).join(', ') || 'Aucun';
+    const style = [...form.querySelectorAll('input[name="style[]"]:checked')].map(o => o.value).join(', ') || 'Non renseigné';
+    const couleurs = form.querySelector('[name="couleurs"]').value.trim() || 'Non renseignées';
+    const inspiration = form.querySelector('[name="inspiration"]').value.trim() || 'Aucune';
+    const photos = form.querySelector('input[name="photos"]:checked')?.value || 'Non renseigné';
+    const logo = form.querySelector('input[name="logo"]:checked')?.value || 'Non renseigné';
+    const logoNom = form.querySelector('[name="logo_nom"]')?.value.trim() || '';
+    const logoSlogan = form.querySelector('[name="logo_slogan"]')?.value.trim() || '';
+    const logoStyle = form.querySelector('input[name="logo_style"]:checked')?.value || '';
+    const logoCouleurs = form.querySelector('[name="logo_couleurs"]')?.value.trim() || '';
+    const recoAccord = form.querySelector('input[name="reco_accord"]:checked')?.value || 'Non renseigné';
+    const reco = calcReco();
 
     if (!prenom || !email) { alert('Veuillez renseigner votre prénom et votre email.'); return; }
 
@@ -777,11 +963,18 @@
 
     const delaiLivraison = {
       'Vitrine Simple': '5 à 7 jours',
-      'Vitrine Avancée': '5 à 7 jours',
-      'Hôtel / Réservation': '7 à 10 jours',
-      'E-commerce': '15 jours',
-      "Prêt à l'emploi (48h)": '48h'
+      'Vitrine Premium': '7 à 10 jours',
+      'Vitrine Premium+': '10 à 14 jours',
+      'E-boutique': '12 à 15 jours',
+      "Prêt à l'emploi": '48h'
     }[typeSite] || 'à définir';
+
+    const logoSection = logo === 'Je veux en créer un' ? `
+      <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Nom logo</td><td style="padding:8px 12px;font-size:14px;">${logoNom || '—'}</td></tr>
+      <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Slogan</td><td style="padding:8px 12px;font-size:14px;">${logoSlogan || '—'}</td></tr>
+      <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Style logo</td><td style="padding:8px 12px;font-size:14px;">${logoStyle || '—'}</td></tr>
+      <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Couleurs logo</td><td style="padding:8px 12px;font-size:14px;">${logoCouleurs || '—'}</td></tr>
+    ` : '';
 
     const mailClient = `
     <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;background:#020c0a;color:#e8f5f2;border-radius:16px;overflow:hidden;">
@@ -792,13 +985,17 @@
       <div style="padding:32px;">
         <h2 style="color:#ffffff;font-size:22px;margin-bottom:8px;">Bonjour ${prenom} 👋</h2>
         <p style="color:#8ab5ad;margin-bottom:24px;">Merci pour votre demande ! Voici ce qui va se passer maintenant :</p>
+        <div style="background:rgba(0,255,192,0.05);border:1px solid rgba(0,255,192,0.2);border-radius:12px;padding:20px;margin-bottom:24px;">
+          <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">✦ Notre recommandation pour vous</h3>
+          <p style="color:#fff;font-size:18px;font-weight:bold;margin:0 0 6px;">${reco.offre}</p>
+          <p style="color:#8ab5ad;font-size:14px;margin:0;">${reco.detail}</p>
+        </div>
         <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px;margin-bottom:24px;">
           <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">📋 Récapitulatif</h3>
           <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;width:40%;">Type de site</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${typeSite}</td></tr>
+            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;width:40%;">Type de site choisi</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${typeSite}</td></tr>
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Secteur</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${secteur}</td></tr>
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Ville</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${ville}</td></tr>
-            <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Budget estimé</td><td style="padding:6px 0;color:#ffffff;font-size:14px;">${parseInt(budget) >= 5000 ? '5 000 €+' : parseInt(budget).toLocaleString('fr-FR') + ' €'}</td></tr>
             <tr><td style="padding:6px 0;color:#8ab5ad;font-size:14px;">Délai de livraison</td><td style="padding:6px 0;color:#00ffc0;font-size:14px;font-weight:bold;">${delaiLivraison}</td></tr>
           </table>
         </div>
@@ -806,7 +1003,7 @@
           <h3 style="color:#00ffc0;font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">🚀 Les prochaines étapes</h3>
           <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">1.</strong> On vous recontacte sous 24h pour valider votre projet</p>
           <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">2.</strong> Signature du contrat + acompte de 50%</p>
-          <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">3.</strong> Brief client — on vous envoie un questionnaire rapide</p>
+          <p style="color:#e8f5f2;font-size:14px;margin:0 0 8px;"><strong style="color:#00ffc0;">3.</strong> Brief client — on affine ensemble votre projet</p>
           <p style="color:#e8f5f2;font-size:14px;margin:0;"><strong style="color:#00ffc0;">4.</strong> Livraison de votre site en <strong style="color:#00ffc0;">${delaiLivraison}</strong></p>
         </div>
         <div style="display:flex;gap:12px;margin-top:12px;">
@@ -820,30 +1017,58 @@
     </div>`;
 
     const mailMoi = `
-    <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;">
+    <div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;">
       <div style="background:#1a3a6e;padding:24px;border-radius:12px 12px 0 0;">
         <h2 style="color:#00ffc0;margin:0;font-size:20px;">🔔 Nouvelle demande de devis</h2>
         <p style="color:#aaccff;margin:6px 0 0;font-size:14px;">${new Date().toLocaleDateString('fr-FR', {weekday:'long', year:'numeric', month:'long', day:'numeric'})}</p>
       </div>
       <div style="background:#f8faff;padding:24px;border:1px solid #dde8ff;">
-        <h3 style="color:#1a3a6e;font-size:16px;margin-bottom:16px;">👤 Infos client</h3>
-        <table style="width:100%;border-collapse:collapse;">
+
+        <div style="background:#e8f5ff;border-left:4px solid #00ffc0;border-radius:8px;padding:16px;margin-bottom:20px;">
+          <p style="font-size:12px;color:#1a3a6e;text-transform:uppercase;letter-spacing:1px;margin:0 0 6px;font-weight:bold;">✦ Offre recommandée calculée</p>
+          <p style="font-size:18px;font-weight:bold;color:#1a3a6e;margin:0 0 4px;">${reco.offre}</p>
+          <p style="font-size:13px;color:#555;margin:0 0 8px;">${reco.detail}</p>
+          <p style="font-size:13px;color:#1a3a6e;margin:0;">Réponse client : <strong>${recoAccord}</strong></p>
+        </div>
+
+        <h3 style="color:#1a3a6e;font-size:16px;margin-bottom:12px;">👤 Infos client</h3>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Nom</td><td style="padding:8px 12px;font-size:14px;">${prenom} ${nom}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Email</td><td style="padding:8px 12px;font-size:14px;"><a href="mailto:${email}">${email}</a></td></tr>
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Téléphone</td><td style="padding:8px 12px;font-size:14px;">${tel}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Entreprise</td><td style="padding:8px 12px;font-size:14px;">${entreprise}</td></tr>
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Ville</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${ville}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Source</td><td style="padding:8px 12px;font-size:14px;">${source}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Réseaux sociaux</td><td style="padding:8px 12px;font-size:14px;">${reseaux}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Source</td><td style="padding:8px 12px;font-size:14px;">${source}</td></tr>
         </table>
-        <h3 style="color:#1a3a6e;font-size:16px;margin:24px 0 16px;">📋 Projet</h3>
-        <table style="width:100%;border-collapse:collapse;">
-          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Type</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${typeSite}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Secteur</td><td style="padding:8px 12px;font-size:14px;">${secteur}</td></tr>
+
+        <h3 style="color:#1a3a6e;font-size:16px;margin-bottom:12px;">🏢 Activité</h3>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Secteur</td><td style="padding:8px 12px;font-size:14px;">${secteur}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Description</td><td style="padding:8px 12px;font-size:14px;">${descActivite}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Concurrents</td><td style="padding:8px 12px;font-size:14px;">${concurrents}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Site existant</td><td style="padding:8px 12px;font-size:14px;">${siteExistant}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Adresse actuelle</td><td style="padding:8px 12px;font-size:14px;">${siteActuel}</td></tr>
+        </table>
+
+        <h3 style="color:#1a3a6e;font-size:16px;margin-bottom:12px;">📋 Projet</h3>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Type choisi</td><td style="padding:8px 12px;font-size:14px;color:#2D6BE4;font-weight:bold;">${typeSite}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Objectifs</td><td style="padding:8px 12px;font-size:14px;">${objectifs}</td></tr>
           <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Budget</td><td style="padding:8px 12px;font-size:14px;">${parseInt(budget) >= 5000 ? '5 000 €+' : parseInt(budget).toLocaleString('fr-FR') + ' €'}</td></tr>
           <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Délai souhaité</td><td style="padding:8px 12px;font-size:14px;">${delai}</td></tr>
-          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Options</td><td style="padding:8px 12px;font-size:14px;">${options}</td></tr>
-          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Description</td><td style="padding:8px 12px;font-size:14px;">${description}</td></tr>
         </table>
+
+        <h3 style="color:#1a3a6e;font-size:16px;margin-bottom:12px;">🎨 Design & Identité</h3>
+        <table style="width:100%;border-collapse:collapse;margin-bottom:20px;">
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;width:35%;">Style souhaité</td><td style="padding:8px 12px;font-size:14px;">${style}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Couleurs</td><td style="padding:8px 12px;font-size:14px;">${couleurs}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Inspirations</td><td style="padding:8px 12px;font-size:14px;">${inspiration}</td></tr>
+          <tr><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Photos dispo</td><td style="padding:8px 12px;font-size:14px;">${photos}</td></tr>
+          <tr style="background:#eef3fb;"><td style="padding:8px 12px;font-weight:bold;color:#1a3a6e;font-size:14px;">Logo</td><td style="padding:8px 12px;font-size:14px;">${logo}</td></tr>
+          ${logoSection}
+        </table>
+
         <h3 style="color:#1a3a6e;font-size:16px;margin:24px 0 16px;">✅ Checklist onboarding</h3>
         <div style="background:white;border:1px solid #dde8ff;border-radius:8px;padding:16px;">
           <p style="color:#666;font-size:12px;margin:0 0 12px;">Délai prévu : <strong style="color:#2D6BE4;">${delaiLivraison}</strong></p>
@@ -871,23 +1096,11 @@
     try {
       await Promise.all([
         sendBrevoEmail(email, `${prenom} ${nom}`, 'DB Studio — Votre demande est bien reçue ✅', mailClient),
-        sendBrevoEmail('db_studio@outlook.fr', 'DB Studio', `🔔 Nouveau devis — ${prenom} ${nom} (${typeSite} · ${ville})`, mailMoi)
+        sendBrevoEmail('db_studio@outlook.fr', 'DB Studio', `🔔 Nouveau devis — ${prenom} ${nom} (${reco.offre.split('—')[0].trim()} · ${ville})`, mailMoi)
       ]);
 
       form.style.display = 'none';
       document.querySelector('.steps').style.display = 'none';
       document.getElementById('successScreen').style.display = 'block';
 
-    } catch(err) {
-      console.error(err);
-      alert('Une erreur est survenue. Contactez-nous directement par WhatsApp.');
-      btn.textContent = 'Envoyer ma demande';
-      btn.disabled = false;
-    }
-  });
-
-  updateBudget(500);
-</script>
-
-</body>
-</html>
+    } catch(err) 
