@@ -496,10 +496,15 @@
       #nos-offres { grid-template-columns: 1fr; }
       .text-bloc { margin: 0 0 2rem; }
     }
+
+/*=== AVIS CLIENT  ===*/
+
 .container-satisfaction{
    margin: 10px auto;
    padding: 10px;
+   text-align: center;
+   background: ghostwhite;
 }
 .satisfaction {
-   
+   color: var(--accent);
 } 
