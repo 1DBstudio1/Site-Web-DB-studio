@@ -496,3 +496,10 @@
       #nos-offres { grid-template-columns: 1fr; }
       .text-bloc { margin: 0 0 2rem; }
     }
+.container-satisfaction{
+   margin: 10px auto;
+   padding: 10px;
+}
+.satisfaction {
+   
+} 
