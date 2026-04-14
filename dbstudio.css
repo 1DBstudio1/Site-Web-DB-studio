@@ -504,14 +504,22 @@
    padding: 10px;
    width: 450px; height: 450px;
    background: grey;
-   backdrop-filter: blur(5px);
+   backdrop-filter: blur(1px);
    border: solid 2px var(--accent);
+   text-align: center;
 }
 .satisfaction {
    border: solid 2px var(--accent);
    color: var(--accent);
    margin: 10px auto;
+   padding: 5px;
+   text-align: center;
 } 
+
+
+
+
+
 
 
 
