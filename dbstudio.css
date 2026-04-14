@@ -503,11 +503,14 @@
    margin: 10px auto;
    padding: 10px;
    width: 450px; height: 450px;
-   background: white;
+   background: grey;
+   backdrop-filter: blur(5px);
+   border: solid 2px var(--accent);
 }
 .satisfaction {
-   text-align: center;
+   border: solid 2px var(--accent);
    color: var(--accent);
+   margin: 10px auto;
 } 
 
 
