@@ -500,28 +500,32 @@
 /*=== AVIS CLIENT  ===*/
 
 #container-satisfaction{
-   margin: 10px auto;
-   padding: 10px;
-   width: 450px; height: 450px;
-   background: grey;
-   backdrop-filter: blur(1px);
-   border: solid 2px var(--accent);
-   display: block;
-   border-radius: 50px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 450px;
+    height: 450px;
+    background: grey;
+    backdrop-filter: blur(1px);
+    border: solid 2px var(--accent);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;   /* ← centre horizontalement #satisfaction */
 }
+
 #satisfaction{
-   border: solid 2px var(--accent);
-   color: var(--accent);
-   margin: 30px auto;
-   padding: 10px;
-   border-radius: 50px;
-   justify-content: center;
-   text-align: center;
-} 
+    border: solid 2px var(--accent);
+    color: var(--accent);
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 50px;
+    text-align: center;
+    /* pas besoin de width spécifique si tu veux qu'il s'adapte */
+}
 #cadre-satisfaction{
    width: 225px; height: 225px;
    margin: 10px auto;
    border: solid 2px black;
+   border-radius: 40px;
 }
 
 
