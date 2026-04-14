@@ -499,7 +499,7 @@
 
 /*=== AVIS CLIENT  ===*/
 
-.container-satisfaction{
+#container-satisfaction{
    margin: 10px auto;
    padding: 10px;
    width: 450px; height: 450px;
@@ -509,15 +509,20 @@
    display: block;
    border-radius: 50px;
 }
-.satisfaction{
+#satisfaction a{
    border: solid 2px var(--accent);
    color: var(--accent);
-   margin: 15px auto;
+   margin: 30px auto;
    padding: 10px;
    border-radius: 50px;
-   justify-content: center; 
+   justify-content: center;
+   text-align: center;
 } 
-
+#cadre-satisfaction{
+   width: 225px; height: 225px;
+   margin: 10px auto;
+   border: solid 2px black;
+}
 
 
 
