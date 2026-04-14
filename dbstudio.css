@@ -521,12 +521,7 @@
     text-align: center;
     /* pas besoin de width spécifique si tu veux qu'il s'adapte */
 }
-#cadre-satisfaction{
-   width: 225px; height: 225px;
-   margin: 10px auto;
-   border: solid 2px black;
-   border-radius: 40px;
-}
+
 
 
 
