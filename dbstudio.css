@@ -502,9 +502,19 @@
 .container-satisfaction{
    margin: 10px auto;
    padding: 10px;
-   text-align: center;
-   background: ghostwhite;
+   width: 450px; height: 450px;
+   background: white;
 }
 .satisfaction {
+   text-align: center;
    color: var(--accent);
 } 
+
+
+
+
+
+
+
+
+
