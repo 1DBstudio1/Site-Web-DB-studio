@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DB Studio — Avis clients</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080808;--bg2:#111;--bg3:#181818;--bg4:#1E1E1E;
+  --w:#FFFFFF;--tx:#E8E8E8;--mu:#666;--mu2:#444;
+  --gr:#00E87A;--gr2:#00C968;--gr3:rgba(0,232,122,.08);--grl:rgba(0,232,122,.18);
+  --line:rgba(255,255,255,.07);--line2:rgba(0,232,122,.2);
+  --ok:#00E87A;--ko:#FF4D4D;--warn:#FFB800;
+  --star:#FFB800;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;font-weight:300;min-height:100vh;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(8,8,8,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.logo-wrap{display:inline-flex;align-items:center;gap:0;border:2px solid var(--gr);border-radius:6px;padding:5px 12px;cursor:pointer}
+.logo-txt{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gr)}
+.navb{display:flex;gap:6px;flex-wrap:wrap}
+.nb{padding:6px 14px;border-radius:5px;font-size:.75rem;font-family:'Space Grotesk',sans-serif;font-weight:600;cursor:pointer;transition:all .18s;border:none;letter-spacing:.04em;text-transform:uppercase}
+.nb.g{background:transparent;color:var(--mu);border:1px solid var(--line)}.nb.g:hover{color:var(--w);border-color:rgba(255,255,255,.2)}
+.nb.s{background:var(--gr);color:#000;font-weight:700}.nb.s:hover{background:var(--gr2)}
+
+/* ── PAGES ── */
+.page{display:none}.page.active{display:block}
+
+/* ═══════════════════════
+   HOME
+═══════════════════════ */
+#p-home{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 24px 60px;text-align:center;position:relative;overflow:hidden}
+#p-home::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,232,122,.07) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.hbadge{display:inline-flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gr);border:1px solid var(--line2);border-radius:4px;padding:5px 14px;margin-bottom:1.8rem}
+.h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.4rem,5.5vw,4.2rem);font-weight:700;line-height:1.02;letter-spacing:-.04em;margin-bottom:1rem;color:var(--w)}
+.h1 em{font-style:normal;color:var(--gr)}
+.hp{font-size:.93rem;color:var(--mu);max-width:400px;line-height:1.8;margin:0 auto 2.4rem}
+.hact{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.bm{padding:13px 32px;background:var(--gr);color:#000;border:none;border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:.84rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.bm:hover{background:var(--gr2);transform:translateY(-2px)}
+.bs{padding:13px 32px;background:transparent;color:var(--mu);border:1px solid var(--line);border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:.84rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.bs:hover{color:var(--w);border-color:rgba(255,255,255,.2)}
+.hstats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:3.2rem;padding-top:2.4rem;border-top:1px solid var(--line)}
+.hs .sn{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:700;color:var(--w);line-height:1}
+.hs .sn span{color:var(--gr)}
+.hs .sl{font-size:.7rem;color:var(--mu);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+
+/* ═══════════════════════
+   FORM
+═══════════════════════ */
+#p-form{padding:76px 0 60px;max-width:700px;margin:0 auto;padding-left:18px;padding-right:18px}
+.fh{text-align:center;padding:44px 0 36px;border-bottom:1px solid var(--line);margin-bottom:38px}
+.ftag{display:inline-block;font-family:'Space Grotesk',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gr);border:1px solid var(--line2);border-radius:4px;padding:4px 11px;margin-bottom:1rem}
+.fh h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;letter-spacing:-.04em;margin-bottom:.6rem;color:var(--w)}
+.fh h2 em{font-style:normal;color:var(--gr)}
+.fh p{font-size:.86rem;color:var(--mu);line-height:1.7}
+.fsec{margin-bottom:38px}
+.fsh{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.fsn{width:26px;height:26px;border-radius:4px;background:var(--gr3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700;color:var(--gr);flex-shrink:0}
+.fst{font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:600;color:var(--w)}
+.fss{font-size:.72rem;color:var(--mu);margin-left:auto}
+.qb{margin-bottom:16px;padding:16px 18px;border:1px solid var(--line);border-radius:7px;background:var(--bg2);transition:border-color .2s}
+.qb:hover{border-color:rgba(0,232,122,.15)}
+.ql{font-size:.84rem;color:rgba(232,232,232,.85);line-height:1.6;margin-bottom:12px;display:flex;gap:9px;align-items:flex-start}
+.qn{font-family:'Space Grotesk',sans-serif;font-size:.66rem;font-weight:700;color:var(--gr);opacity:.7;flex-shrink:0;margin-top:1px;min-width:20px}
+.ouinon{display:flex;gap:7px}
+.ynb{flex:1;padding:8px 10px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--mu);font-family:'Inter',sans-serif;font-size:.82rem;cursor:pointer;transition:all .15s}
+.ynb:hover{border-color:rgba(255,255,255,.2);color:var(--w)}
+.ynb.y.on{border-color:var(--ok);color:var(--ok);background:rgba(0,232,122,.07)}
+.ynb.n.on{border-color:var(--ko);color:var(--ko);background:rgba(255,77,77,.07)}
+.sc10{display:flex;gap:4px;flex-wrap:wrap}
+.s10{width:34px;height:34px;border-radius:5px;border:1px solid var(--line);background:transparent;color:var(--mu);font-size:.8rem;font-family:'Space Grotesk',sans-serif;font-weight:600;cursor:pointer;transition:all .15s}
+.s10:hover{border-color:var(--gr);color:var(--gr)}
+.s10.on{border-color:var(--gr);background:var(--gr3);color:var(--gr);font-weight:700}
+.choices{display:flex;flex-direction:column;gap:6px}
+.ch{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--mu);font-size:.83rem;font-family:'Inter',sans-serif;cursor:pointer;transition:all .15s;text-align:left;width:100%}
+.ch:hover{border-color:rgba(255,255,255,.14);color:var(--w)}
+.ch.on{border-color:var(--gr);background:var(--gr3);color:var(--w)}
+.chd{width:14px;height:14px;border-radius:50%;border:1.5px solid currentColor;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.ch.on .chd{background:var(--gr);border-color:var(--gr)}
+.ch.on .chd::after{content:'';width:5px;height:5px;border-radius:50%;background:#000}
+textarea,input[type=text]{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:5px;padding:9px 12px;color:var(--tx);font-family:'Inter',sans-serif;font-size:.83rem;resize:vertical;outline:none;transition:border-color .2s}
+textarea{min-height:70px}
+textarea:focus,input:focus{border-color:var(--gr)}
+textarea::placeholder,input::placeholder{color:rgba(255,255,255,.14)}
+.ffoot{text-align:center;padding-top:30px;border-top:1px solid var(--line)}
+.submit{padding:14px 48px;background:var(--gr);color:#000;border:none;border-radius:6px;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.submit:hover{background:var(--gr2);transform:translateY(-1px)}
+.fnote{font-size:.73rem;color:var(--mu);margin-top:9px}
+
+/* ═══════════════════════
+   CONFIRM
+═══════════════════════ */
+#p-confirm{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:80px 24px;text-align:center}
+.conf{max-width:440px}
+.cico{width:62px;height:62px;border-radius:8px;background:var(--gr3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 1.6rem}
+.conf h2{font-family:'Space Grotesk',sans-serif;font-size:1.9rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.7rem;color:var(--w)}
+.conf h2 em{font-style:normal;color:var(--gr)}
+.conf p{font-size:.87rem;color:var(--mu);line-height:1.8;margin-bottom:1.8rem}
+
+/* ═══════════════════════
+   DASHBOARD
+═══════════════════════ */
+#p-dash{padding:76px 0 60px;max-width:1040px;margin:0 auto;padding-left:18px;padding-right:18px}
+.dh{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:36px 0 26px;border-bottom:1px solid var(--line);margin-bottom:30px}
+.dh h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;letter-spacing:-.03em;color:var(--w)}
+.dh h2 em{font-style:normal;color:var(--gr)}
+.dh p{font-size:.79rem;color:var(--mu);margin-top:3px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:11px;margin-bottom:28px}
+.kpi{padding:18px 20px;border:1px solid var(--line);border-radius:7px;background:var(--bg2)}
+.kpiv{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--w);line-height:1;margin-bottom:3px}
+.kpiv sub{font-size:.85rem;color:var(--mu);font-weight:400}
+.kpil{font-size:.69rem;color:var(--mu);letter-spacing:.08em;text-transform:uppercase}
+
+/* Google-style cards */
+.rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:11px;margin-bottom:28px}
+.rvc{background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:15px 16px;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;gap:8px}
+.rvc:hover{border-color:var(--line2);transform:translateY(-2px)}
+.rvtop{display:flex;align-items:center;justify-content:space-between}
+.rvnom{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:600;color:var(--w)}
+.rvdate{font-size:.69rem;color:var(--mu)}
+.rvst{font-size:.9rem;line-height:1;display:flex;align-items:center;gap:6px}
+.rvpre{display:inline-block;font-size:.64rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gr);background:var(--gr3);border:1px solid var(--line2);border-radius:3px;padding:2px 7px;align-self:flex-start}
+.rvtxt{font-size:.8rem;color:rgba(232,232,232,.55);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.rvsc{display:inline-flex;padding:2px 8px;border-radius:3px;font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:700}
+.sh{background:rgba(0,232,122,.1);color:#00E87A;border:1px solid rgba(0,232,122,.22)}
+.sm{background:rgba(255,184,0,.09);color:#FFB800;border:1px solid rgba(255,184,0,.22)}
+.sl{background:rgba(255,77,77,.09);color:#FF6666;border:1px solid rgba(255,77,77,.22)}
+
+/* Table */
+.twrap{border:1px solid var(--line);border-radius:7px;overflow:hidden;margin-bottom:28px}
+.thdr{padding:11px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--bg3)}
+.thdr span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+table{width:100%;border-collapse:collapse}
+th{padding:9px 14px;text-align:left;font-size:.67rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);border-bottom:1px solid var(--line);background:var(--bg3)}
+td{padding:12px 14px;font-size:.81rem;border-bottom:1px solid rgba(255,255,255,.035);color:rgba(232,232,232,.8)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.012)}
+.abv{padding:4px 10px;border-radius:3px;font-size:.7rem;cursor:pointer;transition:all .15s;font-family:'Space Grotesk',sans-serif;font-weight:600;background:var(--gr3);color:var(--gr);border:1px solid var(--line2)}
+.abv:hover{background:rgba(0,232,122,.15)}
+.abd{padding:4px 10px;border-radius:3px;font-size:.7rem;cursor:pointer;transition:all .15s;font-family:'Space Grotesk',sans-serif;background:transparent;color:var(--mu2);border:1px solid var(--line)}
+.abd:hover{color:var(--ko);border-color:rgba(255,77,77,.3)}
+.empty{text-align:center;padding:48px 20px;color:var(--mu);font-size:.83rem;line-height:1.7}
+.empty strong{display:block;font-family:'Space Grotesk',sans-serif;font-size:1rem;color:var(--w);opacity:.35;margin-bottom:5px}
+
+/* ═══════════════════════
+   WIDGET
+═══════════════════════ */
+#p-widget{padding:76px 0 60px;max-width:720px;margin:0 auto;padding-left:18px;padding-right:18px}
+.wprev{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg2);margin-bottom:22px}
+.wph{padding:11px 16px;border-bottom:1px solid var(--line);font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--mu)}
+.wpb{padding:16px}
+.codebl{background:var(--bg3);border:1px solid var(--line);border-radius:5px;padding:12px 14px;font-family:'Courier New',monospace;font-size:.72rem;color:var(--mu);line-height:1.7;white-space:pre;overflow-x:auto;margin-bottom:8px}
+.copybtn{padding:7px 16px;background:var(--gr);color:#000;border:none;border-radius:4px;font-size:.75rem;font-weight:700;font-family:'Space Grotesk',sans-serif;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.06em}
+.copybtn:hover{background:var(--gr2)}
+
+/* ═══════════════════════
+   MODAL
+═══════════════════════ */
+.mbg{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.85);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:18px}
+.mbg.open{display:flex}
+.modal{background:#0F0F0F;border:1px solid var(--line);border-radius:9px;width:100%;max-width:620px;max-height:86vh;overflow-y:auto}
+.mhdr{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:#0F0F0F;z-index:1}
+.mhdr h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;color:var(--w)}
+.mcl{width:28px;height:28px;border-radius:4px;border:1px solid var(--line);background:transparent;color:var(--mu);font-size:.85rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.mcl:hover{border-color:var(--gr);color:var(--gr)}
+.mbody{padding:18px 22px}
+.mq{margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.04)}
+.mq:last-child{border-bottom:none;margin-bottom:0}
+.mql{font-size:.72rem;color:var(--mu);margin-bottom:3px}
+.mqv{font-size:.86rem;color:var(--w)}
+
+@media(max-width:580px){
+  nav{padding:0 14px}.navb{gap:4px}.nb{padding:5px 10px;font-size:.68rem}
+  .h1{font-size:2.2rem}
+  th:nth-child(3),td:nth-child(3){display:none}
+  .rg{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-wrap" onclick="sp('home')">
+    <span class="logo-txt">DB Studio</span>
+  </div>
+  <div class="navb">
+    <button class="nb g" onclick="sp('form')">Questionnaire</button>
+    <button class="nb g" onclick="sp('widget')">Widget</button>
+    <button class="nb s" onclick="sp('dash')">Dashboard</button>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="page active" id="p-home">
+  <div class="hbadge">✦ Satisfaction client</div>
+  <h1 class="h1">Ce que pensent<br>vos <em>clients</em></h1>
+  <p class="hp">Collectez les avis après chaque prestation. Analysez. Affichez les meilleurs retours sur votre site.</p>
+  <div class="hact">
+    <button class="bm" onclick="sp('form')">Envoyer un questionnaire →</button>
+    <button class="bs" onclick="sp('dash')">Voir le dashboard</button>
+  </div>
+  <div class="hstats" id="hstats"></div>
+</div>
+
+<!-- FORM -->
+<div class="page" id="p-form">
+  <div class="fh">
+    <div class="ftag">Évaluation prestation</div>
+    <h2>Votre avis <em>compte</em></h2>
+    <p>3 minutes pour nous aider à nous améliorer en continu.</p>
+  </div>
+
+  <!-- I -->
+  <div class="fsec">
+    <div class="fsh"><div class="fsn">I</div><span class="fst">Informations</span></div>
+    <div class="qb"><div class="ql"><span class="qn">01</span>Nom de votre établissement ou entreprise</div><input type="text" id="q-nom" placeholder="Ex : Hôtel Le Napoléon"></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">02</span>Type de prestation réalisée</div>
+      <div class="choices" id="q02">
+        <button class="ch" data-v="Création site vitrine"><div class="chd"></div>Création de site vitrine</button>
+        <button class="ch" data-v="Refonte site existant"><div class="chd"></div>Refonte de site existant</button>
+        <button class="ch" data-v="Site e-commerce"><div class="chd"></div>Site e-commerce</button>
+        <button class="ch" data-v="Site prêt à l'emploi"><div class="chd"></div>Site prêt à l'emploi</button>
+        <button class="ch" data-v="Maintenance"><div class="chd"></div>Maintenance & mises à jour</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- II -->
+  <div class="fsec">
+    <div class="fsh"><div class="fsn">II</div><span class="fst">Attentes & objectifs</span><span class="fss">6 questions</span></div>
+    <div class="qb"><div class="ql"><span class="qn">03</span>Vos attentes initiales ont-elles été bien comprises dès le départ ?</div><div class="ouinon" id="q03"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">04</span>Le brief initial a-t-il été respecté tout au long du projet ?</div>
+      <div class="choices" id="q04">
+        <button class="ch" data-v="Totalement"><div class="chd"></div>Totalement respecté</button>
+        <button class="ch" data-v="En grande partie"><div class="chd"></div>En grande partie</button>
+        <button class="ch" data-v="Partiellement"><div class="chd"></div>Partiellement</button>
+        <button class="ch" data-v="Peu respecté"><div class="chd"></div>Peu respecté</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">05</span>Vous êtes-vous senti écouté et pris en compte ?</div><div class="ouinon" id="q05"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">06</span>Le résultat correspond-il à ce que vous imaginiez ? <span style="color:var(--mu);font-size:.76rem">/10</span></div><div class="sc10" id="q06"><button class="s10" data-v="1">1</button><button class="s10" data-v="2">2</button><button class="s10" data-v="3">3</button><button class="s10" data-v="4">4</button><button class="s10" data-v="5">5</button><button class="s10" data-v="6">6</button><button class="s10" data-v="7">7</button><button class="s10" data-v="8">8</button><button class="s10" data-v="9">9</button><button class="s10" data-v="10">10</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">07</span>Y a-t-il des aspects de votre vision qui n'ont pas été intégrés ?</div><textarea id="q07" placeholder="Décrivez si besoin..."></textarea></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">08</span>Le projet a-t-il évolué par rapport au brief initial ?</div>
+      <div class="choices" id="q08">
+        <button class="ch" data-v="Conforme au brief"><div class="chd"></div>Conforme au brief — pas d'écart</button>
+        <button class="ch" data-v="Évolution positive"><div class="chd"></div>A évolué positivement</button>
+        <button class="ch" data-v="Évolution mitigée"><div class="chd"></div>Évolution mitigée</button>
+        <button class="ch" data-v="Pas dans le bon sens"><div class="chd"></div>Pas dans la bonne direction</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- III -->
+  <div class="fsec">
+    <div class="fsh"><div class="fsn">III</div><span class="fst">Design & esthétique</span><span class="fss">7 questions</span></div>
+    <div class="qb"><div class="ql"><span class="qn">09</span>Note pour l'esthétique générale du site <span style="color:var(--mu);font-size:.76rem">/10</span></div><div class="sc10" id="q09"><button class="s10" data-v="1">1</button><button class="s10" data-v="2">2</button><button class="s10" data-v="3">3</button><button class="s10" data-v="4">4</button><button class="s10" data-v="5">5</button><button class="s10" data-v="6">6</button><button class="s10" data-v="7">7</button><button class="s10" data-v="8">8</button><button class="s10" data-v="9">9</button><button class="s10" data-v="10">10</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">10</span>Le design reflète-t-il l'image de votre établissement ?</div><div class="ouinon" id="q10"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">11</span>Les couleurs et la typographie vous conviennent-elles ?</div>
+      <div class="choices" id="q11">
+        <button class="ch" data-v="Tout à fait"><div class="chd"></div>Tout à fait — exactement ce que je voulais</button>
+        <button class="ch" data-v="Globalement oui"><div class="chd"></div>Globalement oui</button>
+        <button class="ch" data-v="Moyennement"><div class="chd"></div>Moyennement</button>
+        <button class="ch" data-v="Non"><div class="chd"></div>Non, à retravailler</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">12</span>Les visuels et photos intégrés sont-ils de bonne qualité ?</div><div class="ouinon" id="q12"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">13</span>Le rendu sur mobile est-il satisfaisant ?</div>
+      <div class="choices" id="q13">
+        <button class="ch" data-v="Très satisfaisant"><div class="chd"></div>Très satisfaisant</button>
+        <button class="ch" data-v="Correct"><div class="chd"></div>Correct</button>
+        <button class="ch" data-v="À améliorer"><div class="chd"></div>À améliorer</button>
+        <button class="ch" data-v="Non testé"><div class="chd"></div>Non testé</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">14</span>Le design vous distingue-t-il de vos concurrents ?</div><div class="ouinon" id="q14"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">15</span>Qu'est-ce qui vous a le plus plu visuellement ?</div><textarea id="q15" placeholder="L'élément visuel le plus réussi selon vous..."></textarea></div>
+  </div>
+
+  <!-- IV -->
+  <div class="fsec">
+    <div class="fsh"><div class="fsn">IV</div><span class="fst">Fonctionnalité & navigation</span><span class="fss">5 questions</span></div>
+    <div class="qb"><div class="ql"><span class="qn">16</span>La navigation est-elle intuitive ? <span style="color:var(--mu);font-size:.76rem">/10</span></div><div class="sc10" id="q16"><button class="s10" data-v="1">1</button><button class="s10" data-v="2">2</button><button class="s10" data-v="3">3</button><button class="s10" data-v="4">4</button><button class="s10" data-v="5">5</button><button class="s10" data-v="6">6</button><button class="s10" data-v="7">7</button><button class="s10" data-v="8">8</button><button class="s10" data-v="9">9</button><button class="s10" data-v="10">10</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">17</span>Toutes les fonctionnalités demandées ont-elles été livrées ?</div><div class="ouinon" id="q17"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">18</span>La vitesse de chargement est-elle correcte ?</div>
+      <div class="choices" id="q18">
+        <button class="ch" data-v="Très rapide"><div class="chd"></div>Très rapide</button>
+        <button class="ch" data-v="Correct"><div class="chd"></div>Correct</button>
+        <button class="ch" data-v="Un peu lent"><div class="chd"></div>Un peu lent</button>
+        <button class="ch" data-v="Lent"><div class="chd"></div>Lent</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">19</span>Les textes sont-ils bien rédigés et sans fautes ?</div><div class="ouinon" id="q19"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">20</span>Y a-t-il des fonctionnalités manquantes ?</div><textarea id="q20" placeholder="Décrivez si besoin..."></textarea></div>
+  </div>
+
+  <!-- V -->
+  <div class="fsec">
+    <div class="fsh"><div class="fsn">V</div><span class="fst">Qualité de la prestation</span><span class="fss">7 questions</span></div>
+    <div class="qb"><div class="ql"><span class="qn">21</span>Qualité globale de la prestation <span style="color:var(--mu);font-size:.76rem">/10</span></div><div class="sc10" id="q21"><button class="s10" data-v="1">1</button><button class="s10" data-v="2">2</button><button class="s10" data-v="3">3</button><button class="s10" data-v="4">4</button><button class="s10" data-v="5">5</button><button class="s10" data-v="6">6</button><button class="s10" data-v="7">7</button><button class="s10" data-v="8">8</button><button class="s10" data-v="9">9</button><button class="s10" data-v="10">10</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">22</span>Les délais annoncés ont-ils été respectés ?</div>
+      <div class="choices" id="q22">
+        <button class="ch" data-v="Entièrement respectés"><div class="chd"></div>Entièrement respectés</button>
+        <button class="ch" data-v="Léger retard acceptable"><div class="chd"></div>Léger retard — acceptable</button>
+        <button class="ch" data-v="Retard notable"><div class="chd"></div>Retard notable</button>
+        <button class="ch" data-v="Non respectés"><div class="chd"></div>Non respectés</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">23</span>La communication tout au long du projet <span style="color:var(--mu);font-size:.76rem">/10</span></div><div class="sc10" id="q23"><button class="s10" data-v="1">1</button><button class="s10" data-v="2">2</button><button class="s10" data-v="3">3</button><button class="s10" data-v="4">4</button><button class="s10" data-v="5">5</button><button class="s10" data-v="6">6</button><button class="s10" data-v="7">7</button><button class="s10" data-v="8">8</button><button class="s10" data-v="9">9</button><button class="s10" data-v="10">10</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">24</span>Vos retours ont-ils été pris en compte rapidement ?</div><div class="ouinon" id="q24"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">25</span>Le rapport qualité / prix vous semble-t-il juste ?</div>
+      <div class="choices" id="q25">
+        <button class="ch" data-v="Excellent"><div class="chd"></div>Excellent rapport qualité/prix</button>
+        <button class="ch" data-v="Juste"><div class="chd"></div>Juste et cohérent</button>
+        <button class="ch" data-v="Un peu cher"><div class="chd"></div>Un peu cher pour le résultat</button>
+        <button class="ch" data-v="Trop cher"><div class="chd"></div>Trop cher</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">26</span>Avez-vous été accompagné après la livraison ?</div><div class="ouinon" id="q26"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">27</span>Qu'est-ce qui aurait pu être fait mieux ?</div><textarea id="q27" placeholder="Vos suggestions..."></textarea></div>
+  </div>
+
+  <!-- VI -->
+  <div class="fsec">
+    <div class="fsh"><div class="fsn">VI</div><span class="fst">Satisfaction globale</span><span class="fss">5 questions</span></div>
+    <div class="qb"><div class="ql"><span class="qn">28</span>Votre note de satisfaction globale <span style="color:var(--mu);font-size:.76rem">/10</span></div><div class="sc10" id="q28"><button class="s10" data-v="1">1</button><button class="s10" data-v="2">2</button><button class="s10" data-v="3">3</button><button class="s10" data-v="4">4</button><button class="s10" data-v="5">5</button><button class="s10" data-v="6">6</button><button class="s10" data-v="7">7</button><button class="s10" data-v="8">8</button><button class="s10" data-v="9">9</button><button class="s10" data-v="10">10</button></div></div>
+    <div class="qb">
+      <div class="ql"><span class="qn">29</span>Recommanderiez-vous DB Studio à d'autres professionnels ?</div>
+      <div class="choices" id="q29">
+        <button class="ch" data-v="Oui sans hésiter"><div class="chd"></div>Oui, sans hésiter</button>
+        <button class="ch" data-v="Probablement oui"><div class="chd"></div>Probablement oui</button>
+        <button class="ch" data-v="Peut-être"><div class="chd"></div>Peut-être</button>
+        <button class="ch" data-v="Non"><div class="chd"></div>Non</button>
+      </div>
+    </div>
+    <div class="qb"><div class="ql"><span class="qn">30</span>Seriez-vous prêt à retravailler avec DB Studio ?</div><div class="ouinon" id="q30"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non</button></div></div>
+    <div class="qb"><div class="ql"><span class="qn">31</span>En quelques mots, qu'est-ce que DB Studio vous a apporté ?</div><textarea id="q31" placeholder="Votre témoignage (affiché sur le site si vous l'autorisez)..."></textarea></div>
+    <div class="qb"><div class="ql"><span class="qn">32</span>Autorisez-vous l'affichage de votre avis sur le site DB Studio ?</div><div class="ouinon" id="q32"><button class="ynb y" data-v="Oui">Oui</button><button class="ynb n" data-v="Non">Non, confidentiel</button></div></div>
+  </div>
+
+  <div class="ffoot">
+    <button class="submit" onclick="soumettre()">Envoyer mon avis</button>
+    <p class="fnote">Réponses confidentielles — utilisées uniquement par DB Studio.</p>
+  </div>
+</div>
+
+<!-- CONFIRM -->
+<div class="page" id="p-confirm">
+  <div class="conf">
+    <div class="cico">✦</div>
+    <h2>Merci pour <em>votre retour</em></h2>
+    <p>Votre avis a bien été enregistré et sauvegardé. Il nous aide à améliorer chaque prestation.</p>
+    <button class="bm" onclick="sp('home')">Retour à l'accueil</button>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="page" id="p-dash">
+  <div class="dh">
+    <div><h2>Retours <em>clients</em></h2><p id="dsub"></p></div>
+    <button class="bm" onclick="sp('form')">+ Nouveau questionnaire</button>
+  </div>
+  <div class="kpis" id="kpis"></div>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Derniers avis</span>
+    <span style="font-size:.7rem;color:var(--mu)" id="rvc"></span>
+  </div>
+  <div class="rg" id="rg"></div>
+  <div class="twrap">
+    <div class="thdr"><span>Historique complet</span><span id="tc" style="font-size:.68rem;color:var(--mu)"></span></div>
+    <div id="tbody"></div>
+  </div>
+</div>
+
+<!-- WIDGET -->
+<div class="page" id="p-widget">
+  <div class="fh">
+    <div class="ftag">Intégration site</div>
+    <h2>Widget <em>avis</em></h2>
+    <p>Copiez ce code dans votre site DB Studio pour afficher vos derniers avis.</p>
+  </div>
+  <div style="margin-bottom:12px;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:600;color:var(--w)">Prévisualisation</div>
+  <div class="wprev"><div class="wph">Aperçu widget</div><div class="wpb" id="wprev"></div></div>
+  <div style="margin-bottom:10px;font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:600;color:var(--w)">Code à intégrer</div>
+  <div class="codebl" id="codbl"></div>
+  <button class="copybtn" onclick="copier()">Copier le code</button>
+</div>
+
+<!-- MODAL -->
+<div class="mbg" id="modal">
+  <div class="modal">
+    <div class="mhdr"><h3 id="mtitre">Détail</h3><button class="mcl" onclick="mf()">✕</button></div>
+    <div class="mbody" id="mbody"></div>
+  </div>
+</div>
+
+<script>
+const QL={'q-nom':'Établissement','q02':'Type de prestation','q03':'Attentes comprises','q04':'Brief respecté','q05':'Senti écouté','q06':'Résultat /10','q07':'Aspects non intégrés','q08':'Évolution projet','q09':'Esthétique /10','q10':'Design reflète l\'image','q11':'Couleurs & typo','q12':'Visuels qualité','q13':'Rendu mobile','q14':'Se démarque','q15':'Point fort visuel','q16':'Navigation /10','q17':'Fonctionnalités livrées','q18':'Vitesse chargement','q19':'Textes corrects','q20':'Fonctionnalités manquantes','q21':'Qualité prestation /10','q22':'Délais','q23':'Communication /10','q24':'Retours pris en compte','q25':'Rapport qualité/prix','q26':'Accompagnement post-livraison','q27':'Axes amélioration','q28':'Satisfaction globale /10','q29':'Recommandation','q30':'Retravaillerait','q31':'Témoignage','q32':'Autorisation affichage'};
+let R={};
+
+function sp(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p-'+id).classList.add('active');window.scrollTo(0,0);if(id==='dash')renderDash();if(id==='home')renderHome();if(id==='widget')renderWidget();}
+
+// Interactions
+document.querySelectorAll('.ouinon').forEach(w=>{w.querySelectorAll('.ynb').forEach(b=>{b.addEventListener('click',()=>{w.querySelectorAll('.ynb').forEach(x=>x.classList.remove('on'));b.classList.add('on');R[w.id]=b.dataset.v;});});});
+document.querySelectorAll('.choices').forEach(w=>{w.querySelectorAll('.ch').forEach(b=>{b.addEventListener('click',()=>{w.querySelectorAll('.ch').forEach(x=>x.classList.remove('on'));b.classList.add('on');R[w.id]=b.dataset.v;});});});
+document.querySelectorAll('.sc10').forEach(w=>{w.querySelectorAll('.s10').forEach(b=>{b.addEventListener('click',()=>{w.querySelectorAll('.s10').forEach(x=>x.classList.remove('on'));b.classList.add('on');R[w.id]=b.dataset.v;});});});
+
+// Calcul note automatique — pondération propre
+function calcNote(rep){
+  const scores=['q06','q09','q16','q21','q23'].map(k=>parseInt(rep[k]||0)).filter(v=>v>0);
+  if(!scores.length)return null;
+  let base=scores.reduce((a,b)=>a+b,0)/scores.length;
+  // Bonus/malus qualitatifs
+  const bm={'q03':{Oui:.3,Non:-.3},'q05':{Oui:.2,Non:-.2},'q10':{Oui:.2,Non:-.2},'q17':{Oui:.3,Non:-.4},'q24':{Oui:.2,Non:-.2},'q26':{Oui:.15,Non:-.1},'q30':{Oui:.3,Non:-.3}};
+  Object.entries(bm).forEach(([k,m])=>{if(rep[k]&&m[rep[k]]!==undefined)base+=m[rep[k]];});
+  // Satisfaction globale a le plus grand poids
+  const g=parseInt(rep['q28']||0);
+  if(g)base=base*0.55+g*0.45;
+  return Math.min(10,Math.max(1,Math.round(base*10)/10));
+}
+
+function stars(n){
+  const s5=Math.round((n/10)*5*2)/2;
+  let h='';
+  for(let i=1;i<=5;i++){
+    if(s5>=i)h+='<span style="color:var(--star)">★</span>';
+    else if(s5>=i-.5)h+='<span style="color:var(--star);opacity:.5">★</span>';
+    else h+='<span style="color:var(--mu2)">★</span>';
+  }
+  return h;
+}
+function badge(n){const c=n>=8?'sh':n>=5?'sm':'sl';return `<span class="rvsc ${c}">${n}/10</span>`;}
+
+// Soumission
+function soumettre(){
+  ['q07','q15','q20','q27','q31'].forEach(id=>{const e=document.getElementById(id);if(e)R[id]=e.value.trim();});
+  R['q-nom']=(document.getElementById('q-nom').value||'').trim();
+  if(!R['q-nom']){alert('Merci d\'indiquer le nom de votre établissement.');return;}
+  if(!R['q28']){alert('Merci de donner une note de satisfaction globale (question 28).');return;}
+  const note=calcNote(R);
+  const retours=JSON.parse(localStorage.getItem('db_retours')||'[]');
+  retours.push({id:Date.now(),date:new Date().toLocaleDateString('fr-FR'),reponses:{...R},noteCalculee:note,public:R['q32']==='Oui'});
+  localStorage.setItem('db_retours',JSON.stringify(retours));
+  // Reset
+  R={};
+  document.querySelectorAll('.ynb,.ch,.s10').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('textarea,input[type=text]').forEach(i=>i.value='');
+  sp('confirm');
+}
+
+// Dashboard
+function renderDash(){
+  const r=JSON.parse(localStorage.getItem('db_retours')||'[]');
+  const nb=r.length;
+  document.getElementById('dsub').textContent=nb?`${nb} retour${nb>1?'s':''} enregistré${nb>1?'s':''} — historique permanent`:'Aucun retour enregistré pour l\'instant';
+  document.getElementById('tc').textContent=nb+' entrée'+(nb>1?'s':'');
+  document.getElementById('rvc').textContent=`${Math.min(nb,6)} dernier${Math.min(nb,6)>1?'s':''}`;
+  const notes=r.map(x=>x.noteCalculee).filter(Boolean);
+  const moy=notes.length?(notes.reduce((a,b)=>a+b,0)/notes.length).toFixed(1):'—';
+  const reco=r.filter(x=>['Oui sans hésiter','Probablement oui'].includes(x.reponses?.q29)).length;
+  const retrav=r.filter(x=>x.reponses?.q30==='Oui').length;
+  const pub=r.filter(x=>x.public).length;
+  document.getElementById('kpis').innerHTML=`
+    <div class="kpi"><div class="kpiv">${nb}</div><div class="kpil">Retours totaux</div></div>
+    <div class="kpi"><div class="kpiv">${moy}<sub>/10</sub></div><div class="kpil">Note moyenne</div></div>
+    <div class="kpi"><div class="kpiv">${nb?Math.round(reco/nb*100):0}<sub>%</sub></div><div class="kpil">Recommandent</div></div>
+    <div class="kpi"><div class="kpiv">${nb?Math.round(retrav/nb*100):0}<sub>%</sub></div><div class="kpil">Retravailleraient</div></div>
+    <div class="kpi"><div class="kpiv">${pub}</div><div class="kpil">Avis publics</div></div>`;
+  // Cards style Google
+  document.getElementById('rg').innerHTML=nb===0?'<div class="empty"><strong>Aucun avis</strong>Envoyez le questionnaire à vos clients.</div>':
+    r.slice(-6).reverse().map(x=>{
+      const n=x.noteCalculee||parseInt(x.reponses?.q28)||0;
+      return `<div class="rvc" onclick="detail(${x.id})">
+        <div class="rvtop"><span class="rvnom">${x.reponses?.['q-nom']||'Client'}</span><span class="rvdate">${x.date}</span></div>
+        <div class="rvst">${stars(n)} ${badge(n)}</div>
+        ${x.reponses?.q02?`<span class="rvpre">${x.reponses.q02}</span>`:''}
+        ${x.reponses?.q31?`<p class="rvtxt">${x.reponses.q31}</p>`:'<p class="rvtxt" style="color:var(--mu2);font-style:italic">Aucun témoignage rédigé.</p>'}
+      </div>`;
+    }).join('');
+  // Table complète
+  if(!nb){document.getElementById('tbody').innerHTML='<div class="empty"><strong>Aucune donnée</strong></div>';return;}
+  document.getElementById('tbody').innerHTML=`<table><thead><tr><th>Client</th><th>Prestation</th><th>Date</th><th>Note</th><th>Recommande</th><th>Visibilité</th><th></th></tr></thead><tbody>`+
+    r.slice().reverse().map(x=>{
+      const n=x.noteCalculee||0;const c=n>=8?'sh':n>=5?'sm':'sl';
+      return `<tr><td><strong>${x.reponses?.['q-nom']||'—'}</strong></td><td style="font-size:.77rem">${x.reponses?.q02||'—'}</td><td>${x.date}</td>
+      <td><span class="rvsc ${c}">${n||'—'}/10</span></td>
+      <td style="font-size:.76rem;color:var(--mu)">${x.reponses?.q29||'—'}</td>
+      <td style="font-size:.73rem;color:${x.public?'var(--gr)':'var(--mu)'}">${x.public?'Public':'Privé'}</td>
+      <td><button class="abv" onclick="detail(${x.id})">Voir</button> <button class="abd" onclick="suppr(${x.id})">✕</button></td></tr>`;
+    }).join('')+'</tbody></table>';
+}
+
+function detail(id){
+  const r=JSON.parse(localStorage.getItem('db_retours')||'[]').find(x=>x.id===id);
+  if(!r)return;
+  document.getElementById('mtitre').textContent=r.reponses?.['q-nom']||'Détail';
+  const n=r.noteCalculee;
+  let h=n?`<div class="mq"><div class="mql">Note calculée automatiquement</div><div class="mqv" style="display:flex;align-items:center;gap:8px">${stars(n)} <strong style="color:var(--gr)">${n}/10</strong></div></div>`:'';
+  Object.entries(QL).forEach(([k,l])=>{const v=r.reponses?.[k];if(v)h+=`<div class="mq"><div class="mql">${l}</div><div class="mqv">${v}</div></div>`;});
+  document.getElementById('mbody').innerHTML=h||'<p style="color:var(--mu)">Aucune donnée.</p>';
+  document.getElementById('modal').classList.add('open');
+}
+function mf(){document.getElementById('modal').classList.remove('open');}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')mf();});
+function suppr(id){
+  if(!confirm('Supprimer ce retour définitivement ?'))return;
+  const r=JSON.parse(localStorage.getItem('db_retours')||'[]').filter(x=>x.id!==id);
+  localStorage.setItem('db_retours',JSON.stringify(r));
+  renderDash();
+}
+
+// Home
+function renderHome(){
+  const r=JSON.parse(localStorage.getItem('db_retours')||'[]');
+  const notes=r.map(x=>x.noteCalculee).filter(Boolean);
+  const moy=notes.length?(notes.reduce((a,b)=>a+b,0)/notes.length).toFixed(1):'—';
+  document.getElementById('hstats').innerHTML=`
+    <div class="hs"><div class="sn">${r.length}</div><div class="sl">Clients évalués</div></div>
+    <div class="hs"><div class="sn">${moy}<span>/10</span></div><div class="sl">Note moyenne</div></div>
+    <div class="hs"><div class="sn">${r.filter(x=>x.reponses?.q29==='Oui sans hésiter').length}</div><div class="sl">Recommandent sans hésiter</div></div>`;
+}
+
+// Widget
+function renderWidget(){
+  const r=JSON.parse(localStorage.getItem('db_retours')||'[]').filter(x=>x.public).slice(-3).reverse();
+  if(!r.length){document.getElementById('wprev').innerHTML='<p style="color:var(--mu);font-size:.82rem;padding:6px 0">Aucun avis public. Activez "Autoriser l\'affichage" dans le questionnaire.</p>';document.getElementById('codbl').textContent='Aucun avis public disponible.';return;}
+  document.getElementById('wprev').innerHTML=`<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;font-family:Inter,sans-serif">`+
+    r.map(x=>{const n=x.noteCalculee||parseInt(x.reponses?.q28)||0;return `<div style="border:1px solid #222;border-radius:7px;padding:12px 14px;background:#111"><div style="display:flex;justify-content:space-between;margin-bottom:5px"><strong style="font-size:.86rem">${x.reponses?.['q-nom']||'Client'}</strong><span style="font-size:.68rem;color:#666">${x.date}</span></div><div style="font-size:.88rem;margin-bottom:6px">${stars(n)}</div><p style="font-size:.79rem;color:#888;line-height:1.6">${x.reponses?.q31||''}</p></div>`;}).join('')+'</div>';
+  const data=r.map(x=>({nom:x.reponses?.['q-nom'],note:x.noteCalculee,texte:x.reponses?.q31,date:x.date}));
+  document.getElementById('codbl').textContent=`<!-- Avis DB Studio -->\n<div id="db-avis"></div>\n<script>\nconst avis=${JSON.stringify(data)};\ndocument.getElementById('db-avis').innerHTML=avis.map(a=>\n  '<div class=\"db-card\"><strong>'+a.nom+'</strong><span>'+a.note+'/10</span><p>'+a.texte+'</p></div>'\n).join('');\n<\/script>`;
+}
+function copier(){navigator.clipboard.writeText(document.getElementById('codbl').textContent).then(()=>alert('Code copié !'));}
+
+renderHome();
+</script>
+</body>
+</html>
