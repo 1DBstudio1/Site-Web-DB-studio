@@ -509,7 +509,7 @@
    display: block;
    border-radius: 50px;
 }
-#satisfaction a{
+#satisfaction{
    border: solid 2px var(--accent);
    color: var(--accent);
    margin: 30px auto;
