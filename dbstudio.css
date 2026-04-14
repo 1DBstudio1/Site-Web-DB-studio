@@ -506,13 +506,13 @@
    background: grey;
    backdrop-filter: blur(1px);
    border: solid 2px var(--accent);
-   text-align: center;
+   
 }
-.satisfaction {
+.satisfaction{
    border: solid 2px var(--accent);
    color: var(--accent);
    margin: 10px auto;
-   padding: 5px;
+   padding: 10px;
    text-align: center;
 } 
 
