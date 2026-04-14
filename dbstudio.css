@@ -506,14 +506,16 @@
    background: grey;
    backdrop-filter: blur(1px);
    border: solid 2px var(--accent);
-   
+   display: block;
+   justify-content: center; 
+   border-radius: 50px;
 }
 .satisfaction{
    border: solid 2px var(--accent);
    color: var(--accent);
-   margin: 10px auto;
+   margin: 15px auto;
    padding: 10px;
-   text-align: center;
+   border-radius: 50px;
 } 
 
 
