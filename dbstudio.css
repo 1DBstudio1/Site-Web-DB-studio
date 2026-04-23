@@ -502,8 +502,8 @@
 #container-satisfaction{
     margin: 10px auto;
     padding: 10px;
-    width: 450px;
-    height: 450px;
+    width: 90%;
+    height: 650px;
     background: grey;
     backdrop-filter: blur(1px);
     border: solid 2px var(--accent);
@@ -515,7 +515,7 @@
 #satisfaction{
     border: solid 2px var(--accent);
     color: var(--accent);
-    margin: 30px auto;
+    margin: 30px;
     padding: 10px;
     border-radius: 50px;
     text-align: center;
