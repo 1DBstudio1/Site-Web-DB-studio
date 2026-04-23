@@ -497,29 +497,78 @@
       .text-bloc { margin: 0 0 2rem; }
     }
 
-/*=== AVIS CLIENT  ===*/
-
-#container-satisfaction{
-    margin: 10px auto;
-    padding: 10px;
+/* Container principal des avis */
+#container-satisfaction {
+    margin: 30px auto;
     width: 90%;
+    max-width: 800px;
     height: 650px;
-    background: grey;
-    backdrop-filter: blur(1px);
-    border: solid 2px var(--accent);
-    border-radius: 50px;
+    background: rgba(20, 20, 20, 0.7); /* Fond sombre semi-transparent */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid var(--accent); /* Bordure verte fluo */
+    border-radius: 20px;
     display: flex;
-    justify-content: center;   /* ← centre horizontalement #satisfaction */
+    flex-direction: column; /* Pour empiler les éléments verticalement */
+    justify-content: flex-start; /* Aligne le contenu en haut (pour le titre) */
+    align-items: center; /* Centre horizontalement */
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombre subtile pour le relief */
+    position: relative;
+    overflow: hidden; /* Masque tout débordement */
 }
 
-#satisfaction{
+/* Titre des avis (fixe en haut) */
+#satisfaction h2 {
     color: var(--accent);
-    margin: 30px;
-    padding: 10px;
     text-align: center;
-    /* pas besoin de width spécifique si tu veux qu'il s'adapte */
+    width: 100%;
+    margin: 0;
+    padding: 15px 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(120, 120, 120, 0.3); /* Séparateur discret */
 }
 
+/* Espace réservé pour les avis (vide pour l'instant) */
+.avis-container {
+    width: 100%;
+    height: calc(100% - 60px); /* Hauteur = hauteur totale - titre/padding */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Les avis s'afficheront en partant du haut */
+    overflow-y: auto; /* Scroll si trop d'avis */
+    padding: 10px;
+    gap: 15px; /* Espace entre les avis */
+}
+
+/* Style des futurs avis (pour référence) */
+.avis {
+    width: 90%;
+    background: rgba(30, 30, 30, 0.5);
+    border: 1px solid rgba(120, 120, 120, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de surbrillance pour le container (optionnel) */
+#container-satisfaction::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent), transparent);
+    z-index: -1;
+    border-radius: 22px;
+    opacity: 0.3;
+   }
 
 
 
