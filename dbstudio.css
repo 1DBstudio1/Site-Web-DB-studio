@@ -513,11 +513,9 @@
 }
 
 #satisfaction{
-    border: solid 2px var(--accent);
     color: var(--accent);
     margin: 30px;
     padding: 10px;
-    border-radius: 50px;
     text-align: center;
     /* pas besoin de width spécifique si tu veux qu'il s'adapte */
 }
