@@ -812,30 +812,37 @@
 
 <!-- ===== OFFRE LANCEMENT ===== -->
 
-<section id="offre-lancement">
-  <div class="lancement-card">
-    <div class="lancement-badge">🚀 Offre de lancement</div>
-    <h2 class="lancement-title"><span>−25%</span> sur la création de votre site</h2>
-    <p class="lancement-desc">
-      Pour fêter le lancement de DB Studio, les 5 premiers clients des Hautes-Alpes bénéficient d'une réduction de 25% sur le prix de création de leur site sur-mesure. Prêt à l'emploi non concerné.
-    </p>
-    <div class="lancement-compteur">
-      <div class="place libre"></div>
-      <div class="place libre"></div>
-      <div class="place libre"></div>
-      <div class="place libre"></div>
-      <div class="place libre"></div>
+<section id="offre-lancement" style="background:linear-gradient(135deg,#0d2b1a,#0a3d1f);border:1px solid #00e87a33;border-radius:20px;padding:40px 24px;text-align:center;margin:40px 0 60px;">
+    <div style="display:inline-block;background:#00e87a22;border:1px solid #00e87a;border-radius:50px;padding:6px 18px;font-size:12px;font-weight:700;letter-spacing:2px;color:#00e87a;margin-bottom:20px;">🎁 OFFRE DE LANCEMENT</div>
+    <h2 style="font-size:clamp(28px,6vw,42px);font-weight:900;margin-bottom:16px;color:#fff;">3 premiers sites web <span style="color:#00e87a;">GRATUITS</span></h2>
+    <p style="color:#94a3b8;font-size:16px;max-width:500px;margin:0 auto 28px;">Les 3 premiers clients DB Studio reçoivent leur site <strong style="color:#fff;">sans frais de création</strong>. Vous payez uniquement l'abonnement mensuel.</p>
+    <div style="margin:28px auto;max-width:280px;">
+      <div style="display:flex;justify-content:center;gap:14px;margin-bottom:14px;">
+        <div class="place-dot" style="width:56px;height:56px;border-radius:14px;border:2px solid #00e87a;display:flex;align-items:center;justify-content:center;font-size:22px;color:#00e87a33;">⬡</div>
+        <div class="place-dot" style="width:56px;height:56px;border-radius:14px;border:2px solid #00e87a;display:flex;align-items:center;justify-content:center;font-size:22px;color:#00e87a33;">⬡</div>
+        <div class="place-dot" style="width:56px;height:56px;border-radius:14px;border:2px solid #00e87a;display:flex;align-items:center;justify-content:center;font-size:22px;color:#00e87a33;">⬡</div>
+      </div>
+      <p id="places-texte" style="color:#00e87a;font-weight:700;font-size:15px;">3 places disponibles — offre limitée</p>
     </div>
-    <p class="lancement-label"><strong>5 places disponibles</strong> — offre valable jusqu'à épuisement</p>
-    <div class="lancement-conditions">
-      <div class="lancement-cond"><i class="fa-solid fa-check"></i> Maquette gratuite</div>
-      <div class="lancement-cond"><i class="fa-solid fa-check"></i> Sans engagement</div>
-      <div class="lancement-cond"><i class="fa-solid fa-check"></i> Paiement en 2 fois</div>
-      <div class="lancement-cond"><i class="fa-solid fa-check"></i> Sur-mesure uniquement</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:28px;">
+      <span style="color:#94a3b8;font-size:14px;">✓ Maquette gratuite</span>
+      <span style="color:#94a3b8;font-size:14px;">✓ Sans engagement</span>
+      <span style="color:#00e87a;font-size:14px;font-weight:600;">✓ Abonnement mensuel uniquement</span>
+      <span style="color:#94a3b8;font-size:14px;">✓ Sur-mesure uniquement</span>
     </div>
-    <a href="devis.html" class="lancement-cta">Profiter de l'offre →</a>
-  </div>
-</section>
+    <a href="/Site-Web-DB-studio/devis.html" style="display:inline-block;background:#00e87a;color:#000;font-weight:700;font-size:16px;padding:14px 36px;border-radius:50px;text-decoration:none;">Réserver ma place gratuite →</a>
+    <script>
+    fetch('/Site-Web-DB-studio/stats.json?t='+Date.now()).then(r=>r.json()).then(s=>{
+      const dots=document.querySelectorAll('.place-dot');
+      const signes=s.clients_signes||0;
+      dots.forEach((d,i)=>{if(i<signes){d.style.background='#00e87a22';d.innerHTML='<span style="color:#00e87a;font-size:22px;">✓</span>';}});
+      const t=document.getElementById('places-texte');
+      const r=s.places_restantes||3;
+      if(r===0){t.textContent='🎉 Offre épuisée';t.style.color='#ef4444';}
+      else t.textContent=r+' place'+(r>1?'s disponibles':' disponible')+' — offre limitée';
+    }).catch(()=>{});
+    </script>
+  </section>
 
 <!-- ===== OFFRES SUR-MESURE ===== -->
 
