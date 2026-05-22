@@ -524,9 +524,9 @@
     <div class="form-group">
       <label>Type de site souhaité <span class="req">*</span></label>
       <div class="option-grid">
-        <div class="option-card"><input type="radio" name="type_site" id="t1" value="Prêt à l'emploi" required><label for="t1"><span class="icon">⚡</span>Prêt à l'emploi<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">250 € · 48h</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Simple"><label for="t2"><span class="icon">💻</span>Vitrine Simple<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">800 € · 5 jours</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Vitrine Premium"><label for="t3"><span class="icon">🚀</span>Vitrine Premium<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">1 800 € · 7-10 jours</span></label></div>
+        
+        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Simple"><label for="t2"><span class="icon">💻</span>Vitrine Simple<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Création offerte · 5 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Vitrine Premium"><label for="t3"><span class="icon">🚀</span>Vitrine Premium<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">1 Création offerte · 7-10 jours</span></label></div>
         <div class="option-card"><input type="radio" name="type_site" id="t4" value="Vitrine Premium+"><label for="t4"><span class="icon">🏨</span>Premium+ Réservation<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 10-14 jours</span></label></div>
         <div class="option-card"><input type="radio" name="type_site" id="t5" value="E-boutique"><label for="t5"><span class="icon">🛒</span>E-boutique<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 12-15 jours</span></label></div>
         <div class="option-card"><input type="radio" name="type_site" id="t6" value="Je ne sais pas encore"><label for="t6"><span class="icon">🤔</span>Je ne sais pas<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">On vous conseille</span></label></div>
@@ -769,7 +769,7 @@
 
 <div class="sidebar-card">
   <h3>⏱ Délais indicatifs</h3>
-  <div class="sidebar-item"><i class="fa-solid fa-bolt" style="color:#ffa032"></i><div><strong>Prêt à l'emploi</strong><p>Livré en 48h</p></div></div>
+  
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 5 à 7 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium</strong><p>Livré en 7 à 10 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium+</strong><p>Livré en 10 à 14 jours</p></div></div>
@@ -863,15 +863,15 @@
       return { offre: '🛒 E-boutique — 2 500 €', detail: 'Vous souhaitez vendre en ligne. La boutique complète est faite pour vous — paiement sécurisé, gestion stocks, zéro commission contrairement à Etsy ou Shopify.', abo: '120 €/mois' };
     }
     if (secteur === 'Hôtellerie / Hébergement' || (secteur === 'Restauration / Bar' && veuxReservation) || typeSite === 'Vitrine Premium+') {
-      return { offre: '🏨 Vitrine Premium+ — 2 500 €', detail: 'Votre activité nécessite un système de réservation en ligne. Zéro commission contrairement à Booking ou The Fork — vos clients réservent directement chez vous.', abo: '90 €/mois' };
+      return { offre: '🏨 Vitrine Premium+ — 2 000 €', detail: 'Votre activité nécessite un système de réservation en ligne. Zéro commission contrairement à Booking ou The Fork — vos clients réservent directement chez vous.', abo: '90 €/mois' };
     }
     if ((veuxDevis || veuxAvis || objectifs.length >= 3) && budget >= 1200) {
-      return { offre: '🚀 Vitrine Premium — 1 800 €', detail: 'Vous avez plusieurs objectifs ambitieux. La Vitrine Premium travaille activement pour vous : devis en ligne, avis Google, SEO mensuel, rapport analytics.', abo: '60 €/mois' };
+      return { offre: '🚀 Vitrine Premium — 1 500 €', detail: 'Vous avez plusieurs objectifs ambitieux. La Vitrine Premium travaille activement pour vous : devis en ligne, avis Google, SEO mensuel, rapport analytics.', abo: '60 €/mois' };
     }
     if (budget <= 400 || typeSite === 'Prêt à l\'emploi') {
-      return { offre: '⚡ Prêt à l\'emploi — 250 €', detail: 'Idéal pour démarrer rapidement. Site professionnel livré en 48h, déjà optimisé pour votre secteur, exclusif à votre zone.', abo: '20 €/mois' };
+      return { ;
     }
-    return { offre: '💻 Vitrine Simple — 800 €', detail: 'Pour être visible sur Google et présenter votre activité clairement. Sur-mesure, livré en 5 jours, avec bouton d\'appel direct et formulaire de contact.', abo: '40 €/mois' };
+    return { offre: '💻 Vitrine Simple — Création offerte', detail: 'Pour être visible sur Google et présenter votre activité clairement. Sur-mesure, livré en 5 jours, avec bouton d\'appel direct et formulaire de contact.', abo: '40 €/mois' };
   }
 
   function showReco() {
@@ -949,8 +949,7 @@
       'Vitrine Simple': '5 à 7 jours',
       'Vitrine Premium': '7 à 10 jours',
       'Vitrine Premium+': '10 à 14 jours',
-      'E-boutique': '12 à 15 jours',
-      "Prêt à l'emploi": '48h'
+      'E-boutique': '12 à 15 jours'
     }[typeSite] || 'à définir';
 
     const logoSection = logo === 'Je veux en créer un' ? `
