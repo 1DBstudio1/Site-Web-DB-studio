@@ -524,9 +524,8 @@
     <div class="form-group">
       <label>Type de site souhaité <span class="req">*</span></label>
       <div class="option-grid">
-        
-        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Simple"><label for="t2"><span class="icon">💻</span>Vitrine Simple<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Création offerte · 5 jours</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Vitrine Premium"><label for="t3"><span class="icon">🚀</span>Vitrine Premium<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">1 Création offerte · 7-10 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Simple"><label for="t2"><span class="icon">💻</span>Vitrine Simple<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Gratuit · 5 jours</span></label></div>
+        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Vitrine Premium"><label for="t3"><span class="icon">🚀</span>Vitrine Premium<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">1 500 € · 7-10 jours</span></label></div>
         <div class="option-card"><input type="radio" name="type_site" id="t4" value="Vitrine Premium+"><label for="t4"><span class="icon">🏨</span>Premium+ Réservation<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 10-14 jours</span></label></div>
         <div class="option-card"><input type="radio" name="type_site" id="t5" value="E-boutique"><label for="t5"><span class="icon">🛒</span>E-boutique<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 12-15 jours</span></label></div>
         <div class="option-card"><input type="radio" name="type_site" id="t6" value="Je ne sais pas encore"><label for="t6"><span class="icon">🤔</span>Je ne sais pas<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">On vous conseille</span></label></div>
@@ -716,8 +715,12 @@
       <button type="button" class="btn-prev" onclick="goTo(3)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
       
   <div style="margin-bottom:1.5rem;">
-    <label style="display:block;font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:8px;">Code parrain <span style="color:#a0aec0;font-weight:400;">(optionnel — -25% sur votre creation)</span></label>
-    <input type="text" id="codeParrain" name="code_parrain" placeholder="Ex: AB3K9F2P" maxlength="8" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;color:#fff;font-size:0.95rem;font-family:monospace;letter-spacing:3px;text-transform:uppercase;">
+    <label style="display:block;font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:8px;">
+      Code parrain <span style="color:#a0aec0;font-weight:400;">(optionnel — -25% sur votre création)</span>
+    </label>
+    <input type="text" id="codeParrain" name="code_parrain" 
+      placeholder="Ex: AB3K9F2P" maxlength="8"
+      style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;color:#fff;font-size:0.95rem;font-family:monospace;letter-spacing:3px;text-transform:uppercase;">
     <div id="parrainStatus" style="font-size:0.82rem;margin-top:6px;color:#a0aec0;"></div>
   </div>
 <button type="submit" class="btn-next">Envoyer ma demande <i class="fa-solid fa-paper-plane"></i></button>
@@ -769,7 +772,6 @@
 
 <div class="sidebar-card">
   <h3>⏱ Délais indicatifs</h3>
-  
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 5 à 7 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium</strong><p>Livré en 7 à 10 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium+</strong><p>Livré en 10 à 14 jours</p></div></div>
@@ -863,13 +865,13 @@
       return { offre: '🛒 E-boutique — 2 500 €', detail: 'Vous souhaitez vendre en ligne. La boutique complète est faite pour vous — paiement sécurisé, gestion stocks, zéro commission contrairement à Etsy ou Shopify.', abo: '120 €/mois' };
     }
     if (secteur === 'Hôtellerie / Hébergement' || (secteur === 'Restauration / Bar' && veuxReservation) || typeSite === 'Vitrine Premium+') {
-      return { offre: '🏨 Vitrine Premium+ — 2 000 €', detail: 'Votre activité nécessite un système de réservation en ligne. Zéro commission contrairement à Booking ou The Fork — vos clients réservent directement chez vous.', abo: '90 €/mois' };
+      return { offre: '🏨 Vitrine Premium+ — 2 500 €', detail: 'Votre activité nécessite un système de réservation en ligne. Zéro commission contrairement à Booking ou The Fork — vos clients réservent directement chez vous.', abo: '90 €/mois' };
     }
     if ((veuxDevis || veuxAvis || objectifs.length >= 3) && budget >= 1200) {
       return { offre: '🚀 Vitrine Premium — 1 500 €', detail: 'Vous avez plusieurs objectifs ambitieux. La Vitrine Premium travaille activement pour vous : devis en ligne, avis Google, SEO mensuel, rapport analytics.', abo: '60 €/mois' };
     }
     if (budget <= 400 || typeSite === 'Prêt à l\'emploi') {
-      return { ;
+      return { offre: '⚡ Prêt à l\'emploi — 250 €', detail: 'Idéal pour démarrer rapidement. Site professionnel livré en 48h, déjà optimisé pour votre secteur, exclusif à votre zone.', abo: '20 €/mois' };
     }
     return { offre: '💻 Vitrine Simple — Création offerte', detail: 'Pour être visible sur Google et présenter votre activité clairement. Sur-mesure, livré en 5 jours, avec bouton d\'appel direct et formulaire de contact.', abo: '40 €/mois' };
   }
@@ -1094,35 +1096,23 @@
     }
   });
 
-  // Validation code parrain
-  const codeParrainInput = document.getElementById('codeParrain');
+  var codeParrainInput = document.getElementById('codeParrain');
   if(codeParrainInput) {
-    codeParrainInput.addEventListener('input', async function() {
-      const code = this.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
+    codeParrainInput.addEventListener('input', function() {
+      var code = this.value.toUpperCase().replace(/[^A-Z0-9]/g,'');
       this.value = code;
-      const status = document.getElementById('parrainStatus');
+      var status = document.getElementById('parrainStatus');
       if(code.length === 8) {
-        status.textContent = 'Verification...';
+        status.textContent = 'Code valide — -25% applique sur votre creation';
+        status.style.color = '#00ffc0';
+      } else if(code.length > 0) {
+        status.textContent = (8-code.length) + ' caracteres restants';
         status.style.color = '#a0aec0';
-        try {
-          const r = await fetch('/parrainage/verifier/'+code);
-          const d = await r.json();
-          if(d.valide) {
-            status.textContent = 'Code valide — parrain : '+d.parrain+' — -25% sur votre creation !';
-            status.style.color = '#00ffc0';
-          } else {
-            status.textContent = 'Code invalide';
-            status.style.color = '#ff6b6b';
-          }
-        } catch(e) {
-          status.textContent = '';
-        }
       } else {
-        status.textContent = code.length > 0 ? (8-code.length)+' caracteres restants' : '';
+        status.textContent = '';
       }
     });
   }
-
 </script>
 </body>
 </html>
