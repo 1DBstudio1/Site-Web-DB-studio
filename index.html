@@ -393,177 +393,7 @@
       color: #001a14;
     }
 
-    /* ===== PRÊT À L'EMPLOI ===== */
-    #pret-emploi {
-      padding: 5rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .pret-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .pret-badge {
-      display: inline-block;
-      background: rgba(255,160,50,0.1);
-      border: 1px solid rgba(255,160,50,0.3);
-      color: #ffa032;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 50px;
-      margin-bottom: 1rem;
-    }
-
-    .pret-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .pret-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pret-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 16px 40px rgba(255,160,50,0.1);
-      border-color: #ffa032;
-    }
-
-    .pret-mockup {
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.8rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pret-mockup-icon {
-      position: relative;
-      z-index: 1;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-    }
-
-    .pret-info {
-      padding: 1.4rem 1.6rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .pret-sector {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #ffa032;
-      margin-bottom: 0.4rem;
-    }
-
-    .pret-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 0.4rem;
-    }
-
-    .pret-desc {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      flex: 1;
-    }
-
-    .pret-prix {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 0.2rem;
-    }
-
-    .pret-prix span {
-      font-size: 0.82rem;
-      font-weight: 400;
-      color: var(--text-muted);
-    }
-
-    .pret-delai {
-      font-size: 0.78rem;
-      color: #ffa032;
-      margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .pret-exclusif {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .pret-exclusif i { color: var(--accent); font-size: 0.7rem; }
-
-    .pret-btns {
-      display: flex;
-      gap: 0.6rem;
-    }
-
-    .pret-btn-demo {
-      flex: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 50px;
-      transition: border-color 0.2s, color 0.2s;
-    }
-
-    .pret-btn-demo:hover { border-color: var(--accent); color: var(--accent); }
-
-    .pret-btn-cmd {
-      flex: 1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #001a14;
-      background: linear-gradient(135deg, #ffa032, #e07800);
-      padding: 8px 12px;
-      border-radius: 50px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .pret-btn-cmd:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(255,160,50,0.3);
-      color: #001a14;
-    }
+    
 
     /* ===== FAQ ===== */
     #faq {
@@ -740,7 +570,7 @@
       <span style="color:#a0aec0;">Juste l'abonnement mensuel.</span>
     </p>
 
-    <div style="display:flex;justify-content:center;align-items:center;gap:12px;margin-bottom:20px;">
+    <div style="display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
       <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
         <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">01</div>
       </div>
@@ -749,6 +579,27 @@
       </div>
       <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
         <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">03</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">04</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">05</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">06</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">07</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">08</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">09</div>
+      </div>
+      <div class="place-dot" style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+        <div style="width:56px;height:56px;border-radius:16px;border:2px solid #00ffc055;background:#00ffc008;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:22px;color:#00ffc044;font-weight:900;">10</div>
       </div>
     </div>
 
@@ -771,7 +622,7 @@
       .then(r=>r.json()).then(s=>{
         const dots=document.querySelectorAll('.place-dot > div');
         const signes=s.clients_signes||0;
-        const restantes=s.places_restantes||3;
+        const restantes=s.places_restantes||10;
         dots.forEach((d,i)=>{
           if(i<signes){
             d.style.background='#00ffc022';
@@ -1035,7 +886,7 @@
 
   </div>
 </section>
-  <!-- === AVIS === --->
+  
   
   
 
