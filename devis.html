@@ -522,13 +522,79 @@
     <p class="form-page-title">Votre projet web</p>
 
     <div class="form-group">
-      <label>Type de site souhaité <span class="req">*</span></label>
+      <label>Quel est votre objectif principal avec ce site ? <span class="req">*</span></label>
       <div class="option-grid">
-        <div class="option-card"><input type="radio" name="type_site" id="t2" value="Vitrine Simple"><label for="t2"><span class="icon">💻</span>Vitrine Simple<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Gratuit · 5 jours</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t3" value="Vitrine Premium"><label for="t3"><span class="icon">🚀</span>Vitrine Premium<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">1 500 € · 7-10 jours</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t4" value="Vitrine Premium+"><label for="t4"><span class="icon">🏨</span>Premium+ Réservation<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 10-14 jours</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t5" value="E-boutique"><label for="t5"><span class="icon">🛒</span>E-boutique<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">2 500 € · 12-15 jours</span></label></div>
-        <div class="option-card"><input type="radio" name="type_site" id="t6" value="Je ne sais pas encore"><label for="t6"><span class="icon">🤔</span>Je ne sais pas<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">On vous conseille</span></label></div>
+        <div class="option-card"><input type="radio" name="objectif" id="o1" value="Augmenter mon chiffre d'affaires" required><label for="o1"><span class="icon">💰</span>Augmenter mon CA<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Générer plus de revenus</span></label></div>
+        <div class="option-card"><input type="radio" name="objectif" id="o2" value="Gagner en visibilité locale"><label for="o2"><span class="icon">📍</span>Visibilité locale<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Être trouvé sur Google</span></label></div>
+        <div class="option-card"><input type="radio" name="objectif" id="o3" value="Attirer de nouveaux clients"><label for="o3"><span class="icon">🎯</span>Nouveaux clients<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Développer ma clientèle</span></label></div>
+        <div class="option-card"><input type="radio" name="objectif" id="o4" value="Vendre mes produits en ligne"><label for="o4"><span class="icon">🛒</span>Vendre en ligne<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Boutique e-commerce</span></label></div>
+        <div class="option-card"><input type="radio" name="objectif" id="o5" value="Permettre les réservations en ligne"><label for="o5"><span class="icon">📅</span>Réservations / RDV<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Hôtel, restaurant, salon...</span></label></div>
+        <div class="option-card"><input type="radio" name="objectif" id="o6" value="Me professionnaliser et crédibiliser mon image"><label for="o6"><span class="icon">⭐</span>Me professionnaliser<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Soigner mon image</span></label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Votre situation actuelle en ligne</label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="situation_actuelle" id="s1" value="Je n'existe pas encore en ligne"><label for="s1"><span class="icon">🆕</span>Je pars de zéro<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Aucune présence en ligne</span></label></div>
+        <div class="option-card"><input type="radio" name="situation_actuelle" id="s2" value="J'ai juste les réseaux sociaux"><label for="s2"><span class="icon">📱</span>Juste les réseaux<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Instagram, Facebook...</span></label></div>
+        <div class="option-card"><input type="radio" name="situation_actuelle" id="s3" value="J'ai un site mais il est mauvais"><label for="s3"><span class="icon">😕</span>Site existant mauvais<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Je veux mieux</span></label></div>
+        <div class="option-card"><input type="radio" name="situation_actuelle" id="s4" value="J'ai un site correct mais je veux évoluer"><label for="s4"><span class="icon">📈</span>Site correct à améliorer<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Je veux passer au niveau supérieur</span></label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Votre plus grand problème aujourd'hui</label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="probleme_principal" id="p1" value="Personne ne me trouve sur Google"><label for="p1"><span class="icon">🔍</span>Invisible sur Google<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Mes clients ne me trouvent pas</span></label></div>
+        <div class="option-card"><input type="radio" name="probleme_principal" id="p2" value="Mon image ne me représente pas"><label for="p2"><span class="icon">🎭</span>Image qui ne me correspond pas<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Je veux mieux me représenter</span></label></div>
+        <div class="option-card"><input type="radio" name="probleme_principal" id="p3" value="Je perds des clients faute de présence en ligne"><label for="p3"><span class="icon">📉</span>Je perds des clients<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Faute de présence en ligne</span></label></div>
+        <div class="option-card"><input type="radio" name="probleme_principal" id="p4" value="Je gère tout manuellement, c'est chronophage"><label for="p4"><span class="icon">⏰</span>Tout est manuel<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">Réservations, contacts...</span></label></div>
+        <div class="option-card"><input type="radio" name="probleme_principal" id="p5" value="Mes concurrents me dépassent en ligne"><label for="p5"><span class="icon">🏆</span>Concurrents me dépassent<span style="font-size:0.72rem;color:var(--text-muted);display:block;margin-top:2px;">En ligne ils sont mieux</span></label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Votre clientèle cible</label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="clientele" id="c1" value="Particuliers locaux"><label for="c1"><span class="icon">🏘️</span>Particuliers locaux</label></div>
+        <div class="option-card"><input type="radio" name="clientele" id="c2" value="Professionnels et entreprises"><label for="c2"><span class="icon">💼</span>Professionnels / B2B</label></div>
+        <div class="option-card"><input type="radio" name="clientele" id="c3" value="Touristes et visiteurs"><label for="c3"><span class="icon">🧳</span>Touristes</label></div>
+        <div class="option-card"><input type="radio" name="clientele" id="c4" value="Clientèle nationale en ligne"><label for="c4"><span class="icon">🇫🇷</span>Clientèle nationale</label></div>
+        <div class="option-card"><input type="radio" name="clientele" id="c5" value="Particuliers et professionnels"><label for="c5"><span class="icon">🤝</span>Les deux</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Ce que vous voulez que le visiteur ressente</label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="ressenti" id="r1" value="Confiance et sérieux"><label for="r1"><span class="icon">🤝</span>Confiance et sérieux</label></div>
+        <div class="option-card"><input type="radio" name="ressenti" id="r2" value="Chaleur et proximité"><label for="r2"><span class="icon">❤️</span>Chaleur et proximité</label></div>
+        <div class="option-card"><input type="radio" name="ressenti" id="r3" value="Luxe et prestige"><label for="r3"><span class="icon">💎</span>Luxe et prestige</label></div>
+        <div class="option-card"><input type="radio" name="ressenti" id="r4" value="Modernité et innovation"><label for="r4"><span class="icon">🚀</span>Modernité</label></div>
+        <div class="option-card"><input type="radio" name="ressenti" id="r5" value="Simplicité et efficacité"><label for="r5"><span class="icon">✅</span>Simplicité</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Votre style visuel souhaité</label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="style_visuel" id="sv1" value="Minimaliste et épuré"><label for="sv1"><span class="icon">⬜</span>Minimaliste</label></div>
+        <div class="option-card"><input type="radio" name="style_visuel" id="sv2" value="Chaleureux et humain"><label for="sv2"><span class="icon">🌿</span>Chaleureux</label></div>
+        <div class="option-card"><input type="radio" name="style_visuel" id="sv3" value="Moderne et tech"><label for="sv3"><span class="icon">💻</span>Moderne</label></div>
+        <div class="option-card"><input type="radio" name="style_visuel" id="sv4" value="Classique et élégant"><label for="sv4"><span class="icon">🎩</span>Classique</label></div>
+        <div class="option-card"><input type="radio" name="style_visuel" id="sv5" value="Coloré et dynamique"><label for="sv5"><span class="icon">🎨</span>Coloré</label></div>
+        <div class="option-card"><input type="radio" name="style_visuel" id="sv6" value="Je fais confiance à votre expertise"><label for="sv6"><span class="icon">🎯</span>Faites-moi une proposition</label></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Votre budget mensuel (abonnement)</label>
+      <div class="option-grid">
+        <div class="option-card"><input type="radio" name="budget_mensuel" id="bm1" value="Moins de 50€/mois"><label for="bm1"><span class="icon">💶</span>Moins de 50€/mois</label></div>
+        <div class="option-card"><input type="radio" name="budget_mensuel" id="bm2" value="50 à 100€/mois"><label for="bm2"><span class="icon">💶</span>50 à 100€/mois</label></div>
+        <div class="option-card"><input type="radio" name="budget_mensuel" id="bm3" value="100 à 200€/mois"><label for="bm3"><span class="icon">💶</span>100 à 200€/mois</label></div>
+        <div class="option-card"><input type="radio" name="budget_mensuel" id="bm4" value="Je ne sais pas encore"><label for="bm4"><span class="icon">🤷</span>Je ne sais pas</label></div>
       </div>
     </div>
 
@@ -628,6 +694,22 @@
         <label>Slogan <span class="opt">(optionnel)</span></label>
         <input type="text" name="logo_slogan" placeholder="Ex : Votre artisan de confiance depuis 2010">
       </div>
+  <div class="form-group">
+    <label>3 mots qui décrivent votre marque</label>
+    <input type="text" name="logo_mots" placeholder="Ex: Chaleureux, Local, Authentique">
+  </div>
+  <div class="form-group">
+    <label>Logos que vous aimez (marques ou URLs)</label>
+    <textarea name="logo_exemples" rows="2" placeholder="Ex: Nike pour sa simplicité, Apple pour son minimalisme..."></textarea>
+  </div>
+  <div class="form-group">
+    <label>Couleurs à éviter</label>
+    <input type="text" name="logo_eviter" placeholder="Ex: Pas de rouge — ou: Aucune contrainte">
+  </div>
+  <div class="form-group">
+    <label>Concurrents dont vous aimez ou non le logo</label>
+    <input type="text" name="logo_concurrents" placeholder="Ex: J'aime le logo de X mais pas celui de Y">
+  </div>
 
       <div class="form-group" style="margin-bottom:1rem;">
         <label>Style de logo souhaité</label>
@@ -713,17 +795,7 @@
 
     <div class="form-nav">
       <button type="button" class="btn-prev" onclick="goTo(3)"><i class="fa-solid fa-arrow-left"></i> Retour</button>
-      
-  <div style="margin-bottom:1.5rem;">
-    <label style="display:block;font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:8px;">
-      Code parrain <span style="color:#a0aec0;font-weight:400;">(optionnel — -25% sur votre création)</span>
-    </label>
-    <input type="text" id="codeParrain" name="code_parrain" 
-      placeholder="Ex: AB3K9F2P" maxlength="8"
-      style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:14px 16px;color:#fff;font-size:0.95rem;font-family:monospace;letter-spacing:3px;text-transform:uppercase;">
-    <div id="parrainStatus" style="font-size:0.82rem;margin-top:6px;color:#a0aec0;"></div>
-  </div>
-<button type="submit" class="btn-next">Envoyer ma demande <i class="fa-solid fa-paper-plane"></i></button>
+      <button type="submit" class="btn-next">Envoyer ma demande <i class="fa-solid fa-paper-plane"></i></button>
     </div>
   </div>
 
@@ -745,7 +817,7 @@
 
 <div class="sidebar-card">
   <h3>✦ Pourquoi nous choisir ?</h3>
-  <div class="sidebar-item"><i class="fa-solid fa-bolt"></i><div><strong>Livraison rapide</strong><p>Site livré en 48h à 15 jours selon le projet.</p></div></div>
+  
   <div class="sidebar-item"><i class="fa-solid fa-euro-sign"></i><div><strong>Maquette gratuite</strong><p>Vous voyez le résultat avant de vous décider.</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-map-marker-alt"></i><div><strong>Basés à Gap</strong><p>Agence locale, disponible et réactive.</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-mobile-screen"></i><div><strong>100% Responsive</strong><p>Optimisé mobile, tablette et desktop.</p></div></div>
@@ -772,6 +844,7 @@
 
 <div class="sidebar-card">
   <h3>⏱ Délais indicatifs</h3>
+  
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Simple</strong><p>Livré en 5 à 7 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium</strong><p>Livré en 7 à 10 jours</p></div></div>
   <div class="sidebar-item"><i class="fa-solid fa-circle-check"></i><div><strong>Vitrine Premium+</strong><p>Livré en 10 à 14 jours</p></div></div>
@@ -850,30 +923,18 @@
 
   // ── ALGORITHME DE RECOMMANDATION ──
   function calcReco() {
-    const secteur = document.querySelector('select[name="secteur"]').value;
-    const typeSite = document.querySelector('input[name="type_site"]:checked')?.value || '';
-    const budget = parseInt(document.getElementById('budgetRange').value);
-    const objectifs = [...document.querySelectorAll('input[name="objectifs[]"]:checked')].map(o => o.value);
-
-    const veuxReservation = objectifs.includes('Réservations en ligne');
-    const veuxVendre = objectifs.includes('Vendre des produits en ligne');
-    const veuxDevis = objectifs.includes('Recevoir des demandes de devis');
-    const veuxAvis = objectifs.includes('Avis Google et témoignages');
-
-    // Logique de recommandation
-    if (secteur === 'E-commerce / Vente en ligne' || veuxVendre || typeSite === 'E-boutique') {
-      return { offre: '🛒 E-boutique — 2 500 €', detail: 'Vous souhaitez vendre en ligne. La boutique complète est faite pour vous — paiement sécurisé, gestion stocks, zéro commission contrairement à Etsy ou Shopify.', abo: '120 €/mois' };
-    }
-    if (secteur === 'Hôtellerie / Hébergement' || (secteur === 'Restauration / Bar' && veuxReservation) || typeSite === 'Vitrine Premium+') {
-      return { offre: '🏨 Vitrine Premium+ — 2 500 €', detail: 'Votre activité nécessite un système de réservation en ligne. Zéro commission contrairement à Booking ou The Fork — vos clients réservent directement chez vous.', abo: '90 €/mois' };
-    }
-    if ((veuxDevis || veuxAvis || objectifs.length >= 3) && budget >= 1200) {
-      return { offre: '🚀 Vitrine Premium — 1 500 €', detail: 'Vous avez plusieurs objectifs ambitieux. La Vitrine Premium travaille activement pour vous : devis en ligne, avis Google, SEO mensuel, rapport analytics.', abo: '60 €/mois' };
-    }
-    if (budget <= 400 || typeSite === 'Prêt à l\'emploi') {
-      return { offre: '⚡ Prêt à l\'emploi — 250 €', detail: 'Idéal pour démarrer rapidement. Site professionnel livré en 48h, déjà optimisé pour votre secteur, exclusif à votre zone.', abo: '20 €/mois' };
-    }
-    return { offre: '💻 Vitrine Simple — Création offerte', detail: 'Pour être visible sur Google et présenter votre activité clairement. Sur-mesure, livré en 5 jours, avec bouton d\'appel direct et formulaire de contact.', abo: '40 €/mois' };
+    var objectif = document.querySelector('input[name="objectif"]:checked')?.value || '';
+    var situation = document.querySelector('input[name="situation_actuelle"]:checked')?.value || '';
+    var budgetM = document.querySelector('input[name="budget_mensuel"]:checked')?.value || '';
+    var typeSite = document.querySelector('input[name="type_site"]:checked')?.value || '';
+    
+    if(objectif.includes('Vendre') || typeSite === 'E-boutique') 
+      return { offre: "🛒 E-boutique — 2 500 €", detail: "Vous souhaitez vendre en ligne. La boutique e-commerce est faite pour vous.", abo: "120 €/mois" };
+    if(objectif.includes('réservations') || typeSite === 'Vitrine Premium+') 
+      return { offre: "🏨 Vitrine Premium+ — 2 000 €", detail: "Votre activité nécessite un système de réservation en ligne.", abo: "90 €/mois" };
+    if(budgetM.includes('100 à 200') || typeSite === 'Vitrine Premium') 
+      return { offre: "🚀 Vitrine Premium — 1 500 €", detail: "Vous avez des ambitions fortes pour votre présence en ligne.", abo: "60 €/mois" };
+    return { offre: "💻 Vitrine Simple — Création offerte", detail: "Pour célébrer notre lancement, nous offrons la création de site à nos 10 premiers clients. Vous ne payez que l'abonnement mensuel. Offre valable sur la Vitrine Simple uniquement.", abo: "40 €/mois" };
   }
 
   function showReco() {
@@ -1096,6 +1157,7 @@
     }
   });
 
+  // Validation code parrain
   var codeParrainInput = document.getElementById('codeParrain');
   if(codeParrainInput) {
     codeParrainInput.addEventListener('input', function() {
@@ -1103,7 +1165,7 @@
       this.value = code;
       var status = document.getElementById('parrainStatus');
       if(code.length === 8) {
-        status.textContent = 'Code valide — -25% applique sur votre creation';
+        status.textContent = 'Code valide - -25% sur votre creation';
         status.style.color = '#00ffc0';
       } else if(code.length > 0) {
         status.textContent = (8-code.length) + ' caracteres restants';
