@@ -907,17 +907,15 @@
   // ── ALGORITHME DE RECOMMANDATION ──
   function calcReco() {
     var objectif = document.querySelector('input[name="objectif"]:checked')?.value || '';
-    var situation = document.querySelector('input[name="situation_actuelle"]:checked')?.value || '';
     var budgetM = document.querySelector('input[name="budget_mensuel"]:checked')?.value || '';
-    var typeSite = document.querySelector('input[name="type_site"]:checked')?.value || '';
-    
-    if(objectif.includes('Vendre') || typeSite === 'E-boutique') 
-      return { offre: "🛒 E-boutique — 2 500 €", detail: "Vous souhaitez vendre en ligne. La boutique e-commerce est faite pour vous.", abo: "120 €/mois" };
-    if(objectif.includes('réservations') || typeSite === 'Vitrine Premium+') 
-      return { offre: "🏨 Vitrine Premium+ — 2 000 €", detail: "Votre activité nécessite un système de réservation en ligne.", abo: "90 €/mois" };
-    if(budgetM.includes('100 à 200') || typeSite === 'Vitrine Premium') 
-      return { offre: "🚀 Vitrine Premium — 1 500 €", detail: "Vous avez des ambitions fortes pour votre présence en ligne.", abo: "60 €/mois" };
-    return { offre: "💻 Vitrine Simple — Création offerte", detail: "Pour célébrer notre lancement, nous offrons la création de site à nos 10 premiers clients. Vous ne payez que l'abonnement mensuel. Offre valable sur la Vitrine Simple uniquement.", abo: "40 €/mois" };
+
+    if(objectif.includes('Vendre') || objectif.includes('ligne'))
+      return { offre: "🛒 E-Boutique — 2 500 €", detail: "Vous souhaitez vendre en ligne. Notre boutique e-commerce inclut catalogue produits, paiement Stripe/PayPal et gestion des stocks.", abo: "120 €/mois" };
+    if(objectif.includes('Réservation') || objectif.includes('RDV') || objectif.includes('réservation'))
+      return { offre: "🏨 Vitrine Premium+ — 2 000 €", detail: "Votre activité nécessite un système de réservation en ligne avec espace client et notifications automatiques.", abo: "90 €/mois" };
+    if(budgetM.includes('100 à 200') || objectif.includes('convertir') || objectif.includes('clients'))
+      return { offre: "🚀 Vitrine Premium — 1 500 €", detail: "Un site qui convertit vos visiteurs en clients, avec formulaire de devis, témoignages et SEO actif mensuel.", abo: "60 €/mois" };
+    return { offre: "💻 Vitrine Simple — 800 €", detail: "Pour exister en ligne et être trouvé sur Google. 3 à 4 pages personnalisées, formulaire de contact, livré en 5 jours.", abo: "40 €/mois" };
   }
 
   function showReco() {
