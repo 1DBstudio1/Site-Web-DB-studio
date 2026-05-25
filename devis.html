@@ -1139,7 +1139,7 @@
       console.error(err);
       btn.textContent = 'Envoyer ma demande';
       btn.disabled = false;
-      alert('Une erreur est survenue. Contactez-nous directement sur WhatsApp ou par email.');
+      alert('Erreur: ' + (err.message || JSON.stringify(err)));
     }
   });
 
