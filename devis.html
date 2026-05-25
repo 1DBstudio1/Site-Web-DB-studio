@@ -962,7 +962,7 @@
   }
 
   async function sendBrevoEmail(to, toName, subject, htmlContent) {
-    const res = await fetch('/api/send-email', {
+    const res = await fetch('/api/envoyer-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ to, toName, subject, htmlContent })
