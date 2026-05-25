@@ -869,25 +869,8 @@
   const totalSteps = 4;
 
   function goTo(page) {
-    // Validation étape 1
-    if (page === 2 && current === 1) {
-      const secteur = document.querySelector('select[name="secteur"]').value;
-      const activite = document.querySelector('[name="description_activite"]').value.trim();
-      const concurrents = document.querySelector('[name="concurrents"]').value.trim();
-      if (!secteur) { alert('Veuillez sélectionner votre secteur d\'activité.'); return; }
-      if (!activite) { alert('Veuillez décrire votre activité.'); return; }
-      if (!concurrents) { alert('Veuillez renseigner vos concurrents.'); return; }
-    }
-    // Validation étape 2
-    if (page === 3 && current === 2) {
-      const type = document.querySelector('input[name="type_site"]:checked');
-      if (!type) { alert('Veuillez sélectionner un type de site.'); return; }
-    }
-    // Validation étape 3
+    // Afficher la recommandation à l'étape 4
     if (page === 4 && current === 3) {
-      const logo = document.querySelector('input[name="logo"]:checked');
-      if (!logo) { alert('Veuillez indiquer si vous avez un logo.'); return; }
-      // Calculer et afficher la recommandation
       showReco();
     }
 
