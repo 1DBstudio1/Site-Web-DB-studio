@@ -24,13 +24,16 @@ export default async function handler(req, res) {
       })
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const err = await response.json();
-      return res.status(500).json({ error: err.message || 'Erreur Brevo' });
+      console.error('BREVO ERROR:', JSON.stringify(data));
+      return res.status(500).json({ error: data.message || 'Erreur Brevo' });
     }
 
     return res.status(200).json({ success: true });
   } catch (err) {
+    console.error('CATCH ERROR:', err.message);
     return res.status(500).json({ error: err.message });
   }
 }
