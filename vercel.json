@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/envoyer-email", "destination": "/API/envoyer-email" },
+    { "source": "/api/send-email", "destination": "/API/send-email" }
+  ]
+}
