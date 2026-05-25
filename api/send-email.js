@@ -3,7 +3,7 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  console.log('Function called');
+  console.log('envoyer-email called');
 
   let body = req.body;
   if (typeof body === 'string') {
@@ -12,14 +12,13 @@ module.exports = async function handler(req, res) {
 
   const { to, toName, subject, htmlContent } = body || {};
 
-  console.log('To:', to, 'Subject:', subject ? 'ok' : 'missing');
-
   if (!to || !subject || !htmlContent) {
+    console.log('Params manquants:', { to, subject: !!subject, htmlContent: !!htmlContent });
     return res.status(400).json({ error: 'Paramètres manquants' });
   }
 
   const apiKey = process.env.BREVO_API_KEY;
-  console.log('API Key present:', !!apiKey);
+  console.log('API Key présente:', !!apiKey);
 
   try {
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
@@ -37,7 +36,7 @@ module.exports = async function handler(req, res) {
     });
 
     const data = await response.json();
-    console.log('Brevo status:', response.status, JSON.stringify(data));
+    console.log('Brevo réponse:', response.status, JSON.stringify(data));
 
     if (!response.ok) {
       return res.status(500).json({ error: data.message || 'Erreur Brevo' });
@@ -45,7 +44,7 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({ success: true });
   } catch (err) {
-    console.error('Error:', err.message);
+    console.error('Erreur:', err.message);
     return res.status(500).json({ error: err.message });
   }
 };
