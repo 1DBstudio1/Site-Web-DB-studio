@@ -962,11 +962,16 @@
   }
 
   async function sendBrevoEmail(to, toName, subject, htmlContent) {
-    return fetch('/api/send-email', {
+    const res = await fetch('/api/send-email', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ to, toName, subject, htmlContent })
     });
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || 'Erreur envoi');
+    }
+    return res;
   }
 
   const form = document.getElementById('devisForm');
